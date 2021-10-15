@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Doric Debugger",
+            "program": "${workspaceFolder}/${relativeFile}",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/bundle/**/*.js"
+            ]
+        }
+    ]
+}

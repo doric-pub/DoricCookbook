@@ -1,0 +1,31 @@
+{
+  "name": "DoricExamples",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "doric build",
+    "dev": "doric dev",
+    "clean": "doric clean",
+    "android": "doric run android",
+    "ios": "doric run iOS"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "doric": "0.7.1",
+    "doric-cli": "0.7.1",
+    "reflect-metadata": "^0.1.13",
+    "rollup": "^2.24.0",
+    "typescript": "^4.2.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-image": "^2.0.5",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0"
+  },
+  "optionalDependencies": {
+    "ios-deploy": "^1.11.4"
+  }
+}
