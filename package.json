@@ -12,8 +12,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "doric": "0.7.1",
-    "doric-cli": "0.7.1",
+    "doric": "0.9.9",
+    "doric-cli": "0.9.9",
     "reflect-metadata": "^0.1.13",
     "rollup": "^2.24.0",
     "typescript": "^4.2.2"

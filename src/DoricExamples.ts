@@ -1,43 +1,46 @@
-import { Panel, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar } from "doric";
+import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec } from "doric";
+
+const colors = [
+    "#f0932b",
+    "#eb4d4b",
+    "#6ab04c",
+    "#e056fd",
+    "#686de0",
+    "#30336b",
+]
+
+function cell(index = 0) {
+    var padding = 10
+    return stack([
+        stack(
+            [],{
+                width: 100,
+                layoutConfig: layoutConfig().most(),
+                backgroundColor:Color.RED,
+            }
+        )
+    ], {
+        height: 200,
+        layoutConfig: {
+            widthSpec: LayoutSpec.MOST,
+            heightSpec: LayoutSpec.JUST,
+        },
+        padding:{left: padding, right: padding, top: padding, bottom: padding},
+        backgroundColor: Color.parse(colors[index || 0]),
+    })
+}
 
 @Entry
-class DoricExamples extends Panel {
+class MainWidget extends Panel {
     onShow() {
         navbar(context).setTitle("DoricExamples")
     }
     build(rootView: Group): void {
-        let number: Text
-        let count = 0
-        vlayout([
-            number = text({
-                textSize: 40,
-                text: '0',
-            }),
-            text({
-                text: "Click to count",
-                textSize: 20,
-                backgroundColor: Color.parse('#70a1ff'),
-                textColor: Color.WHITE,
-                onClick: () => {
-                    number.text = `${++count}`
-                },
-                layoutConfig: layoutConfig().just(),
-                width: 200,
-                height: 50,
-            }),
-        ])
-            .apply({
-                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
-                width: 200,
-                height: 200,
-                space: 20,
-                border: {
-                    color: Color.BLUE,
-                    width: 1,
-                },
-                gravity: Gravity.Center,
-            })
-            .in(rootView)
+        list({
+            itemCount: 8,
+            renderItem: (index: number) => cell(index%colors.length)
+        }).apply({
+            layoutConfig: layoutConfig().most(),
+        }).in(rootView)
     }
-
 }
