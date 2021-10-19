@@ -1,9 +1,9 @@
 import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator } from "doric";
-// import { ComponentModel } from "./ComponentModel";
+import { ComponentModel } from "./ComponentModel";
 import { Container } from "./Container"
-import { ComponentDetail } from "./ComponentDetail";
-import {ComponentModel}  from "./ComponentModel"
 
+
+const themColor = Color.parse('#766BEA')
 function cell(model: ComponentModel) {
     let padding = 10
     let hPadding = 20
@@ -61,10 +61,7 @@ function cell(model: ComponentModel) {
             padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
             // backgroundColor: Color.parse(colors[index || 0]),
             onClick: () => {
-                // modal(context).alert(`即将跳转${model.name}详情`)
-                navigator(context).push(ComponentDetail, {
-                    extra: model,
-                })
+                modal(context).alert(`即将跳转${model.title}详情`)
             }
         }, Container.d({  // child 圆角白色 container
             corners: 8,
@@ -97,61 +94,75 @@ function cell(model: ComponentModel) {
         ))
 }
 
-const themColor = Color.parse('#766BEA')
-const colors = [
-    "#f0932b",
-    "#eb4d4b",
-    "#6ab04c",
-    "#e056fd",
-    "#686de0",
-    "#30336b",
-]
+// 1.顶部介绍cell
+function _descCell(model: ComponentModel) {
+
+    let padding = 20
+    let hPadding = 20
+
+    let titleLabel = text({
+        text: model.subTitle,
+        layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+        textSize: 28,
+        fontStyle: 'bold',
+        textColor: themColor,
+        textAlignment: Gravity.Left,
+        maxLines: 1,
+        height: 28,
+    })
+
+    return listItem(
+        [
+            vlayout(
+                [
+                    titleLabel,
+                    titleLabel
+                ],
+                {
+                    backgroundColor: Color.LTGRAY,
+                    space: 10
+                }
+            )
+        ]
+    ).apply({
+        height: 140,
+        layoutConfig: {
+            widthSpec: LayoutSpec.MOST,
+            heightSpec: LayoutSpec.JUST,
+        },
+        backgroundColor: Color.YELLOW,
+        padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
+    })
+}
 
 @Entry
-class MainWidget extends Panel {
-    // 数据源
-    private models: ComponentModel[] = []
+export class ComponentDetail extends Panel {
+
+    private model?: ComponentModel
 
     onCreate() {
-        this.makeLocalDatas();
+        // 拿到上个Panel传过来的数据
+        if (this.getInitData()) {
+            this.model = this.getInitData() as ComponentModel;
+            modal(context).alert(`Init Data :${this.model.title}`)
+        }
+
+        // let filePath = fs.readFileSync("./src/localComponents.json", {encoding: "utf8"})
+        // modal(context).alert(`Init Data :${filePath}`)
+        // var models = JSON.parse(filePath)
+        // modal(context).alert(`Init Data :${filePath}`)
     }
+
     onShow() {
-        navbar(context).setTitle("DoricExamples")
+        navbar(context).setTitle(this.model?.title ?? '')
     }
+
     build(rootView: Group): void {
         list({
-            itemCount: this.models.length,
-            renderItem: (index: number) => cell(this.models[index]),
+            itemCount: 1,
+            renderItem: (index: number) => _descCell(this.model!)
         }).apply({
             layoutConfig: layoutConfig().most(),
         }).in(rootView)
     }
-
-    /// 构造本地数据
-    makeLocalDatas() {
-
-        // let filePath = fs.readFileSync("./src/localComponents.json", {encoding: "utf-8"})
-        // this.models = JSON.parse(filePath)
-
-        var model = <ComponentModel>{}
-        model.title = 'Stack'
-        model.desc = '层叠布局容器控件，子控件都是相对于其左上角顶点摆放'
-        this.models.push(model)
-
-        model = <ComponentModel>{}
-        model.title = 'Text'
-        model.desc = '文本控件'
-        this.models.push(model)
-
-        model = <ComponentModel>{}
-        model.title = 'HLayout'
-        model.desc = '水平线性布局容器控件'
-        this.models.push(model)
-
-        model = <ComponentModel>{}
-        model.title = 'VLayout'
-        model.desc = '垂直线性布局组件'
-        this.models.push(model)
-    }
 }
-
