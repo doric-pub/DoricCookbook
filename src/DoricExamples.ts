@@ -1,8 +1,8 @@
 import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator } from "doric";
-// import { ComponentModel } from "./ComponentModel";
 import { Container } from "./Container"
 import { ComponentDetail } from "./ComponentDetail";
-import {ComponentModel}  from "./ComponentModel"
+import { ComponentModel } from "./ComponentModel"
+import localJson from "./localComponents.json";
 
 function cell(model: ComponentModel) {
     let padding = 10
@@ -49,7 +49,6 @@ function cell(model: ComponentModel) {
         },
         layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
     })
-
 
     return listItem(
         Container.d({  // 底部背景
@@ -130,28 +129,28 @@ class MainWidget extends Panel {
     /// 构造本地数据
     makeLocalDatas() {
 
-        // let filePath = fs.readFileSync("./src/localComponents.json", {encoding: "utf-8"})
-        // this.models = JSON.parse(filePath)
+        console.log('json读出来', localJson)
+        this.models = localJson
 
-        var model = <ComponentModel>{}
-        model.title = 'Stack'
-        model.desc = '层叠布局容器控件，子控件都是相对于其左上角顶点摆放'
-        this.models.push(model)
+        // var model = <ComponentModel>{}
+        // model.title = 'Stack'
+        // model.desc = '层叠布局容器控件，子控件都是相对于其左上角顶点摆放'
+        // this.models.push(model)
 
-        model = <ComponentModel>{}
-        model.title = 'Text'
-        model.desc = '文本控件'
-        this.models.push(model)
+        // model = <ComponentModel>{}
+        // model.title = 'Text'
+        // model.desc = '文本控件'
+        // this.models.push(model)
 
-        model = <ComponentModel>{}
-        model.title = 'HLayout'
-        model.desc = '水平线性布局容器控件'
-        this.models.push(model)
+        // model = <ComponentModel>{}
+        // model.title = 'HLayout'
+        // model.desc = '水平线性布局容器控件'
+        // this.models.push(model)
 
-        model = <ComponentModel>{}
-        model.title = 'VLayout'
-        model.desc = '垂直线性布局组件'
-        this.models.push(model)
+        // model = <ComponentModel>{}
+        // model.title = 'VLayout'
+        // model.desc = '垂直线性布局组件'
+        // this.models.push(model)
     }
 }
 

@@ -2,7 +2,7 @@
     {
         "title": "Stack",
         "subTitle": "堆叠布局",
-        "desc": "层叠布局容器控件，子控件都是相对于其左上角顶点摆放",
+        "desc": "可容纳多个组件，已堆叠的方式摆放子组件，后者居上，子控件都是相对于其左上角顶点摆放",
         "cases": [
             {
                 "title": "Stack基本使用",
@@ -11,6 +11,57 @@
             },
             {
                 "title": "Stack高级使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            }
+        ]
+    },
+    {
+        "title": "Text",
+        "subTitle": "文本控件",
+        "desc": "文本控件",
+        "cases": [
+            {
+                "title": "Text基本使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            },
+            {
+                "title": "Text高级使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            }
+        ]
+    },
+    {
+        "title": "HLayout",
+        "subTitle": "水平线性布局容器控件",
+        "desc": "水平线性布局容器控件",
+        "cases": [
+            {
+                "title": "HLayout基本使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            },
+            {
+                "title": "HLayout高级使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            }
+        ]
+    },
+    {
+        "title": "VLayout",
+        "subTitle": "垂直线性布局组件",
+        "desc": "垂直线性布局组件",
+        "cases": [
+            {
+                "title": "VLayout基本使用",
+                "code":"./codes/Stack_1.txt",
+                "ui":"./codes/Stack_1.ts"
+            },
+            {
+                "title": "VLayout高级使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             }

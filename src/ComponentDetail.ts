@@ -2,7 +2,6 @@ import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color,
 import { ComponentModel } from "./ComponentModel";
 import { Container } from "./Container"
 
-
 const themColor = Color.parse('#766BEA')
 function cell(model: ComponentModel) {
     let padding = 10
@@ -102,13 +101,22 @@ function _descCell(model: ComponentModel) {
 
     let titleLabel = text({
         text: model.subTitle,
-        layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
-        textSize: 28,
+        layoutConfig: layoutConfig().fit(),
+        textSize: 20,
         fontStyle: 'bold',
         textColor: themColor,
         textAlignment: Gravity.Left,
         maxLines: 1,
-        height: 28,
+    })
+
+    let descLabel = text({
+        text: model.desc,
+        layoutConfig: layoutConfig().fit(),
+        textSize: 15,
+        textColor: Color.safeParse('#666666'),
+        textAlignment: Gravity.Left,
+        maxLines: 0,
+        lineSpacing: 4,
     })
 
     return listItem(
@@ -116,7 +124,7 @@ function _descCell(model: ComponentModel) {
             vlayout(
                 [
                     titleLabel,
-                    titleLabel
+                    descLabel
                 ],
                 {
                     backgroundColor: Color.LTGRAY,
@@ -125,11 +133,7 @@ function _descCell(model: ComponentModel) {
             )
         ]
     ).apply({
-        height: 140,
-        layoutConfig: {
-            widthSpec: LayoutSpec.MOST,
-            heightSpec: LayoutSpec.JUST,
-        },
+        layoutConfig: layoutConfig().fit(),
         backgroundColor: Color.YELLOW,
         padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
     })
@@ -144,13 +148,8 @@ export class ComponentDetail extends Panel {
         // 拿到上个Panel传过来的数据
         if (this.getInitData()) {
             this.model = this.getInitData() as ComponentModel;
-            modal(context).alert(`Init Data :${this.model.title}`)
+            // modal(context).alert(`Init Data :${this.model.title}`)
         }
-
-        // let filePath = fs.readFileSync("./src/localComponents.json", {encoding: "utf8"})
-        // modal(context).alert(`Init Data :${filePath}`)
-        // var models = JSON.parse(filePath)
-        // modal(context).alert(`Init Data :${filePath}`)
     }
 
     onShow() {
