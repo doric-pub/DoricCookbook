@@ -6,11 +6,13 @@
         "cases": [
             {
                 "title": "Stack基本使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             },
             {
                 "title": "Stack高级使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             }
@@ -23,11 +25,13 @@
         "cases": [
             {
                 "title": "Text基本使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             },
             {
                 "title": "Text高级使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             }
@@ -40,11 +44,13 @@
         "cases": [
             {
                 "title": "HLayout基本使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             },
             {
                 "title": "HLayout高级使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             }
@@ -57,28 +63,13 @@
         "cases": [
             {
                 "title": "VLayout基本使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             },
             {
                 "title": "VLayout高级使用",
-                "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
-            }
-        ]
-    },
-    {
-        "title": "Text",
-        "subTitle": "文本控件",
-        "desc": "文本控件",
-        "cases": [
-            {
-                "title": "Text基本使用",
-                "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
-            },
-            {
-                "title": "Text高级使用",
+                "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
                 "ui":"./codes/Stack_1.ts"
             }
