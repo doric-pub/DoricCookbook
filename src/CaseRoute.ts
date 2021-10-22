@@ -1,17 +1,18 @@
 import { stack } from "doric";
-
+/// Text
 import * as Text_1 from "./components/Text_1"
 import * as Text_2 from "./components/Text_2"
 import * as Text_3 from "./components/Text_3"
 import * as Text_4 from "./components/Text_4"
 import * as Text_5 from "./components/Text_5"
-
+/// Stack
 import * as Stack_1 from "./components/Stack_1"
+import * as Stack_2 from "./components/Stack_2"
+import * as Stack_3 from "./components/Stack_3"
+import * as Stack_4 from "./components/Stack_4"
 
 export function caseUIorCode(path: string, needCode?: boolean) {
     switch (path) {
-        case 'Stack_1':
-            return needCode ? Stack_1.codeString() : Stack_1.ui()
         case 'Text_1':
             return needCode ? Text_1.codeString() : Text_1.ui()
         case 'Text_2':
@@ -22,6 +23,14 @@ export function caseUIorCode(path: string, needCode?: boolean) {
             return needCode ? Text_4.codeString() : Text_4.ui()
         case 'Text_5':
             return needCode ? Text_5.codeString() : Text_5.ui()
+        case 'Stack_1':
+            return needCode ? Stack_1.codeString() : Stack_1.ui()
+        case 'Stack_2':
+            return needCode ? Stack_2.codeString() : Stack_2.ui()
+        case 'Stack_3':
+            return needCode ? Stack_3.codeString() : Stack_3.ui()
+        case 'Stack_4':
+            return needCode ? Stack_4.codeString() : Stack_4.ui()
         default: return needCode ? '' : stack([])
     }
 }

@@ -1,68 +1,49 @@
 
-import { Color, layoutConfig, Stack, stack, View, ViewComponent } from "doric"
+import { Color, Gravity, layoutConfig, Stack, stack, View, ViewComponent, vlayout } from "doric"
+import * as PubTool from "../PubTool"
 
 export function ui() {
-
-    let redView = stack([],
-        {
-            width: 50,
-            height: 50,
-            layoutConfig:layoutConfig().just(),
-            backgroundColor: Color.RED
-        }
-    )
-
     let cyanView = stack([],
         {
-            width: 50,
-            height: 50,
-            layoutConfig:layoutConfig().just(),
+            width: 80,
+            height: 80,
+            layoutConfig: layoutConfig().just(),
             backgroundColor: Color.CYAN
         }
     )
-
     return stack(
         [
-            redView,
             cyanView
         ],
         {
-            layoutConfig:layoutConfig().most(),
-            backgroundColor: Color.LTGRAY
+            width: 240,
+            height: 160,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            backgroundColor: PubTool.bgColor,
         }
     )
 }
 
-
 export function codeString() {
-    
-    return  ` export function ui() {
-        let redView = stack([],
-            {
-                width: 50,
-                height: 50,
-                layoutConfig:layoutConfig().just(),
-                backgroundColor: Color.RED
-            }
-        )
-    
+
+    return `export function ui() {
         let cyanView = stack([],
             {
-                width: 50,
-                height: 50,
-                layoutConfig:layoutConfig().just(),
+                width: 80,
+                height: 80,
+                layoutConfig: layoutConfig().just(),
                 backgroundColor: Color.CYAN
             }
         )
-    
         return stack(
             [
-                redView,
                 cyanView
             ],
             {
-                layoutConfig:layoutConfig().most(),
-                backgroundColor: Color.LTGRAY
+                width: 240,
+                height: 160,
+                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+                backgroundColor: PubTool.bgColor,
             }
         )
     }
