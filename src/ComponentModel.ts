@@ -2,7 +2,6 @@
 export interface CasesModel {
     title: string;
     desc: string;
-    code: string
     ui: string;
 }
 

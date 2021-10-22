@@ -1,11 +1,9 @@
-import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator, flexlayout, FlexDirection, Align, Justify, View } from "doric";
+import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, ListItem, listItem, HLayout, modal, navigator, flexlayout, FlexDirection, Align, Justify, View } from "doric";
 import { CasesModel, ComponentModel } from "./ComponentModel";
-// import { Stack_1 } from "./components/Stack_1";
 import { Container } from "./Container"
 import * as PubTool from "./PubTool"
 import * as CaseRoute from "./CaseRoute"
 import { CodeIDE } from "./CodeIDE";
-
 
 // 1.顶部介绍cell
 function _descCell(model: ComponentModel) {
@@ -20,6 +18,7 @@ function _descCell(model: ComponentModel) {
         textColor: PubTool.themColor,
         textAlignment: Gravity.Left,
         maxLines: 1,
+        layoutConfig: layoutConfig().mostWidth().fitHeight(),
     })
 
     let descLabel = text({
@@ -29,6 +28,7 @@ function _descCell(model: ComponentModel) {
         textAlignment: Gravity.Left,
         maxLines: 0,
         lineSpacing: 4,
+        layoutConfig: layoutConfig().mostWidth().fitHeight(),
     })
 
     return listItem(
@@ -39,7 +39,8 @@ function _descCell(model: ComponentModel) {
                     descLabel
                 ],
                 {
-                    space: 10
+                    space: 10,
+                    layoutConfig: layoutConfig().mostWidth().fitHeight(),
                 }
             )
         ]
@@ -125,7 +126,7 @@ function _caseCell(caseModel: CasesModel) {
         lineSpacing: 4,
     })
 
-    let edge = 5
+    let edge = 0
 
     let container = stack(
         [
@@ -133,11 +134,10 @@ function _caseCell(caseModel: CasesModel) {
             CaseRoute.caseUIorCode(caseModel.ui) as View
         ],
         {
-            // width: 200,
-            // height: 160,
             layoutConfig: layoutConfig().mostWidth().fitHeight(),
             padding: { left: edge, right: edge, top: edge, bottom: edge },
-            backgroundColor: PubTool.bgColor,
+            // backgroundColor: PubTool.themColor,
+            backgroundColor: Color.WHITE,
         }
     )
     return listItem(

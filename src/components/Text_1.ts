@@ -1,5 +1,5 @@
-
 import { Color, Gravity, layoutConfig, LayoutSpec, Text, text, vlayout } from "doric"
+import * as PubTool from "../PubTool"
 
 export function ui() {
     return vlayout([
@@ -31,7 +31,7 @@ export function ui() {
             text: "This is line Spaceing 40,\nSecond line",
             maxLines: 0,
             lineSpacing: 40,
-            textColor: Color.RED,
+            textColor: Color.MAGENTA,
             textAlignment: Gravity.Right,
             onClick: function () {
                 (this as Text).textAlignment = Gravity.Left;
@@ -54,14 +54,16 @@ export function ui() {
     ], {
         space: 10,
         gravity: Gravity.Left,
-        layoutConfig: layoutConfig().most().configHeight(LayoutSpec.FIT)
+        backgroundColor: PubTool.bgColor,
+        layoutConfig: layoutConfig().mostWidth().fitHeight()
     })
 }
 
 
 export function codeString() {
-    
-    return  `export function ui() {
+
+    return `
+    export function ui() {
         return vlayout([
             text({
                 text: "This is normal text",
@@ -91,7 +93,7 @@ export function codeString() {
                 text: "This is line Spaceing 40,\nSecond line",
                 maxLines: 0,
                 lineSpacing: 40,
-                textColor: Color.RED,
+                textColor: Color.MAGENTA,
                 textAlignment: Gravity.Right,
                 onClick: function () {
                     (this as Text).textAlignment = Gravity.Left;
@@ -114,7 +116,8 @@ export function codeString() {
         ], {
             space: 10,
             gravity: Gravity.Left,
-            layoutConfig: layoutConfig().most().configHeight(LayoutSpec.FIT)
+            backgroundColor: PubTool.bgColor,
+            layoutConfig: layoutConfig().mostWidth().fitHeight()
         })
     }
     `
