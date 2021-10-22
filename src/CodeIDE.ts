@@ -15,7 +15,6 @@ export class CodeIDE extends Panel {
 
     onShow() {
         navbar(context).setTitle(this.caseModel?.title ?? '')
-        navbar(context).setBgColor(Color.BLACK)
     }
 
     build(rootView: Group): void {

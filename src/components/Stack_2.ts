@@ -1,5 +1,5 @@
 
-import { Color, Gravity, layoutConfig, LayoutSpec, stack } from "doric"
+import { Color, Gravity, layoutConfig, stack } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {

@@ -1,5 +1,5 @@
 
-import { Color, Gravity, layoutConfig, LayoutSpec, stack, text, vlayout } from "doric"
+import { Color, Gravity, layoutConfig, stack, text, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 /// 文字对齐方式

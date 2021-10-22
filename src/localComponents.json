@@ -16,12 +16,12 @@
             },
             {
                 "title": "子组件对齐方式",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
+                "desc": "【alignment】：子组件相对位置，可以设置对齐方式\n 左对齐、右对齐、居中对齐等方式可直接通过Gravity的静态方法设置，但是右上、右下等对齐方式需要用对象方法设置，比如\n【右下对齐】：通过Gravity的构造方式设置，比如gravity().right().bottom()",
                 "ui":"Stack_3"
             },
             {
                 "title": "基础动画",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
+                "desc": "此处通过animate进行简单的rotation演示，后面会有详细的动画教程",
                 "ui":"Stack_4"
             }
         ]
@@ -32,24 +32,19 @@
         "desc": "用于显示一张图片，支持从本地文件或者网络链接加载图片，支持base64、webp、gif等图片，可以指定不同的缩放模式",
         "cases": [
             {
-                "title": "Stack基本使用",
-                "desc": "【功能】：用来显示一个View\n【views】：子组件列表，可以放一个或者多个子组件\n【config】： 配置项Partial<Stack>",
-                "ui":"Stack_1"
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_1"
             },
             {
-                "title": "多个子组件情况",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
-                "ui":"Stack_2"
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_2"
             },
             {
-                "title": "子组件对齐方式",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
-                "ui":"Stack_3"
-            },
-            {
-                "title": "基础动画",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
-                "ui":"Stack_4"
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui":"Image_3"
             }
         ]
     },
@@ -91,14 +86,29 @@
         "desc": "水平线性布局容器控件",
         "cases": [
             {
-                "title": "HLayout基本使用",
-                "desc": "Stack基本使用",
-                "ui":"./codes/Stack_1.ts"
+                "title": "基本使用",
+                "desc": "【textSize】：文字大小\n【textColor】：文字颜色\n【fontStyle】：字体样式 normal/bold/italic\n【maxLines】：最大行数，设置为0代表不限行数\n【shadow】：阴影\n【lineSpacing】：行间距\n【strikethrough】：显示中横线，默认false\n【underline】：显示下划线，默认false",
+                "ui":"Text_1"
             },
             {
-                "title": "HLayout高级使用",
-                "desc": "Stack基本使用",
-                "ui":"./codes/Stack_1.ts"
+                "title": "文字对齐方式",
+                "desc": "【textAlignment】：对齐方式，例如Gravity.Center代表中心对齐，上图依次是Left、Center、Right、Bottom",
+                "ui":"Text_2"
+            },
+            {
+                "title": "字体文件使用",
+                "desc": "【font】：字体文件名/字体文件路径",
+                "ui":"Text_3"
+            },
+            {
+                "title": "字体渐变色",
+                "desc": "【textColor】：支持渐变色GradientColor\n【start】：开始颜色\n【end】：结束颜色\n【orientation】：渐变方向",
+                "ui":"Text_4"
+            },
+            {
+                "title": "支持html文本",
+                "desc": "【htmlText】：html文本",
+                "ui":"Text_5"
             }
         ]
     },
@@ -108,14 +118,63 @@
         "desc": "垂直线性布局组件",
         "cases": [
             {
-                "title": "VLayout基本使用",
-                "desc": "Stack基本使用",
-                "ui":"./codes/Stack_1.ts"
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_1"
             },
             {
-                "title": "VLayout高级使用",
-                "desc": "Stack基本使用",
-                "ui":"./codes/Stack_1.ts"
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_2"
+            },
+            {
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui":"Image_3"
+            }
+        ]
+    },
+    {
+        "title": "FlexLayout",
+        "subTitle": "盒子布局组件",
+        "desc": "盒子布局组件",
+        "cases": [
+            {
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_1"
+            },
+            {
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_2"
+            },
+            {
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui":"Image_3"
+            }
+        ]
+    },
+    {
+        "title": "List",
+        "subTitle": "列表控件",
+        "desc": "列表控件",
+        "cases": [
+            {
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_1"
+            },
+            {
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_2"
+            },
+            {
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui":"Image_3"
             }
         ]
     }

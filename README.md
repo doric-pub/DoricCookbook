@@ -1,6 +1,8 @@
 
 Doric跨平台开发框架使用手册
 
+![home](../master/images/11.png)
+
 ### Doric
 
 > [Doric](https://doric.pub/docs/index.html) 是一个极简高效的跨端开发框架，使用[TypeScript](https://www.typescriptlang.org/)作为开发语言，
@@ -28,3 +30,12 @@ Doric使用TypeScript作为开发语言，推荐使用编辑器
 
 当必需的开发环境准备就绪后，即可使用npm安装Doric命令行工具.
 请查看文档[命令行工具](https://doric.pub/docs/cli.html)
+
+##### 部分图片
+
+![stack](../master/images/12.png)
+![image](../master/images/13.png)
+![text1](../master/images/14.png)
+![text2](../master/images/15.png)
+![code](../master/images/16.png)
+

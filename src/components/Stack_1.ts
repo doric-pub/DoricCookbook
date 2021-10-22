@@ -7,7 +7,7 @@ export function ui() {
         {
             width: 80,
             height: 80,
-            layoutConfig: layoutConfig().just(),
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Left),
             backgroundColor: Color.CYAN
         }
     )
@@ -31,7 +31,7 @@ export function codeString() {
             {
                 width: 80,
                 height: 80,
-                layoutConfig: layoutConfig().just(),
+                layoutConfig: layoutConfig().just().configAlignment(Gravity.Left),
                 backgroundColor: Color.CYAN
             }
         )

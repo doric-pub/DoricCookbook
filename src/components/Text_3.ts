@@ -8,12 +8,12 @@ export function ui() {
         text({
             text: "Icon Font text from   \ue631 ",
             textSize: 20,
-            font: 'iconfont'
+            font: '../fonts/iconfont.ttf'
         }),
         text({
             text: "Icon Font text from assets/fonts/ \ue631 ",
             textSize: 20,
-            font: '/res/font/Hanabi.ttf'
+            font: '../fonts/Hanabi.ttf'
         }),
     ], {
         space: 10,
