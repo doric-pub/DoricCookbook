@@ -1,10 +1,4 @@
 
-// export class ComponentModel {
-//     name!: string;
-//     desc!: string;
-//     constructor(){}
-// }
-
 export interface CasesModel {
     title: string;
     desc: string;

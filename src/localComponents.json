@@ -8,32 +8,32 @@
                 "title": "Stack基本使用",
                 "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
+                "ui":"Stack_1"
             },
             {
                 "title": "Stack高级使用",
                 "desc": "Stack基本使用",
                 "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
+                "ui":"Stack_1"
             }
         ]
     },
     {
         "title": "Text",
-        "subTitle": "文本控件",
-        "desc": "文本控件",
+        "subTitle": "文字组件",
+        "desc": "用于显示文字的组件，拥有的属性非常多",
         "cases": [
             {
                 "title": "Text基本使用",
-                "desc": "Stack基本使用",
+                "desc": "【textSize】：文字大小\n【textColor】：文字颜色\n【fontStyle】：字体样式 normal/bold/italic",
                 "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
+                "ui":"Text_1"
             },
             {
-                "title": "Text高级使用",
-                "desc": "Stack基本使用",
+                "title": "Text字体文件使用",
+                "desc": "【font】：文字大小",
                 "code":"./codes/Stack_1.txt",
-                "ui":"./codes/Stack_1.ts"
+                "ui":"Text_2"
             }
         ]
     },

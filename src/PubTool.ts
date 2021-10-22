@@ -1,6 +1,7 @@
 import { Color } from "doric";
 
 export const themColor = Color.parse('#766BEA')
+export const bgColor = Color.parse('#FDF5E6')
 
 /// 生成随机色
 export function randomColor() {

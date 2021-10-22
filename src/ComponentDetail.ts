@@ -1,7 +1,11 @@
-import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator, flexlayout, FlexDirection, Align, Justify } from "doric";
+import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator, flexlayout, FlexDirection, Align, Justify, View } from "doric";
 import { CasesModel, ComponentModel } from "./ComponentModel";
+// import { Stack_1 } from "./components/Stack_1";
 import { Container } from "./Container"
 import * as PubTool from "./PubTool"
+import * as CaseRoute from "./CaseRoute"
+import { CodeIDE } from "./CodeIDE";
+
 
 // 1.顶部介绍cell
 function _descCell(model: ComponentModel) {
@@ -35,17 +39,13 @@ function _descCell(model: ComponentModel) {
                     descLabel
                 ],
                 {
-                    backgroundColor: Color.LTGRAY,
                     space: 10
                 }
             )
         ]
     ).apply({
-        layoutConfig: {
-            widthSpec: LayoutSpec.MOST,
-            heightSpec: LayoutSpec.FIT
-        },
-        backgroundColor: PubTool.randomColor(),
+        layoutConfig: layoutConfig().mostWidth().fitHeight(),
+        // backgroundColor: PubTool.randomColor(),
         padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
     })
 }
@@ -62,7 +62,7 @@ function pointWidget() {
 }
 
 // 查看代码widget
-function codeEntrance() {
+function codeEntrance(caseModel: CasesModel) {
     return text({
         text: '<>',
         width: 40,
@@ -76,6 +76,11 @@ function codeEntrance() {
         textColor: PubTool.themColor,
         textAlignment: Gravity.Right,
         maxLines: 1,
+        onClick: function () {
+            navigator(context).push(CodeIDE, {
+                extra: caseModel,
+            })
+        }
     })
 }
 
@@ -91,7 +96,7 @@ function _caseCell(caseModel: CasesModel) {
         fontStyle: 'bold',
         textColor: Color.BLACK,
         textAlignment: Gravity.Left,
-        backgroundColor: PubTool.randomColor(),
+        // backgroundColor: PubTool.randomColor(),
         maxLines: 1,
         layoutConfig: layoutConfig().fit()
     })
@@ -103,18 +108,38 @@ function _caseCell(caseModel: CasesModel) {
         layoutConfig: layoutConfig().fit(),
         space: 10,
         gravity: Gravity.CenterY,
-        backgroundColor: PubTool.randomColor(),
+        // backgroundColor: PubTool.randomColor(),
     })
 
     let descLabel = text({
         text: caseModel.desc,
+        layoutConfig: {
+            widthSpec: LayoutSpec.MOST,
+            heightSpec: LayoutSpec.FIT,
+        },
         textSize: 15,
         textColor: Color.safeParse('#666666'),
         textAlignment: Gravity.Left,
+        // backgroundColor: PubTool.randomColor(),
         maxLines: 0,
         lineSpacing: 4,
     })
 
+    let edge = 5
+
+    let container = stack(
+        [
+            // 内部具体case
+            CaseRoute.caseUIorCode(caseModel.ui) as View
+        ],
+        {
+            // width: 200,
+            // height: 160,
+            layoutConfig: layoutConfig().mostWidth().fitHeight(),
+            padding: { left: edge, right: edge, top: edge, bottom: edge },
+            backgroundColor: PubTool.bgColor,
+        }
+    )
     return listItem(
         [
             vlayout(
@@ -122,24 +147,23 @@ function _caseCell(caseModel: CasesModel) {
                     flexlayout(
                         [
                             caseTitle,
-                            codeEntrance()
+                            codeEntrance(caseModel)
                         ], {
                         flexConfig: {
                             flexDirection: FlexDirection.ROW,
                             justifyContent: Justify.SPACE_BETWEEN,
                             alignItems: Align.CENTER,
                         },
-                        layoutConfig: {
-                            widthSpec: LayoutSpec.MOST,
-                            heightSpec: LayoutSpec.FIT,
-                        },
+                        layoutConfig: layoutConfig().mostWidth().fitHeight(),
                     }
                     ),
+                    container,
                     descLabel
                 ],
                 {
-                    backgroundColor: Color.CYAN,
-                    space: 10,
+                    // backgroundColor: Color.CYAN,
+                    space: 25,
+                    gravity: Gravity.CenterX,
                     layoutConfig: layoutConfig().most(),
                 }
             )
@@ -149,7 +173,7 @@ function _caseCell(caseModel: CasesModel) {
             widthSpec: LayoutSpec.MOST,
             heightSpec: LayoutSpec.FIT
         },
-        backgroundColor: PubTool.randomColor(),
+        // backgroundColor: PubTool.randomColor(),
         padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
     })
 }
