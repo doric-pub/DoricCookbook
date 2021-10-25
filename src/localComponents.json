@@ -87,7 +87,7 @@
         "cases": [
             {
                 "title": "基本使用",
-                "desc": "【space】：子控件间距\n【gravity】：垂直方向上子控件的对齐方式，默认为左对齐",
+                "desc": "【space】：子控件间距\n【gravity】：垂直方向上子控件的对齐方式，默认为左上对齐",
                 "ui":"HLayout_1"
             },
             {
@@ -105,22 +105,22 @@
     {
         "title": "VLayout",
         "subTitle": "垂直线性布局组件",
-        "desc": "垂直线性布局组件",
+        "desc": "沿着垂直方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
         "cases": [
             {
-                "title": "加载PNG、GIF",
-                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
-                "ui":"Image_1"
+                "title": "基本使用",
+                "desc": "【space】：子控件间距\n【gravity】：水平方向上子控件的对齐方式，默认为左上对齐",
+                "ui":"VLayout_1"
             },
             {
-                "title": "加载WebP、Animated WebP",
-                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
-                "ui":"Image_2"
+                "title": "水平方向对齐方式",
+                "desc": "【gravity】：水平方向上子控件的对齐方式设置为中心对齐，Gravity.Center",
+                "ui":"VLayout_2"
             },
             {
-                "title": "拉伸图片",
-                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
-                "ui":"Image_3"
+                "title": "按比重分配",
+                "desc": "【weight】：按照垂直方向高度所占比重，默认值为0\n【weight>0】： 其余子控件高度按照weight比重分配",
+                "ui":"VLayout_3"
             }
         ]
     },
