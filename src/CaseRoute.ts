@@ -14,6 +14,10 @@ import * as Stack_4 from "./components/Stack_4"
 import * as Image_1 from "./components/Image_1"
 import * as Image_2 from "./components/Image_2"
 import * as Image_3 from "./components/Image_3"
+/// HLayout
+import * as HLayout_1 from "./components/HLayout_1"
+import * as HLayout_2 from "./components/HLayout_2"
+import * as HLayout_3 from "./components/HLayout_3"
 
 export function caseUIorCode(path: string, needCode?: boolean) {
     switch (path) {
@@ -41,6 +45,12 @@ export function caseUIorCode(path: string, needCode?: boolean) {
             return needCode ? Image_2.codeString() : Image_2.ui()
         case 'Image_3':
             return needCode ? Image_3.codeString() : Image_3.ui()
+        case 'HLayout_1':
+            return needCode ? HLayout_1.codeString() : HLayout_1.ui()
+        case 'HLayout_2':
+            return needCode ? HLayout_2.codeString() : HLayout_2.ui()
+        case 'HLayout_3':
+            return needCode ? HLayout_3.codeString() : HLayout_3.ui()
         default: return needCode ? '' : stack([])
     }
 }
