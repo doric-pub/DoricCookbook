@@ -22,6 +22,10 @@ import * as HLayout_3 from "./components/HLayout_3"
 import * as VLayout_1 from "./components/VLayout_1"
 import * as VLayout_2 from "./components/VLayout_2"
 import * as VLayout_3 from "./components/VLayout_3"
+/// FlexLayout
+import * as FlexLayout_1 from "./components/FlexLayout_1"
+import * as FlexLayout_2 from "./components/FlexLayout_2"
+import * as FlexLayout_3 from "./components/FlexLayout_3"
 
 export function caseUIorCode(path: string, needCode?: boolean) {
     switch (path) {
@@ -61,6 +65,12 @@ export function caseUIorCode(path: string, needCode?: boolean) {
             return needCode ? VLayout_2.codeString() : VLayout_2.ui()
         case 'VLayout_3':
             return needCode ? VLayout_3.codeString() : VLayout_3.ui()
+        case 'FlexLayout_1':
+            return needCode ? FlexLayout_1.codeString() : FlexLayout_1.ui()
+        case 'FlexLayout_2':
+            return needCode ? FlexLayout_2.codeString() : FlexLayout_2.ui()
+        case 'FlexLayout_3':
+            return needCode ? FlexLayout_3.codeString() : FlexLayout_3.ui()
         default: return needCode ? '' : stack([])
     }
 }

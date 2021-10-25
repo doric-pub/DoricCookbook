@@ -24,3 +24,17 @@ export function randomHexColor() {
     }
     return '#' + hex; //返回‘#'开头16进制颜色
 }
+
+export const colors = [
+    Color.RED,
+    Color.CYAN,
+    Color.YELLOW,
+    Color.MAGENTA,
+    themColor
+]
+
+/// 生成随机色
+export function randomColorForDemo() {
+    let index = (Math.floor(Math.random() * colors.length)) % (colors.length)
+    return colors[index]
+}

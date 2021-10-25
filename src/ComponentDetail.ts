@@ -39,15 +39,14 @@ function _descCell(model: ComponentModel) {
                     descLabel
                 ],
                 {
-                    space: 10,
+                    space: 15,
                     layoutConfig: layoutConfig().mostWidth().fitHeight(),
                 }
             )
         ]
     ).apply({
         layoutConfig: layoutConfig().mostWidth().fitHeight(),
-        // backgroundColor: PubTool.randomColor(),
-        padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
+        padding: { left: hPadding, right: hPadding, top: padding+5, bottom: padding },
     })
 }
 
