@@ -38,3 +38,4 @@ Doric使用TypeScript作为开发语言，推荐使用编辑器
 <img src="../main/images/13.png" width="50%">
 <img src="../main/images/14.png" width="50%">
 <img src="../main/images/15.png" width="50%">
+<img src="../main/images/17.png" width="50%">
