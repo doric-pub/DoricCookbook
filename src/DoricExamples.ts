@@ -68,7 +68,7 @@ function cell(model: ComponentModel) {
             padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
             onClick: () => {
                 if (model.capacityClass && model.capacityClass.length) {
-                    navigator(context).push(`assets//src/capacities/${model.capacityClass}.js`, {
+                    navigator(context).push(`assets://src/capacities/${model.capacityClass}.js`, {
                         extra: model,
                     })
                 } else {

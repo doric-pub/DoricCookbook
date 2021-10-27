@@ -1,1 +1,6 @@
-export default ['src/DoricExamples']
+
+export default [
+    'src/DoricExamples',
+    'src/capacities/*',
+    'src/components/*',
+]
