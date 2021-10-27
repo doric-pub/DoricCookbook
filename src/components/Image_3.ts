@@ -1,7 +1,6 @@
 
 import { Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
-// import logoImage from "../images/logo_w.png"
 import buttonImage from "../images/button.png"
 
 export function ui() {

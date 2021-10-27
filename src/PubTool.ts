@@ -1,4 +1,4 @@
-import { Color } from "doric";
+import { Color, gravity, layoutConfig, LayoutSpec, Stack, Text, text } from "doric";
 
 export const themColor = Color.parse('#766BEA')
 export const bgColor = Color.parse('#FDF5E6')
@@ -37,4 +37,39 @@ export const colors = [
 export function randomColorForDemo() {
     let index = (Math.floor(Math.random() * colors.length)) % (colors.length)
     return colors[index]
+}
+
+
+export function label(str: string) {
+    return text({
+        text: str,
+        textSize: 16,
+    })
+}
+
+export function box(idx = 0) {
+    return (new Stack).also(it => {
+        it.width = it.height = 20
+        it.backgroundColor = colors[idx || 0]
+    })
+}
+export function boxStr(str: string, idx = 0) {
+    return (new Text).also(it => {
+        it.width = it.height = 20
+        it.text = str
+        it.textColor = Color.WHITE
+        it.backgroundColor = colors[idx || 0]
+    })
+}
+
+export function title(str: string) {
+    return text({
+        text: str,
+        layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+        textSize: 30,
+        textColor: Color.WHITE,
+        backgroundColor: colors[1],
+        textAlignment: gravity().center(),
+        height: 50,
+    })
 }

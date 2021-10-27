@@ -2,47 +2,23 @@
 import { Color, Gravity, layoutConfig, stack } from "doric"
 import * as PubTool from "../PubTool"
 
-function subViews() {
-
-    let blueView = stack([],
+function box(backgroundColor: Color, width: number) {
+    return stack([],
         {
-            width: 100,
-            height: 100,
+            width: width,
+            height: width,
             layoutConfig: layoutConfig().just(),
-            backgroundColor: Color.BLUE,
+            backgroundColor: backgroundColor,
         }
     )
-
-    let cyanView = stack([],
-        {
-            width: 80,
-            height: 80,
-            layoutConfig: layoutConfig().just(),
-            backgroundColor: Color.CYAN
-        }
-    )
-
-    let redView = stack([],
-        {
-            width: 60,
-            height: 60,
-            layoutConfig: layoutConfig().just(),
-            backgroundColor: Color.RED
-        }
-    )
-
-    return [
-        blueView,
-        cyanView,
-        redView
-    ]
 }
 
 export function ui() {
-
     return stack(
         [
-            ...subViews()
+            box(Color.BLUE, 100),
+            box(Color.CYAN, 80),
+            box(Color.RED, 60),
         ],
         {
             width: 240,

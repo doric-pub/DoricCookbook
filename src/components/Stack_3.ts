@@ -1,9 +1,8 @@
 
-import { Color, gravity, Gravity, layoutConfig, LayoutSpec, stack } from "doric"
+import { Align, Color, gravity, Gravity, layoutConfig, LayoutSpec, stack } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {
-
     let blueView = stack([],
         {
             width: 80,
@@ -12,7 +11,6 @@ function subViews() {
             backgroundColor: Color.BLUE,
         }
     )
-
     let cyanView = stack([],
         {
             width: 80,
@@ -21,16 +19,20 @@ function subViews() {
             backgroundColor: Color.CYAN
         }
     )
-
     let redView = stack([],
         {
             width: 60,
             height: 60,
-            layoutConfig: layoutConfig().just().configAlignment(gravity().right().bottom()),
+            // layoutConfig: layoutConfig().just().configAlignment(gravity().right().bottom()),
             backgroundColor: Color.RED,
+            layoutConfig: {
+                widthSpec: LayoutSpec.JUST,
+                heightSpec: LayoutSpec.JUST,
+                alignment: gravity().right().bottom()
+            }
+
         }
     )
-
     return [
         blueView,
         cyanView,
@@ -39,7 +41,6 @@ function subViews() {
 }
 
 export function ui() {
-
     return stack(
         [
             ...subViews()

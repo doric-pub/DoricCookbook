@@ -2,21 +2,22 @@
     {
         "title": "Stack",
         "subTitle": "堆叠布局",
-        "desc": "可容纳多个组件，已堆叠的方式摆放子组件，后者居上，子控件都是相对于其左上角顶点摆放",
+        "capacityClass":"",
+        "desc": "Stack是Doric最基本的视图组件，可容纳多个子视图，子视图按添加顺序依次堆叠摆放。后添加的子视图在更上层，最先添加的的子视图在最底层，子视图都是相对于其左上角顶点为坐标系原点。",
         "cases": [
             {
                 "title": "Stack基本使用",
-                "desc": "【功能】：用来显示一个View\n【views】：子组件列表，可以放一个或者多个子组件\n【config】： 配置项Partial<Stack>",
+                "desc": "【功能】：用来显示一个View\n【views】：子视图列表，可以放一个或者多个子视图\n【config】： 配置项Partial<Stack>",
                 "ui":"Stack_1"
             },
             {
-                "title": "多个子组件情况",
-                "desc": "多个子组件，默认左上角对齐布局，以数组顺序层叠堆放组件，最后的组件在最顶层",
+                "title": "多个子视图场景",
+                "desc": "多个子视图，默认左上角对齐布局，以数组顺序层叠堆放视图，最后添加的视图在最上层。",
                 "ui":"Stack_2"
             },
             {
-                "title": "子组件对齐方式",
-                "desc": "【alignment】：子组件相对位置，可以设置对齐方式\n 左对齐、右对齐、居中对齐等方式可直接通过Gravity的静态方法设置，但是右上、右下等对齐方式需要用对象方法设置，比如\n【右下对齐】：通过Gravity的构造方式设置，比如gravity().right().bottom()",
+                "title": "子视图对齐方式",
+                "desc": "【alignment】：子视图相对位置，可以设置对齐方式\n 左对齐、右对齐、居中对齐等方式可直接通过Gravity的静态方法设置，但是右上、右下等对齐方式需要用对象方法设置，比如\n【右下对齐】：通过Gravity的构造方式设置，比如gravity().right().bottom()",
                 "ui":"Stack_3"
             },
             {
@@ -29,6 +30,7 @@
     {
         "title": "Image",
         "subTitle": "图片控件",
+        "capacityClass":"",
         "desc": "用于显示一张图片，支持从本地文件或者网络链接加载图片，支持base64、webp、gif等图片，可以指定不同的缩放模式",
         "cases": [
             {
@@ -51,6 +53,7 @@
     {
         "title": "Text",
         "subTitle": "文字组件",
+        "capacityClass":"",
         "desc": "用于显示文字的组件，拥有的属性非常多",
         "cases": [
             {
@@ -83,6 +86,7 @@
     {
         "title": "HLayout",
         "subTitle": "水平线性布局容器控件",
+        "capacityClass":"",
         "desc": "沿着水平方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
         "cases": [
             {
@@ -105,6 +109,7 @@
     {
         "title": "VLayout",
         "subTitle": "垂直线性布局组件",
+        "capacityClass":"",
         "desc": "沿着垂直方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
         "cases": [
             {
@@ -127,6 +132,7 @@
     {
         "title": "FlexLayout",
         "subTitle": "弹性盒子布局",
+        "capacityClass":"",
         "desc": "弹性盒子是一种用于按行或按列布局元素的一维布局方法，对一个容器中的子元素进行排列、对齐和分配空白空间。\n容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；\n交叉轴的开始位置叫做cross start，结束位置叫做cross end。\n项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。",
         "cases": [
             {
@@ -149,6 +155,7 @@
     {
         "title": "List",
         "subTitle": "列表控件",
+        "capacityClass":"",
         "desc": "列表控件",
         "cases": [
             {

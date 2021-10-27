@@ -9,5 +9,6 @@ export interface ComponentModel {
     title: string;
     subTitle: string
     desc: string;
-    cases: CasesModel[]
+    cases: CasesModel[],
+    capacityClass: string,
 }

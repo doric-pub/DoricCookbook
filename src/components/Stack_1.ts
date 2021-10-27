@@ -7,7 +7,7 @@ export function ui() {
         {
             width: 80,
             height: 80,
-            layoutConfig: layoutConfig().just().configAlignment(Gravity.Left),
+            layoutConfig: layoutConfig().just(),
             backgroundColor: Color.CYAN
         }
     )

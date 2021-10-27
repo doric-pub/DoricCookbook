@@ -1,9 +1,16 @@
-import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, List, ListItem, listItem, HLayout, modal, navigator } from "doric";
+import { Panel, Group, vlayout, layoutConfig, Gravity, text, Color, navbar, hlayout, list, LayoutSpec, listItem, navigator, stack, image, log, List } from "doric";
 import { Container } from "./Container"
 import { ComponentDetail } from "./ComponentDetail";
 import { ComponentModel } from "./ComponentModel"
-import localJson from "./localComponents.json";
+import localComponentJson from "./localComponents.json";
+import localCapacitiesJson from "./localCapacities.json";
 import * as PubTool from "./PubTool"
+import { MyTabBar, myTabBar } from "./components/MyTabBar";
+
+import tab_home_normal from "./images/tab_home_normal@2x.png"
+import tab_home_selected from "./images/tab_home_selected@2x.png"
+import tab_mine_normal from "./images/tab_mine_normal@2x.png"
+import tab_mine_selected from "./images/tab_mine_selected@2x.png"
 
 function cell(model: ComponentModel) {
     let padding = 10
@@ -60,9 +67,15 @@ function cell(model: ComponentModel) {
             },
             padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
             onClick: () => {
-                navigator(context).push(ComponentDetail, {
-                    extra: model,
-                })
+                if (model.capacityClass && model.capacityClass.length) {
+                    navigator(context).push(`assets//src/capacities/${model.capacityClass}.js`, {
+                        extra: model,
+                    })
+                } else {
+                    navigator(context).push(ComponentDetail, {
+                        extra: model,
+                    })
+                }
             }
         }, Container.d({  // child 圆角白色 container
             corners: 8,
@@ -94,11 +107,21 @@ function cell(model: ComponentModel) {
 
 @Entry
 class MainWidget extends Panel {
-    // 数据源
-    private models: ComponentModel[] = []
+    // 基础widgets数据源
+    private widgetModels: ComponentModel[] = []
+    // 基础widgets list
+    private widgetList: List = new List
+   
+    // 常见功能数据源
+    private capacityModels: ComponentModel[] = []
+    // 常见功能list
+    private capacityList: List = new List
+
+    private tabBar: MyTabBar = new MyTabBar
 
     onCreate() {
-        this.makeLocalDatas();
+        this.widgetModels = localComponentJson
+        this.capacityModels = localCapacitiesJson
     }
 
     onShow() {
@@ -106,17 +129,60 @@ class MainWidget extends Panel {
     }
 
     build(rootView: Group): void {
-        list({
-            itemCount: this.models.length,
-            renderItem: (index: number) => cell(this.models[index]),
+        let normalImages = [
+            image({
+                imageBase64: tab_home_normal,
+                layoutConfig: layoutConfig().fit()
+            }),
+            image({
+                imageBase64: tab_mine_normal,
+                layoutConfig: layoutConfig().fit()
+            })
+        ]
+        let selectedImages = [
+            image({
+                imageBase64: tab_home_selected,
+                layoutConfig: layoutConfig().fit()
+            }),
+            image({
+                imageBase64: tab_mine_selected,
+                layoutConfig: layoutConfig().fit()
+            })
+        ]
+        this.widgetList = list({
+            itemCount: this.widgetModels.length,
+            renderItem: (index: number) => cell(this.widgetModels[index]),
         }).apply({
-            layoutConfig: layoutConfig().most(),
-        }).in(rootView)
-    }
+            layoutConfig: layoutConfig().fit()
+        })
+        this.capacityList = list({
+            itemCount: this.capacityModels.length,
+            renderItem: (index: number) => cell(this.capacityModels[index]),
+        }).apply({
+            layoutConfig: layoutConfig().fit()
+        })
 
-    /// 构造本地数据
-    makeLocalDatas() {
-        this.models = localJson
+        vlayout([
+            stack(
+                [this.widgetList, this.capacityList],
+                {
+                    backgroundColor: Color.WHITE,
+                    layoutConfig: layoutConfig().most().configWeight(1)
+                }
+            ),
+            this.tabBar = myTabBar({
+                onSelectedHandler: (currentIndex: number) => {
+                    log('currentIndex =' + currentIndex)
+                    this.widgetList.hidden = currentIndex != 0
+                    this.capacityList.hidden = currentIndex == 0
+                }
+            }).applyChild({
+                titles: ['基础组件', '常见功能'],
+                normalImages: normalImages,
+                selectedImages: selectedImages
+            })
+        ]).in(rootView)
+        this.tabBar.onSelectedHandler(this.tabBar.selectedIndex)
     }
 }
 

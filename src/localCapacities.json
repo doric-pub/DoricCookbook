@@ -1,0 +1,25 @@
+[
+    {
+        "title": "Keyboard",
+        "subTitle": "键盘相关功能",
+        "desc": "键盘相关功能",
+        "capacityClass":"KeyboardDemo",
+        "cases": [
+            {
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_1"
+            },
+            {
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui":"Image_2"
+            },
+            {
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui":"Image_3"
+            }
+        ]
+    }
+]
