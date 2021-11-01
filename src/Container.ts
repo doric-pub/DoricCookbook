@@ -1,22 +1,32 @@
-import { stack, Stack, View } from "doric";
+import { Stack, View, ViewComponent } from "doric";
+import * as PubTool from "./PubTool"
 
+@ViewComponent
 export class Container extends Stack {
+    child?: View
+    isRandomColor?: boolean
 
     constructor() {
-        super();
+        super()
     }
 
-    static d(config: Partial<Stack>, child?: View) {
+    apply(config: Partial<this>) {
+        let t = super.apply(config)
+        let child = config.child
         if (child) {
-            return stack([child],config)
+            t.addChild(child)
         }
-        return stack([],config)
+        if (config.isRandomColor) {
+            t.backgroundColor = PubTool.randomColor()
+        }
+        return t
     }
+}
 
-    static make(config: Partial<Stack> , child?: View) {
-        if (child) {
-            return stack([child],config)
-        }
-        return stack([],config)
+export function container(config?: Partial<Container>) {
+    const ret = new Container
+    if (config) {
+        ret.apply(config)
     }
+    return ret
 }

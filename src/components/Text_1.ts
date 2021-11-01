@@ -1,4 +1,4 @@
-import { Color, Gravity, layoutConfig, LayoutSpec, Text, text, vlayout } from "doric"
+import { Color, Gravity, layoutConfig, Text, text, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 export function ui() {

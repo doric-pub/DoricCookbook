@@ -10,5 +10,5 @@ export interface ComponentModel {
     subTitle: string
     desc: string;
     cases: CasesModel[],
-    capacityClass: string,
+    path: string,
 }

@@ -10,6 +10,8 @@ import * as Stack_1 from "./components/Stack_1"
 import * as Stack_2 from "./components/Stack_2"
 import * as Stack_3 from "./components/Stack_3"
 import * as Stack_4 from "./components/Stack_4"
+import * as Stack_5 from "./components/Stack_5"
+
 /// Image
 import * as Image_1 from "./components/Image_1"
 import * as Image_2 from "./components/Image_2"
@@ -47,6 +49,8 @@ export function caseUIorCode(path: string, needCode?: boolean) {
             return needCode ? Stack_3.codeString() : Stack_3.ui()
         case 'Stack_4':
             return needCode ? Stack_4.codeString() : Stack_4.ui()
+        case 'Stack_5':
+            return needCode ? Stack_5.codeString() : Stack_5.ui()
         case 'Image_1':
             return needCode ? Image_1.codeString() : Image_1.ui()
         case 'Image_2':

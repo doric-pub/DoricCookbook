@@ -3,7 +3,7 @@
         "title": "Keyboard",
         "subTitle": "键盘相关功能",
         "desc": "键盘相关功能",
-        "capacityClass":"KeyboardDemo",
+        "path":"/keyboard",
         "cases": [
             {
                 "title": "加载PNG、GIF",

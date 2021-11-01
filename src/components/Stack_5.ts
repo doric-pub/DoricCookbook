@@ -1,5 +1,5 @@
 
-import {Color, gravity, Gravity, layoutConfig, LayoutSpec, stack } from "doric"
+import { Color, gravity, Gravity, layoutConfig, LayoutSpec, stack } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {
@@ -7,7 +7,9 @@ function subViews() {
         {
             width: 80,
             height: 80,
-            layoutConfig: layoutConfig().just().configAlignment(gravity().right().top()),
+            top: 10,
+            left: 20,
+            layoutConfig: layoutConfig().just(),
             backgroundColor: Color.BLUE,
         }
     )
@@ -15,7 +17,9 @@ function subViews() {
         {
             width: 80,
             height: 80,
-            layoutConfig: layoutConfig().just().configAlignment(gravity().left().bottom()),
+            top: 0,
+            right: 240,
+            layoutConfig: layoutConfig().just(),
             backgroundColor: Color.CYAN
         }
     )
@@ -23,13 +27,9 @@ function subViews() {
         {
             width: 60,
             height: 60,
+            bottom: 160,
             backgroundColor: Color.RED,
-            layoutConfig: {
-                widthSpec: LayoutSpec.JUST,
-                heightSpec: LayoutSpec.JUST,
-                alignment: gravity().right().bottom()
-            }
-
+            layoutConfig: layoutConfig().just(),
         }
     )
     return [
@@ -54,36 +54,36 @@ export function ui() {
 }
 
 export function codeString() {
-
     return `function subViews() {
-
         let blueView = stack([],
             {
                 width: 80,
                 height: 80,
-                layoutConfig: layoutConfig().just().configAlignment(gravity().right().top()),
+                top: 10,
+                left: 20,
+                layoutConfig: layoutConfig().just(),
                 backgroundColor: Color.BLUE,
             }
         )
-    
         let cyanView = stack([],
             {
                 width: 80,
                 height: 80,
-                layoutConfig: layoutConfig().just().configAlignment(gravity().left().bottom()),
+                top: 0,
+                right: 240,
+                layoutConfig: layoutConfig().just(),
                 backgroundColor: Color.CYAN
             }
         )
-    
         let redView = stack([],
             {
                 width: 60,
                 height: 60,
-                layoutConfig: layoutConfig().just().configAlignment(gravity().right().bottom()),
+                bottom: 160,
                 backgroundColor: Color.RED,
+                layoutConfig: layoutConfig().just(),
             }
         )
-    
         return [
             blueView,
             cyanView,
@@ -92,7 +92,6 @@ export function codeString() {
     }
     
     export function ui() {
-    
         return stack(
             [
                 ...subViews()

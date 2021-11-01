@@ -27,7 +27,7 @@ function getInput(c: Partial<Input>) {
 }
 
 @Entry
-class KeyboardDemo extends Panel {
+export class KeyboardDemo extends Panel {
     subscribeId?: string
     build(rootView: Group): void {
         var [inputView, ...otherView] = getInput({

@@ -2,7 +2,7 @@
     {
         "title": "Stack",
         "subTitle": "堆叠布局",
-        "capacityClass":"",
+        "path":"",
         "desc": "Stack是Doric最基本的视图组件，可容纳多个子视图，子视图按添加顺序依次堆叠摆放。后添加的子视图在更上层，最先添加的的子视图在最底层，子视图都是相对于其左上角顶点为坐标系原点。",
         "cases": [
             {
@@ -21,16 +21,16 @@
                 "ui":"Stack_3"
             },
             {
-                "title": "基础动画",
-                "desc": "此处通过animate进行简单的rotation演示，后面会有详细的动画教程",
-                "ui":"Stack_4"
+                "title": "精确位置定位",
+                "desc": "可以指定上下左右的边界对子视图进行位置精准安放\ntop、left分别代表离父视图上边界和左边界的距离\n而bottom和right不能理解成离底部和右边界的距离\n【bottom】代表视图的底部离父视图顶部的距离\n【right】代表视图的右部离父视图左边界的距离",
+                "ui":"Stack_5"
             }
         ]
     },
     {
         "title": "Image",
         "subTitle": "图片控件",
-        "capacityClass":"",
+        "path":"",
         "desc": "用于显示一张图片，支持从本地文件或者网络链接加载图片，支持base64、webp、gif等图片，可以指定不同的缩放模式",
         "cases": [
             {
@@ -53,7 +53,7 @@
     {
         "title": "Text",
         "subTitle": "文字组件",
-        "capacityClass":"",
+        "path":"",
         "desc": "用于显示文字的组件，拥有的属性非常多",
         "cases": [
             {
@@ -86,7 +86,7 @@
     {
         "title": "HLayout",
         "subTitle": "水平线性布局容器控件",
-        "capacityClass":"",
+        "path":"",
         "desc": "沿着水平方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
         "cases": [
             {
@@ -109,7 +109,7 @@
     {
         "title": "VLayout",
         "subTitle": "垂直线性布局组件",
-        "capacityClass":"",
+        "path":"",
         "desc": "沿着垂直方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
         "cases": [
             {
@@ -132,7 +132,7 @@
     {
         "title": "FlexLayout",
         "subTitle": "弹性盒子布局",
-        "capacityClass":"",
+        "path":"",
         "desc": "弹性盒子是一种用于按行或按列布局元素的一维布局方法，对一个容器中的子元素进行排列、对齐和分配空白空间。\n容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；\n交叉轴的开始位置叫做cross start，结束位置叫做cross end。\n项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。",
         "cases": [
             {
@@ -155,7 +155,7 @@
     {
         "title": "List",
         "subTitle": "列表控件",
-        "capacityClass":"",
+        "path":"",
         "desc": "列表控件",
         "cases": [
             {

@@ -39,7 +39,6 @@ export function randomColorForDemo() {
     return colors[index]
 }
 
-
 export function label(str: string) {
     return text({
         text: str,
@@ -53,6 +52,7 @@ export function box(idx = 0) {
         it.backgroundColor = colors[idx || 0]
     })
 }
+
 export function boxStr(str: string, idx = 0) {
     return (new Text).also(it => {
         it.width = it.height = 20

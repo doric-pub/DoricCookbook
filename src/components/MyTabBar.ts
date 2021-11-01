@@ -1,5 +1,4 @@
-import { Color, FlexDirection, flexlayout, FlexLayout, Gravity, Image, Justify, layoutConfig, log, logw, text, View, ViewComponent, vlayout } from "doric";
-import * as PubTool from "../PubTool"
+import { Color, FlexDirection, flexlayout, FlexLayout, Gravity, Image, Justify, layoutConfig, log, text, View, ViewComponent, vlayout } from "doric";
 
 @ViewComponent
 export class MyTabBar extends FlexLayout {
@@ -26,34 +25,19 @@ export class MyTabBar extends FlexLayout {
         this.layoutConfig = layoutConfig().mostWidth().justHeight()
     }
 
-    private tempConfig: {
-        titles?: string[],
-        selectedIndex?: number,
-        normalImages?: Image[],
-        selectedImages?: Image[],
-        normalColor?: Color,
-        selectedColor?: Color,
-    } = {}
-
-    applyChild(config: {
-        titles?: string[],
-        selectedIndex?: number,
-        normalImages?: Image[],
-        selectedImages?: Image[],
-        normalColor?: Color,
-        selectedColor?: Color,
-    }) {
+    apply(config: Partial<this>) {
+        let t = super.apply(config)
         this.tempConfig = config
         if (config.titles && config.titles.length > 0) {
             var tabItems = []
-            let selectedIndex = config.selectedIndex ?? this.selectedIndex
+            let selectedIndex = config.selectedIndex ?? t.selectedIndex
             for (let index = 0; index < config.titles.length; index++) {
                 let title = config.titles[index];
                 let color = Color.LTGRAY
                 if (config.selectedColor && config.normalColor) {
                     color = (index == selectedIndex) ? config.selectedColor : config.normalColor
                 } else {
-                    color = (index == selectedIndex) ? this.selectedColor : this.normalColor
+                    color = (index == selectedIndex) ? t.selectedColor : t.normalColor
                 }
                 let imageV
                 if (config.selectedImages && config.normalImages) {
@@ -78,20 +62,20 @@ export class MyTabBar extends FlexLayout {
                         layoutConfig: layoutConfig().fitWidth().justHeight(),
                         onClick: () => {
                             log('点击当前index=' + index)
-                            this.selectedIndex = index
-                            if (this.tempConfig) {
-                                this.tempConfig.selectedIndex = index
-                                this.applyChild(this.tempConfig)
+                            t.selectedIndex = index
+                            if (t.tempConfig) {
+                                t.tempConfig.selectedIndex = index
+                                t.apply(this.tempConfig)
                             }
-                            if (this.onSelectedHandler) {
-                                this.onSelectedHandler(this.selectedIndex)
+                            if (t.onSelectedHandler) {
+                                t.onSelectedHandler(this.selectedIndex)
                             }
                         }
                     }))
             }
         }
         if (tabItems) {
-            this.removeAllChildren()
+            t.removeAllChildren()
             flexlayout(tabItems as View[], {
                 flexConfig: {
                     flexDirection: FlexDirection.ROW,
@@ -100,14 +84,87 @@ export class MyTabBar extends FlexLayout {
                 layoutConfig: layoutConfig().most()
             }).in(this)
         }
-        return this
+
+        return t
     }
+
+
+    private tempConfig: Partial<this> = {}
+
+    // applyChild(config: {
+    //     titles?: string[],
+    //     selectedIndex?: number,
+    //     normalImages?: Image[],
+    //     selectedImages?: Image[],
+    //     normalColor?: Color,
+    //     selectedColor?: Color,
+    // }) : this {
+    //     this.tempConfig = config
+    //     if (config.titles && config.titles.length > 0) {
+    //         var tabItems = []
+    //         let selectedIndex = config.selectedIndex ?? this.selectedIndex
+    //         for (let index = 0; index < config.titles.length; index++) {
+    //             let title = config.titles[index];
+    //             let color = Color.LTGRAY
+    //             if (config.selectedColor && config.normalColor) {
+    //                 color = (index == selectedIndex) ? config.selectedColor : config.normalColor
+    //             } else {
+    //                 color = (index == selectedIndex) ? this.selectedColor : this.normalColor
+    //             }
+    //             let imageV
+    //             if (config.selectedImages && config.normalImages) {
+    //                 imageV = (index == selectedIndex) ? config.selectedImages[index % config.selectedImages.length] : config.normalImages[index % config.normalImages.length]
+    //             }
+    //             var itemViews = []
+    //             if (imageV) {
+    //                 itemViews.push(imageV)
+    //             }
+    //             itemViews.push(
+    //                 text({
+    //                     text: title,
+    //                     textSize: 13,
+    //                     textColor: color,
+    //                     layoutConfig: layoutConfig().fit()
+    //                 }))
+    //             tabItems.push(
+    //                 vlayout(itemViews, {
+    //                     height: 48,
+    //                     gravity: Gravity.Center,
+    //                     space: 5,
+    //                     layoutConfig: layoutConfig().fitWidth().justHeight(),
+    //                     onClick: () => {
+    //                         log('点击当前index=' + index)
+    //                         this.selectedIndex = index
+    //                         if (this.tempConfig) {
+    //                             this.tempConfig.selectedIndex = index
+    //                             this.applyChild(this.tempConfig)
+    //                         }
+    //                         if (this.onSelectedHandler) {
+    //                             this.onSelectedHandler(this.selectedIndex)
+    //                         }
+    //                     }
+    //                 }))
+    //         }
+    //     }
+    //     if (tabItems) {
+    //         this.removeAllChildren()
+    //         flexlayout(tabItems as View[], {
+    //             flexConfig: {
+    //                 flexDirection: FlexDirection.ROW,
+    //                 justifyContent: Justify.SPACE_AROUND
+    //             },
+    //             layoutConfig: layoutConfig().most()
+    //         }).in(this)
+    //     }
+    //     return this
+    // }
 }
 
 export function myTabBar(config?: Partial<MyTabBar>) {
     const ret = new MyTabBar
     if (config) {
         ret.apply(config)
+        // ret.applyChild(config)
     }
     return ret
 }

@@ -1,9 +1,9 @@
 import { Panel, stack, Group, vlayout, layoutConfig, Gravity, text, Text, Color, navbar, hlayout, list, LayoutSpec, ListItem, listItem, HLayout, modal, navigator, flexlayout, FlexDirection, Align, Justify, View } from "doric";
 import { CasesModel, ComponentModel } from "./ComponentModel";
-import { Container } from "./Container"
 import * as PubTool from "./PubTool"
 import * as CaseRoute from "./CaseRoute"
 import { CodeIDE } from "./CodeIDE";
+import { container } from "./Container";
 
 // 1.顶部介绍cell
 function _descCell(model: ComponentModel) {
@@ -52,7 +52,7 @@ function _descCell(model: ComponentModel) {
 
 // 圆点Widget
 function pointWidget() {
-    return Container.d({
+    return container({
         width: 12,
         height: 12,
         backgroundColor: PubTool.themColor,
