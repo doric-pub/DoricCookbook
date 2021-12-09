@@ -1,7 +1,7 @@
 
 Doric跨平台开发框架使用手册
 
-<img src="../main/images/11.png" width="50%">
+<img src="../main/images/119.png" width="50%">
 
 ### Doric
 
@@ -33,9 +33,9 @@ Doric使用TypeScript作为开发语言，推荐使用编辑器
 
 ##### 部分图片
 <img src="../main/images/110.png" width="50%">
-<img src="../main/images/12.png" width="50%">
-<img src="../main/images/16.png" width="50%">
-<img src="../main/images/13.png" width="50%">
-<img src="../main/images/14.png" width="50%">
-<img src="../main/images/17.png" width="50%">
+<img src="../main/images/129.png" width="50%">
+<img src="../main/images/169.png" width="50%">
+<img src="../main/images/139.png" width="50%">
+<img src="../main/images/149.png" width="50%">
+<img src="../main/images/179.png" width="50%">
 
