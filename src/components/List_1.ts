@@ -2,135 +2,113 @@
 import { Color, Gravity, hlayout, layoutConfig, stack, text, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
-/// 垂直线性布局容器控件
+/// 水平线性布局容器控件
 export function ui() {
-    let width = 70
     return stack(
         [
-            hlayout([
+            vlayout([
 
-                vlayout([
+                hlayout([
                     text({
-                        text: "固定高",
-                        textSize: 13,
-                        lineSpacing: 0,
+                        text: "固定宽",
+                        textSize: 12,
                         height: 40,
-                        width: width,
+                        width: 60,
                         layoutConfig: layoutConfig().just(),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fitWidth().mostHeight()
+                    layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
-                        text: "固定高",
-                        textSize: 13,
-                        lineSpacing: 0,
+                        text: "固定宽",
+                        textSize: 12,
                         height: 40,
-                        width: width,
+                        width: 60,
                         layoutConfig: layoutConfig().just(),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fitWidth().mostHeight()
+                    layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fitWidth().mostHeight()
+                    layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 2",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(2),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fitWidth().mostHeight()
+                    layoutConfig: layoutConfig().fit()
                 }),
 
             ], {
-                space: 10,
-                height: 260,
-                layoutConfig: layoutConfig().mostWidth().justHeight()
+                space: 5,
+                layoutConfig: layoutConfig().most()
             })
         ],
         {
-            layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -139,28 +117,25 @@ export function ui() {
 export function codeString() {
 
     return `
-/// 垂直线性布局容器控件
+/// 水平线性布局容器控件
 export function ui() {
-    let width = 70
+
     return stack(
         [
-            hlayout([
+            vlayout([
 
-                vlayout([
+                hlayout([
                     text({
-                        text: "固定高",
-                        textSize: 13,
-                        lineSpacing: 0,
+                        text: "固定宽",
+                        textSize: 12,
                         height: 40,
-                        width: width,
+                        width: 60,
                         layoutConfig: layoutConfig().just(),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
@@ -169,29 +144,24 @@ export function ui() {
                     layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
-                        text: "固定高",
-                        textSize: 13,
-                        lineSpacing: 0,
+                        text: "固定宽",
+                        textSize: 12,
                         height: 40,
-                        width: width,
+                        width: 60,
                         layoutConfig: layoutConfig().just(),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        width: width,
-                        textSize: 13,
-                        lineSpacing: 0,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
@@ -200,28 +170,22 @@ export function ui() {
                     layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
@@ -230,28 +194,22 @@ export function ui() {
                     layoutConfig: layoutConfig().fit()
                 }),
 
-                vlayout([
+                hlayout([
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.RED
                     }),
                     text({
                         text: "weight: 2",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(2),
                         backgroundColor: Color.CYAN
                     }),
                     text({
                         text: "weight: 1",
-                        textSize: 13,
-                        lineSpacing: 0,
-                        width: width,
+                        height: 40,
                         layoutConfig: layoutConfig().just().configWeight(1),
                         backgroundColor: Color.YELLOW
                     }),
@@ -261,9 +219,8 @@ export function ui() {
                 }),
 
             ], {
-                space: 10,
-                height: 260,
-                layoutConfig: layoutConfig().mostWidth().justHeight()
+                space: 5,
+                layoutConfig: layoutConfig().most()
             })
         ],
         {

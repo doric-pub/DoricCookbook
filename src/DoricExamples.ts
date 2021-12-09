@@ -1,4 +1,4 @@
-import { Panel, Group, vlayout, layoutConfig, Gravity, text, Color, navbar, hlayout, list, LayoutSpec, listItem, navigator, stack, image, log, List, ClassType } from "doric";
+import { Panel, Group, vlayout, layoutConfig, Gravity, text, Color, navbar, hlayout, list, LayoutSpec, listItem, navigator, stack, image, log, List, ClassType, BridgeContext } from "doric";
 import { container } from "./Container"
 import { ComponentDetail } from "./ComponentDetail";
 import { ComponentModel } from "./ComponentModel"
@@ -20,7 +20,7 @@ function cell(model: ComponentModel) {
 
     let titleLabel = text({
         text: model.title,
-        layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+        layoutConfig: layoutConfig().mostWidth(),
         textSize: 18,
         fontStyle: 'bold',
         textColor: Color.BLACK,
@@ -31,7 +31,7 @@ function cell(model: ComponentModel) {
 
     let descLabel = text({
         text: model.desc,
-        layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+        layoutConfig: layoutConfig().mostWidth(),
         textSize: 15,
         textColor: Color.safeParse('#666666'),
         textAlignment: Gravity.Left,
@@ -40,33 +40,32 @@ function cell(model: ComponentModel) {
         height: 48,
     })
 
-    let iconWidget = text({
-        text: model.title.substr(0, 1),
+    let iconWidget = container({
         width: 60,
         height: 60,
-        textColor: PubTool.themColor,
-        textSize: 22,
-        fontStyle: 'bold',
         backgroundColor: PubTool.bgColor,
         corners: 30,
         shadow: {
-            opacity: 1,
+            opacity: 0.15,
             color: Color.BLACK,
-            offsetX: 30,
-            offsetY: 30,
-            radius: 4,
+            offsetX: 2,
+            offsetY: 2,
+            radius: 6,
         },
         layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+        child: text({
+            text: model.title.substr(0, 1),
+            textColor: PubTool.themColor,
+            textSize: 22,
+            fontStyle: 'bold',
+            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+        })
     })
 
     return listItem(
-
         container({  // 底部背景
             height: cellHeight,
-            layoutConfig: {
-                widthSpec: LayoutSpec.MOST,
-                heightSpec: LayoutSpec.JUST,
-            },
+            layoutConfig: layoutConfig().mostWidth().justHeight(),
             padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
             onClick: () => {
                 if (model.path && model.path.length) {
@@ -94,24 +93,27 @@ function cell(model: ComponentModel) {
                 child: hlayout([
                     container({
                         width: 90,
-                        height: cellHeight - 2 * padding,  // 能不能不设置高度值，直接高度是父视图的高度？
-                        layoutConfig: layoutConfig().configWidth(LayoutSpec.JUST),
+                        layoutConfig: layoutConfig().justWidth().mostHeight(),
                         child: iconWidget
                     }),
                     vlayout([
                         titleLabel,
                         descLabel,
-                    ]).apply({
+                    ], {
                         layoutConfig: layoutConfig().most().configAlignment(Gravity.Center),
                         gravity: Gravity.Center,
                         space: 1
                     })
-                ]).apply({
-                    space: 5
+                ], {
+                    space: 5,
+                    layoutConfig: layoutConfig().most(),
                 })
             })
         },
-        ))
+        ), {
+        identifier: 'normalcell',
+        layoutConfig: layoutConfig().mostWidth().fitHeight(),
+    })
 }
 
 @Entry
@@ -146,7 +148,7 @@ class MainWidget extends Panel {
             image({
                 imageBase64: tab_mine_normal,
                 layoutConfig: layoutConfig().fit()
-            })
+            }),
         ]
         let selectedImages = [
             image({
@@ -156,26 +158,27 @@ class MainWidget extends Panel {
             image({
                 imageBase64: tab_mine_selected,
                 layoutConfig: layoutConfig().fit()
-            })
+            }),
         ]
+
         this.widgetList = list({
             itemCount: this.widgetModels.length,
             renderItem: (index: number) => cell(this.widgetModels[index]),
         }).apply({
-            layoutConfig: layoutConfig().fit()
+            layoutConfig: layoutConfig().most()
         })
+
         this.capacityList = list({
             itemCount: this.capacityModels.length,
             renderItem: (index: number) => cell(this.capacityModels[index]),
         }).apply({
-            layoutConfig: layoutConfig().fit()
+            layoutConfig: layoutConfig().most()
         })
 
         vlayout([
             stack(
                 [this.widgetList, this.capacityList],
                 {
-                    backgroundColor: Color.WHITE,
                     layoutConfig: layoutConfig().most().configWeight(1)
                 }
             ),
@@ -186,11 +189,15 @@ class MainWidget extends Panel {
                 onSelectedHandler: (currentIndex: number) => {
                     log('currentIndex =' + currentIndex)
                     this.widgetList.hidden = currentIndex != 0
-                    this.capacityList.hidden = currentIndex == 0
+                    this.capacityList.hidden = currentIndex != 1
                 }
             })
-        ]).in(rootView)
-        this.tabBar.onSelectedHandler(this.tabBar.selectedIndex)
+        ], {
+            layoutConfig: layoutConfig().most(),
+        }).in(rootView)
+        if (this.tabBar.onSelectedHandler) {
+            this.tabBar.onSelectedHandler(this.tabBar.selectedIndex)
+        }
     }
 }
 

@@ -1,233 +1,153 @@
 
-import { Color, Gravity, hlayout, layoutConfig, stack, text, vlayout } from "doric"
+import { Align, Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout, Wrap } from "doric"
 import * as PubTool from "../PubTool"
 
-/// 水平线性布局容器控件
+function createBoxes() {
+    var boxes: View[] = []
+    for (let index = 0; index < 10; index++) {
+        boxes.push(
+            text({
+                text: `${index+1}`,
+                height: 30,
+                width: 30 + Math.floor(Math.random() * 50),
+                layoutConfig: layoutConfig().just(),
+                backgroundColor: PubTool.colors[index % PubTool.colors.length]
+            }),
+        )
+    }
+    return boxes
+}
+
+function exampleUI(flexWrap: Wrap, boxes: View[]) {
+    var desc
+    switch (flexWrap) {
+        case Wrap.NO_WRAP: desc = 'NO_WRAP'; break;
+        case Wrap.WRAP: desc = 'WRAP'; break;
+        case Wrap.WRAP_REVERSE: desc = 'WRAP_REVERSE'; break;
+        default: desc = ''
+    }
+    return vlayout([
+        text({
+            text: `${desc}:`,
+            textSize: 12,
+            textColor: Color.safeParse('#666666'),
+            layoutConfig: layoutConfig().fit(),
+        }),
+        flexlayout(boxes, {
+            flexConfig: {
+                flexDirection: FlexDirection.ROW,
+                justifyContent: Justify.FLEX_START,
+                flexWrap: flexWrap,
+            },
+            backgroundColor: PubTool.bgColor,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            height: 160,
+            width: 240,
+            border: {
+                width: 0.5,
+                color: Color.safeParse('#666666')
+            },
+        }),
+    ], {
+        space: 5,
+        layoutConfig: layoutConfig().fit()
+    })
+}
+
+/// Flex Box布局
 export function ui() {
+    let boxes = createBoxes()
     return stack(
         [
             vlayout([
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 2",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(2),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
+                exampleUI(Wrap.NO_WRAP, boxes),
+                exampleUI(Wrap.WRAP, boxes),
+                exampleUI(Wrap.WRAP_REVERSE, boxes),
             ], {
-                space: 5,
-                layoutConfig: layoutConfig().most()
+                space: 20,
+                layoutConfig: layoutConfig().fit().configMargin({ top: 5 })
             })
         ],
         {
             layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
-            backgroundColor: PubTool.bgColor,
+            backgroundColor: Color.WHITE,
         }
     )
 }
 
 export function codeString() {
-
     return `
-/// 水平线性布局容器控件
-export function ui() {
-
-    return stack(
-        [
-            vlayout([
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
+    function createBoxes() {
+        var boxes: View[] = []
+        for (let index = 0; index < 10; index++) {
+            boxes.push(
+                text({
+                    text: \`\${index+1}\`,
+                    height: 30,
+                    width: 30 + Math.floor(Math.random() * 50),
+                    layoutConfig: layoutConfig().just(),
+                    backgroundColor: PubTool.colors[index % PubTool.colors.length]
                 }),
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 2",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(2),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-            ], {
-                space: 5,
-                layoutConfig: layoutConfig().most()
-            })
-        ],
-        {
-            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
-            backgroundColor: PubTool.bgColor,
+            )
         }
-    )
-}
+        return boxes
+    }
+    
+    function exampleUI(flexWrap: Wrap, boxes: View[]) {
+        var desc
+        switch (flexWrap) {
+            case Wrap.NO_WRAP: desc = 'NO_WRAP'; break;
+            case Wrap.WRAP: desc = 'WRAP'; break;
+            case Wrap.WRAP_REVERSE: desc = 'WRAP_REVERSE'; break;
+            default: desc = ''
+        }
+        return vlayout([
+            text({
+                text: \`\${desc}:\`,
+                textSize: 12,
+                textColor: Color.safeParse('#666666'),
+                layoutConfig: layoutConfig().fit(),
+            }),
+            flexlayout(boxes, {
+                flexConfig: {
+                    flexDirection: FlexDirection.ROW,
+                    justifyContent: Justify.FLEX_START,
+                    flexWrap: flexWrap,
+                },
+                backgroundColor: PubTool.bgColor,
+                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+                height: 160,
+                width: 240,
+                border: {
+                    width: 0.5,
+                    color: Color.safeParse('#666666')
+                },
+            }),
+        ], {
+            space: 5,
+            layoutConfig: layoutConfig().fit()
+        })
+    }
+    
+    /// Flex Box布局
+    export function ui() {
+        let boxes = createBoxes()
+        return stack(
+            [
+                vlayout([
+                    exampleUI(Wrap.NO_WRAP, boxes),
+                    exampleUI(Wrap.WRAP, boxes),
+                    exampleUI(Wrap.WRAP_REVERSE, boxes),
+                ], {
+                    space: 20,
+                    layoutConfig: layoutConfig().fit().configMargin({ top: 5 })
+                })
+            ],
+            {
+                layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+                backgroundColor: Color.WHITE,
+            }
+        )
+    }
     `
 }

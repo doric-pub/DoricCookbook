@@ -34,7 +34,7 @@ export function ui() {
         {
             width: 240,
             height: 160,
-            layoutConfig: layoutConfig().justWidth().justHeight().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )

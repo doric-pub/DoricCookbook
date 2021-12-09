@@ -1,14 +1,23 @@
 
-import { Color, Gravity, hlayout, layoutConfig, stack } from "doric"
+import { Color, gravity, Gravity, hlayout, layoutConfig, stack } from "doric"
 import * as PubTool from "../PubTool"
 
 /// 水平线性布局容器控件
 export function ui() {
 
-    let cyanView = stack([],
+    let blueView = stack([],
         {
             width: 60,
             height: 60,
+            layoutConfig: layoutConfig().just().configMargin({right: 10}),
+            backgroundColor: Color.BLUE,
+        }
+    )
+
+    let cyanView = stack([],
+        {
+            width: 60,
+            height: 100,
             layoutConfig: layoutConfig().just(),
             backgroundColor: Color.CYAN
         }
@@ -18,7 +27,7 @@ export function ui() {
         {
             width: 60,
             height: 60,
-            layoutConfig: layoutConfig().just(),
+            layoutConfig: layoutConfig().just().configMargin({left: 10}),
             backgroundColor: Color.RED
         }
     )
@@ -26,18 +35,18 @@ export function ui() {
     return stack(
         [
             hlayout([
+                blueView,
                 cyanView,
                 redView,
             ],{
-                space: 10,
-                gravity: Gravity.Center,
-                layoutConfig: layoutConfig().most()
+                gravity: gravity().center(),
+                layoutConfig: layoutConfig().most(),
             }),
         ],
         {
             width: 240,
             height: 160,
-            layoutConfig: layoutConfig().justWidth().justHeight().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -46,45 +55,54 @@ export function ui() {
 export function codeString() {
 
     return `
-    /// 水平线性布局容器控件
-    export function ui() {
-    
-        let cyanView = stack([],
-            {
-                width: 60,
-                height: 60,
-                layoutConfig: layoutConfig().just(),
-                backgroundColor: Color.CYAN
-            }
-        )
-    
-        let redView = stack([],
-            {
-                width: 60,
-                height: 60,
-                layoutConfig: layoutConfig().just(),
-                backgroundColor: Color.RED
-            }
-        )
-    
-        return stack(
-            [
-                hlayout([
-                    cyanView,
-                    redView,
-                ],{
-                    space: 10,
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().most()
-                }),
-            ],
-            {
-                width: 240,
-                height: 160,
-                layoutConfig: layoutConfig().justWidth().justHeight().configAlignment(Gravity.Center),
-                backgroundColor: PubTool.bgColor,
-            }
-        )
-    }
+/// 水平线性布局容器控件
+export function ui() {
+
+    let blueView = stack([],
+        {
+            width: 60,
+            height: 60,
+            layoutConfig: layoutConfig().just().configMargin({right: 10}),
+            backgroundColor: Color.BLUE,
+        }
+    )
+
+    let cyanView = stack([],
+        {
+            width: 60,
+            height: 100,
+            layoutConfig: layoutConfig().just(),
+            backgroundColor: Color.CYAN
+        }
+    )
+
+    let redView = stack([],
+        {
+            width: 60,
+            height: 60,
+            layoutConfig: layoutConfig().just().configMargin({left: 10}),
+            backgroundColor: Color.RED
+        }
+    )
+
+    return stack(
+        [
+            hlayout([
+                blueView,
+                cyanView,
+                redView,
+            ],{
+                gravity: gravity().center(),
+                layoutConfig: layoutConfig().most(),
+            }),
+        ],
+        {
+            width: 240,
+            height: 160,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            backgroundColor: PubTool.bgColor,
+        }
+    )
+}
     `
 }

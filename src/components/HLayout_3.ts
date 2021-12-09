@@ -26,7 +26,7 @@ export function ui() {
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
+                    layoutConfig: layoutConfig().mostWidth().fitHeight()
                 }),
 
                 hlayout([
@@ -52,7 +52,7 @@ export function ui() {
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
+                    layoutConfig: layoutConfig().mostWidth().fitHeight()
                 }),
 
                 hlayout([
@@ -76,7 +76,7 @@ export function ui() {
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
+                    layoutConfig: layoutConfig().mostWidth().fitHeight()
                 }),
 
                 hlayout([
@@ -100,16 +100,16 @@ export function ui() {
                     }),
                 ], {
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
+                    layoutConfig: layoutConfig().mostWidth().fitHeight()
                 }),
 
             ], {
                 space: 5,
-                layoutConfig: layoutConfig().most()
+                layoutConfig: layoutConfig().mostWidth().fitHeight()
             })
         ],
         {
-            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -118,117 +118,117 @@ export function ui() {
 export function codeString() {
 
     return `
-/// 水平线性布局容器控件
-export function ui() {
-
-    return stack(
-        [
-            vlayout([
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
+    /// 水平线性布局容器控件
+    export function ui() {
+    
+        return stack(
+            [
+                vlayout([
+    
+                    hlayout([
+                        text({
+                            text: "固定宽",
+                            textSize: 12,
+                            height: 40,
+                            width: 60,
+                            layoutConfig: layoutConfig().just(),
+                            backgroundColor: Color.RED
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.CYAN
+                        }),
+                    ], {
+                        gravity: Gravity.Center,
+                        layoutConfig: layoutConfig().mostWidth().fitHeight()
                     }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
+    
+                    hlayout([
+                        text({
+                            text: "固定宽",
+                            textSize: 12,
+                            height: 40,
+                            width: 60,
+                            layoutConfig: layoutConfig().just(),
+                            backgroundColor: Color.RED
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.CYAN
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.YELLOW
+                        }),
+                    ], {
+                        gravity: Gravity.Center,
+                        layoutConfig: layoutConfig().mostWidth().fitHeight()
                     }),
+    
+                    hlayout([
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.RED
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.CYAN
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.YELLOW
+                        }),
+                    ], {
+                        gravity: Gravity.Center,
+                        layoutConfig: layoutConfig().mostWidth().fitHeight()
+                    }),
+    
+                    hlayout([
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.RED
+                        }),
+                        text({
+                            text: "weight: 2",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(2),
+                            backgroundColor: Color.CYAN
+                        }),
+                        text({
+                            text: "weight: 1",
+                            height: 40,
+                            layoutConfig: layoutConfig().just().configWeight(1),
+                            backgroundColor: Color.YELLOW
+                        }),
+                    ], {
+                        gravity: Gravity.Center,
+                        layoutConfig: layoutConfig().mostWidth().fitHeight()
+                    }),
+    
                 ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "固定宽",
-                        textSize: 12,
-                        height: 40,
-                        width: 60,
-                        layoutConfig: layoutConfig().just(),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-                hlayout([
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.RED
-                    }),
-                    text({
-                        text: "weight: 2",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(2),
-                        backgroundColor: Color.CYAN
-                    }),
-                    text({
-                        text: "weight: 1",
-                        height: 40,
-                        layoutConfig: layoutConfig().just().configWeight(1),
-                        backgroundColor: Color.YELLOW
-                    }),
-                ], {
-                    gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().fit()
-                }),
-
-            ], {
-                space: 5,
-                layoutConfig: layoutConfig().most()
-            })
-        ],
-        {
-            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
-            backgroundColor: PubTool.bgColor,
-        }
-    )
-}
+                    space: 5,
+                    layoutConfig: layoutConfig().mostWidth().fitHeight()
+                })
+            ],
+            {
+                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                backgroundColor: PubTool.bgColor,
+            }
+        )
+    }
     `
 }

@@ -46,7 +46,8 @@ function _descCell(model: ComponentModel) {
         ]
     ).apply({
         layoutConfig: layoutConfig().mostWidth().fitHeight(),
-        padding: { left: hPadding, right: hPadding, top: padding+5, bottom: padding },
+        padding: { left: hPadding, right: hPadding, top: padding + 5, bottom: padding },
+        identifier: 'headerCell'
     })
 }
 
@@ -96,7 +97,6 @@ function _caseCell(caseModel: CasesModel) {
         fontStyle: 'bold',
         textColor: Color.BLACK,
         textAlignment: Gravity.Left,
-        // backgroundColor: PubTool.randomColor(),
         maxLines: 1,
         layoutConfig: layoutConfig().fit()
     })
@@ -108,7 +108,6 @@ function _caseCell(caseModel: CasesModel) {
         layoutConfig: layoutConfig().fit(),
         space: 10,
         gravity: Gravity.CenterY,
-        // backgroundColor: PubTool.randomColor(),
     })
 
     let descLabel = text({
@@ -120,13 +119,11 @@ function _caseCell(caseModel: CasesModel) {
         textSize: 15,
         textColor: Color.safeParse('#666666'),
         textAlignment: Gravity.Left,
-        // backgroundColor: PubTool.randomColor(),
         maxLines: 0,
         lineSpacing: 4,
     })
 
     let edge = 0
-
     let container = stack(
         [
             // 内部具体case
@@ -135,7 +132,6 @@ function _caseCell(caseModel: CasesModel) {
         {
             layoutConfig: layoutConfig().mostWidth().fitHeight(),
             padding: { left: edge, right: edge, top: edge, bottom: edge },
-            // backgroundColor: PubTool.themColor,
             backgroundColor: Color.WHITE,
         }
     )
@@ -160,9 +156,7 @@ function _caseCell(caseModel: CasesModel) {
                     descLabel
                 ],
                 {
-                    // backgroundColor: Color.CYAN,
                     space: 25,
-                    gravity: Gravity.CenterX,
                     layoutConfig: layoutConfig().most(),
                 }
             )
@@ -172,7 +166,7 @@ function _caseCell(caseModel: CasesModel) {
             widthSpec: LayoutSpec.MOST,
             heightSpec: LayoutSpec.FIT
         },
-        // backgroundColor: PubTool.randomColor(),
+        identifier: 'contentCell',
         padding: { left: hPadding, right: hPadding, top: padding, bottom: padding },
     })
 }
@@ -186,7 +180,6 @@ export class ComponentDetail extends Panel {
         // 拿到上个Panel传过来的数据
         if (this.getInitData()) {
             this.model = this.getInitData() as ComponentModel;
-            // modal(context).alert(`Init Data :${this.model.title}`)
         }
     }
 

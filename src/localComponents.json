@@ -96,7 +96,7 @@
             },
             {
                 "title": "垂直方向对齐方式",
-                "desc": "【gravity】：垂直方向上子控件的对齐方式设置为中心对齐，Gravity.Center",
+                "desc": "【gravity】：垂直方向上子控件的对齐方式设置为中心对齐，Gravity.Center\n【margin】：组件外间距",
                 "ui":"HLayout_2"
             },
             {
@@ -142,37 +142,52 @@
             },
             {
                 "title": "justifyContent属性",
-                "desc": "【justifyContent】：属性定义了项目在主轴上的对齐方式。\n假设主轴为从左到右：\n【flex-start（默认值）】：左对齐\n【flex-end】：右对齐\n【center】：居中\n【space-between】：两端对齐，项目之间的间隔都相等\n【space-around】：每个项目两侧的间隔相等，项目之间的间隔比项目与边框的间隔大一倍",
+                "desc": "【justifyContent】：属性定义了项目在主轴上的对齐方式。\n假设主轴为从左到右：\n【flex-start（默认值）】：左对齐\n【flex-end】：右对齐\n【center】：居中\n【space-between】：两端对齐，项目之间的间隔都相等\n【space-around】：每个项目两侧的间隔相等，项目之间的间隔比项目与边框的间隔大一倍\n【space-evenly】：项目与边框的间距以及项目之间的间距均相等，间距均等。",
                 "ui":"FlexLayout_2"
             },
             {
                 "title": "alignItems属性",
                 "desc": "【alignItems】属性定义项目在交叉轴上如何对齐。\n【flex-start】：交叉轴的起点对齐。\n【flex-end】：交叉轴的终点对齐。\n【center】：交叉轴的中点对齐。\n【baseline】: 项目的第一行文字的基线对齐。\n【stretch（默认值）】：如果项目未设置高度或设为auto，将占满整个容器的高度。",
                 "ui":"FlexLayout_3"
+            },
+            {
+                "title": "flex-wrap属性",
+                "desc": "【flexWrap】属性定义，如果一条轴线排不下，如何换行。\n【nowrap】：默认情况下，项目都排在一条轴线上，不换行。\n【wrap】：换行，第一行在上方。\n【wrap-reverse】：换行，第一行在下方。",
+                "ui":"FlexLayout_4"
+            },
+            {
+                "title": "align-content属性",
+                "desc": "【align-content】属性定义项目在与交叉轴上如何对齐。\n【flex-start】：与交叉轴的起点对齐。\n【flex-end】：与交叉轴的终点对齐。\n【center】：与交叉轴的中点对齐。\n【stretch（默认值）】：轴线占满整个交叉轴。\n【space-between】：与交叉轴两端对齐，轴线之间的间隔平均分布\n【space-around】：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。\n",
+                "ui":"FlexLayout_5"
             }
         ]
     },
     {
         "title": "List",
         "subTitle": "列表控件",
-        "path":"",
-        "desc": "列表控件",
-        "cases": [
-            {
-                "title": "加载PNG、GIF",
-                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
-                "ui":"Image_1"
-            },
-            {
-                "title": "加载WebP、Animated WebP",
-                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
-                "ui":"Image_2"
-            },
-            {
-                "title": "拉伸图片",
-                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
-                "ui":"Image_3"
-            }
-        ]
+        "path":"/effects/list",
+        "desc": "圆角阴影在List中的示例",
+        "cases": [ ]
+    },
+    {
+        "title": "FlowLayout",
+        "subTitle": "【itemCount】内容总条数。\n【renderItem】：每条内容的渲染回调。\n【columnCount】：每行列数。\n【columnSpace】：列间距\n【rowSpace】：行间距",
+        "path":"/FlowLayoutDemo",
+        "desc": "FlowLayout流式网格布局",
+        "cases": [ ]
+    },
+    {
+        "title": "Slider",
+        "subTitle": "【itemCount】幻灯片页数。\n【renderPage】：每页的渲染回调。\n【onPageSlided】：幻灯片滑动回调。",
+        "desc": "滑动翻页(幻灯片)控件示例",
+        "path":"/slider",
+        "cases": [ ]
+    },
+    {
+        "title": "Scroller",
+        "subTitle": "Scroller滑动控件示例",
+        "desc": "Scroller滑动控件示例",
+        "path":"/ScrollerDemo",
+        "cases": [ ]
     }
 ]

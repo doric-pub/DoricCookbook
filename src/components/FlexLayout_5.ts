@@ -1,14 +1,15 @@
 
-import { Align, Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout } from "doric"
+import { Align, Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout, Wrap } from "doric"
 import * as PubTool from "../PubTool"
 
 function createBoxes() {
     var boxes: View[] = []
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 10; index++) {
         boxes.push(
             text({
-                height: 30 + Math.floor(Math.random() * 50),
-                width: 50,
+                text: `${index+1}`,
+                height: 30,
+                width: 30 + Math.floor(Math.random() * 50),
                 layoutConfig: layoutConfig().just(),
                 backgroundColor: PubTool.colors[index % PubTool.colors.length]
             }),
@@ -17,9 +18,9 @@ function createBoxes() {
     return boxes
 }
 
-function exampleUI(alignItems: Align, boxes: View[]) {
+function exampleUI(alignContent: Align, boxes: View[]) {
     var desc
-    switch (alignItems) {
+    switch (alignContent) {
         case Align.AUTO: desc = 'AUTO'; break;
         case Align.FLEX_START: desc = 'FLEX_START'; break;
         case Align.CENTER: desc = 'CENTER'; break;
@@ -40,11 +41,14 @@ function exampleUI(alignItems: Align, boxes: View[]) {
         flexlayout(boxes, {
             flexConfig: {
                 flexDirection: FlexDirection.ROW,
-                justifyContent: Justify.SPACE_BETWEEN,
-                alignItems: alignItems
+                flexWrap: Wrap.WRAP,
+                justifyContent: Justify.FLEX_START,
+                alignContent: alignContent,
             },
-            layoutConfig: layoutConfig().mostWidth().justHeight(),
-            height: 90,
+            backgroundColor: PubTool.bgColor,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            height: 160,
+            width: 240,
             border: {
                 width: 0.5,
                 color: Color.safeParse('#666666')
@@ -52,7 +56,7 @@ function exampleUI(alignItems: Align, boxes: View[]) {
         }),
     ], {
         space: 5,
-        layoutConfig: layoutConfig().mostWidth().fitHeight()
+        layoutConfig: layoutConfig().fit()
     })
 }
 
@@ -71,13 +75,13 @@ export function ui() {
                 exampleUI(Align.SPACE_BETWEEN, boxes),
                 exampleUI(Align.SPACE_AROUND, boxes),
             ], {
-                space: 15,
-                layoutConfig: layoutConfig().mostWidth().fitHeight().configMargin({ top: 5 })
+                space: 20,
+                layoutConfig: layoutConfig().fit().configMargin({ top: 5 })
             })
         ],
         {
-            layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
-            backgroundColor: PubTool.bgColor,
+            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+            backgroundColor: Color.WHITE,
         }
     )
 }
@@ -86,11 +90,12 @@ export function codeString() {
     return `
     function createBoxes() {
         var boxes: View[] = []
-        for (let index = 0; index < 4; index++) {
+        for (let index = 0; index < 10; index++) {
             boxes.push(
                 text({
-                    height: 30 + Math.floor(Math.random() * 50),
-                    width: 50,
+                    text: \`\${index+1}\`,
+                    height: 30,
+                    width: 30 + Math.floor(Math.random() * 50),
                     layoutConfig: layoutConfig().just(),
                     backgroundColor: PubTool.colors[index % PubTool.colors.length]
                 }),
@@ -99,9 +104,9 @@ export function codeString() {
         return boxes
     }
     
-    function exampleUI(alignItems: Align, boxes: View[]) {
+    function exampleUI(alignContent: Align, boxes: View[]) {
         var desc
-        switch (alignItems) {
+        switch (alignContent) {
             case Align.AUTO: desc = 'AUTO'; break;
             case Align.FLEX_START: desc = 'FLEX_START'; break;
             case Align.CENTER: desc = 'CENTER'; break;
@@ -122,11 +127,14 @@ export function codeString() {
             flexlayout(boxes, {
                 flexConfig: {
                     flexDirection: FlexDirection.ROW,
-                    justifyContent: Justify.SPACE_BETWEEN,
-                    alignItems: alignItems
+                    flexWrap: Wrap.WRAP,
+                    justifyContent: Justify.FLEX_START,
+                    alignContent: alignContent,
                 },
-                layoutConfig: layoutConfig().mostWidth().justHeight(),
-                height: 90,
+                backgroundColor: PubTool.bgColor,
+                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+                height: 160,
+                width: 240,
                 border: {
                     width: 0.5,
                     color: Color.safeParse('#666666')
@@ -134,7 +142,7 @@ export function codeString() {
             }),
         ], {
             space: 5,
-            layoutConfig: layoutConfig().mostWidth().fitHeight()
+            layoutConfig: layoutConfig().fit()
         })
     }
     
@@ -153,13 +161,13 @@ export function codeString() {
                     exampleUI(Align.SPACE_BETWEEN, boxes),
                     exampleUI(Align.SPACE_AROUND, boxes),
                 ], {
-                    space: 15,
-                    layoutConfig: layoutConfig().mostWidth().fitHeight().configMargin({ top: 5 })
+                    space: 20,
+                    layoutConfig: layoutConfig().fit().configMargin({ top: 5 })
                 })
             ],
             {
-                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
-                backgroundColor: PubTool.bgColor,
+                layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+                backgroundColor: Color.WHITE,
             }
         )
     }

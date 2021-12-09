@@ -63,15 +63,16 @@ export class KeyboardDemo extends Panel {
                 label('Subscribe').apply({
                     width: 200,
                     height: 50,
+                    corners: 25,
                     backgroundColor: colors[0],
                     textSize: 30,
                     textColor: Color.WHITE,
                     layoutConfig: layoutConfig().just(),
                     onClick: () => {
-                        keyboard(context).subscribe(data => {
+                        keyboard(this.context).subscribe(data => {
                             bottomView.translationY = - (data.bottomMargin + data.height)
                         }).then(e => {
-                            modal(context).toast(`Keyboard Subscribe`)
+                            modal(this.context).toast(`Keyboard Subscribe`)
                             this.subscribeId = e
                         })
                     }
@@ -79,14 +80,15 @@ export class KeyboardDemo extends Panel {
                 label('Unsubscribe').apply({
                     width: 200,
                     height: 50,
+                    corners: 25,
                     backgroundColor: colors[0],
                     textSize: 30,
                     textColor: Color.WHITE,
                     layoutConfig: layoutConfig().just(),
                     onClick: () => {
                         if (this.subscribeId) {
-                            keyboard(context).unsubscribe(this.subscribeId).then(e => {
-                                modal(context).toast(`Keyboard Unsubscribe`)
+                            keyboard(this.context).unsubscribe(this.subscribeId).then(e => {
+                                modal(this.context).toast(`Keyboard Unsubscribe`)
                                 this.subscribeId = undefined
                             })
                         }
@@ -94,6 +96,20 @@ export class KeyboardDemo extends Panel {
                 }),
                 inputView,
                 ...otherView,
+                label('获取输入文本').apply({
+                    width: 180,
+                    height: 40,
+                    corners: 20,
+                    backgroundColor: colors[3],
+                    textSize: 22,
+                    textColor: Color.WHITE,
+                    layoutConfig: layoutConfig().just(),
+                    onClick: async () => {
+                        let inputT = inputView as Input
+                        let text = await inputT.getText(this.context) ?? ''
+                        modal(this.context).toast(text)
+                    }
+                }),
             ]).apply({
                 layoutConfig: layoutConfig().most(),
                 gravity: gravity().centerX(),

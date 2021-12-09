@@ -40,14 +40,13 @@ export function ui() {
                 redView,
             ],{
                 space: 10,
-                gravity: Gravity.Left,
                 layoutConfig: layoutConfig().most()
             }),
         ],
         {
             width: 240,
             height: 160,
-            layoutConfig: layoutConfig().justWidth().justHeight().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -56,55 +55,54 @@ export function ui() {
 export function codeString() {
 
     return `
-    /// 水平线性布局容器控件
-    export function ui() {
-    
-        let blueView = stack([],
-            {
-                width: 60,
-                height: 60,
-                layoutConfig: layoutConfig().just(),
-                backgroundColor: Color.BLUE,
-            }
-        )
-    
-        let cyanView = stack([],
-            {
-                width: 60,
-                height: 60,
-                layoutConfig: layoutConfig().just(),
-                backgroundColor: Color.CYAN
-            }
-        )
-    
-        let redView = stack([],
-            {
-                width: 60,
-                height: 60,
-                layoutConfig: layoutConfig().just(),
-                backgroundColor: Color.RED
-            }
-        )
-    
-        return stack(
-            [
-                hlayout([
-                    blueView,
-                    cyanView,
-                    redView,
-                ],{
-                    space: 10,
-                    gravity: Gravity.Left,
-                    layoutConfig: layoutConfig().most()
-                }),
-            ],
-            {
-                width: 240,
-                height: 160,
-                layoutConfig: layoutConfig().justWidth().justHeight().configAlignment(Gravity.Center),
-                backgroundColor: PubTool.bgColor,
-            }
-        )
-    }
+/// 水平线性布局容器控件
+export function ui() {
+
+    let blueView = stack([],
+        {
+            width: 60,
+            height: 60,
+            layoutConfig: layoutConfig().just(),
+            backgroundColor: Color.BLUE,
+        }
+    )
+
+    let cyanView = stack([],
+        {
+            width: 60,
+            height: 60,
+            layoutConfig: layoutConfig().just(),
+            backgroundColor: Color.CYAN
+        }
+    )
+
+    let redView = stack([],
+        {
+            width: 60,
+            height: 60,
+            layoutConfig: layoutConfig().just(),
+            backgroundColor: Color.RED
+        }
+    )
+
+    return stack(
+        [
+            hlayout([
+                blueView,
+                cyanView,
+                redView,
+            ],{
+                space: 10,
+                layoutConfig: layoutConfig().most()
+            }),
+        ],
+        {
+            width: 240,
+            height: 160,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            backgroundColor: PubTool.bgColor,
+        }
+    )
+}
     `
 }

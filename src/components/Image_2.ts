@@ -1,5 +1,5 @@
 
-import { Gravity, image, layoutConfig, stack, vlayout } from "doric"
+import { Color, Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {
@@ -20,11 +20,19 @@ function subViews() {
     // Animated WebP
     let animatedWebPImage = image({
         imageUrl: "https://p.upyun.com/demo/webp/webp/animated-gif-0.webp",
+        width: 200,
+        height: 200,
+        loadCallback: (ret) => {
+            if (ret) {
+                animatedWebPImage.width = ret.width
+                animatedWebPImage.height = ret.height
+            }
+        }
     })
 
     return [
         webPImage,
-        animatedWebPImage
+        animatedWebPImage,
     ]
 }
 
@@ -40,7 +48,7 @@ export function ui() {
             })
         ],
         {
-            width: 240,
+
             layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
@@ -67,11 +75,19 @@ export function codeString() {
         // Animated WebP
         let animatedWebPImage = image({
             imageUrl: "https://p.upyun.com/demo/webp/webp/animated-gif-0.webp",
+            width: 200,
+            height: 200,
+            loadCallback: (ret) => {
+                if (ret) {
+                    animatedWebPImage.width = ret.width
+                    animatedWebPImage.height = ret.height
+                }
+            }
         })
     
         return [
             webPImage,
-            animatedWebPImage
+            animatedWebPImage,
         ]
     }
     
@@ -87,7 +103,7 @@ export function codeString() {
                 })
             ],
             {
-                width: 240,
+    
                 layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
                 backgroundColor: PubTool.bgColor,
             }

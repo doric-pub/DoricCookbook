@@ -1,7 +1,7 @@
 
 import { Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
-import buttonImage from "../images/button.png"
+// import buttonImage from "../images/button.png"
 
 export function ui() {
     return stack(
@@ -9,46 +9,8 @@ export function ui() {
             vlayout([
 
                 image({
-                    imageBase64: buttonImage,
-                    scaleType: ScaleType.ScaleToFill,
                     layoutConfig: layoutConfig().fit(),
-                }),
-
-                image({
-                    imageBase64: buttonImage,
-                    scaleType: ScaleType.ScaleToFill,
-                    layoutConfig: layoutConfig().fit(),
-                    imageScale: 2,
-                }),
-
-                image({
-                    imageBase64: buttonImage,
-                    scaleType: ScaleType.ScaleToFill,
-                    layoutConfig: layoutConfig().just(),
-                    width: 200,
-                    height: 150 / 2.75,
-                    stretchInset: {
-                        left: 100,
-                        top: 0,
-                        right: 100,
-                        bottom: 0
-                    },
-                    imageScale: 2.75,
-                }),
-
-                image({
-                    imageBase64: buttonImage,
-                    scaleType: ScaleType.ScaleToFill,
-                    layoutConfig: layoutConfig().just(),
-                    width: 200,
-                    height: 75,
-                    stretchInset: {
-                        left: 100,
-                        top: 0,
-                        right: 100,
-                        bottom: 0
-                    },
-                    imageScale: 2,
+                    imageRes: 'ress'
                 }),
 
             ], {

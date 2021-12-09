@@ -1,5 +1,5 @@
 
-import { Color, FlexDirection, flexlayout, Gravity, hlayout, layoutConfig, stack, text, View, vlayout } from "doric"
+import { Align, Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 function createBoxes() {
@@ -36,9 +36,14 @@ function exampleUI(flexDirection: FlexDirection, boxes: View[]) {
         }),
         flexlayout(boxes, {
             flexConfig: {
-                flexDirection: flexDirection
+                flexDirection: flexDirection,
+                justifyContent: Justify.FLEX_START,
+                alignContent: Align.FLEX_START
             },
-            layoutConfig: layoutConfig().fit(),
+            backgroundColor: PubTool.bgColor,
+            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            height: 160,
+            width: 240,
             border: {
                 width: 0.5,
                 color: Color.safeParse('#666666')
@@ -46,7 +51,7 @@ function exampleUI(flexDirection: FlexDirection, boxes: View[]) {
         }),
     ], {
         space: 2,
-        layoutConfig: layoutConfig().fit()
+        layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
     })
 }
 
@@ -61,13 +66,13 @@ export function ui() {
                 exampleUI(FlexDirection.COLUMN, boxes),
                 exampleUI(FlexDirection.COLUMN_REVERSE, boxes),
             ], {
-                space: 15,
-                layoutConfig: layoutConfig().most().configMargin({top: 5})
+                space: 20,
+                layoutConfig: layoutConfig().fit().configMargin({ top: 5 }),
             })
         ],
         {
             layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
-            backgroundColor: PubTool.bgColor,
+            backgroundColor: Color.WHITE,
         }
     )
 }
@@ -108,9 +113,14 @@ export function codeString() {
             }),
             flexlayout(boxes, {
                 flexConfig: {
-                    flexDirection: flexDirection
+                    flexDirection: flexDirection,
+                    justifyContent: Justify.FLEX_START,
+                    alignContent: Align.FLEX_START
                 },
-                layoutConfig: layoutConfig().fit(),
+                backgroundColor: PubTool.bgColor,
+                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+                height: 160,
+                width: 240,
                 border: {
                     width: 0.5,
                     color: Color.safeParse('#666666')
@@ -118,7 +128,7 @@ export function codeString() {
             }),
         ], {
             space: 2,
-            layoutConfig: layoutConfig().fit()
+            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
         })
     }
     
@@ -133,15 +143,15 @@ export function codeString() {
                     exampleUI(FlexDirection.COLUMN, boxes),
                     exampleUI(FlexDirection.COLUMN_REVERSE, boxes),
                 ], {
-                    space: 15,
-                    layoutConfig: layoutConfig().most().configMargin({top: 5})
+                    space: 20,
+                    layoutConfig: layoutConfig().fit().configMargin({ top: 5 }),
                 })
             ],
             {
                 layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
-                backgroundColor: PubTool.bgColor,
+                backgroundColor: Color.WHITE,
             }
         )
-    }
+    }    
     `
 }

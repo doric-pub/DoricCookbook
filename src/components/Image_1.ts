@@ -6,18 +6,22 @@ function subViews() {
     // PNG
     let pngView = image({
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/14/Animated_PNG_example_bouncing_beach_ball.png",
-        backgroundColor: Color.CYAN,
     })
     // GIF
     let gifView = image({
         imageUrl: "https://www.w3.org/People/mimasa/test/imgformat/img/w3c_home_animation.gif",
         scaleType: ScaleType.ScaleToFill,
         imageScale: 3,
-        backgroundColor: Color.RED
     })
+    // Animated PNG
+    let aniPngView = image({
+        imageUrl: "https://p6.hellobixin.com/bx-user/e2879f178be74b9ba4a6df52a2e364b0.png",
+    })
+
     return [
         pngView,
-        gifView
+        gifView,
+        aniPngView
     ]
 }
 
@@ -34,7 +38,7 @@ export function ui() {
         ],
         {
             width: 240,
-            height: 160,
+            height: 380,
             layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
@@ -47,18 +51,22 @@ export function codeString() {
         // PNG
         let pngView = image({
             imageUrl: "https://upload.wikimedia.org/wikipedia/commons/1/14/Animated_PNG_example_bouncing_beach_ball.png",
-            backgroundColor: Color.CYAN,
         })
         // GIF
         let gifView = image({
             imageUrl: "https://www.w3.org/People/mimasa/test/imgformat/img/w3c_home_animation.gif",
             scaleType: ScaleType.ScaleToFill,
             imageScale: 3,
-            backgroundColor: Color.RED
         })
+        // Animated PNG
+        let aniPngView = image({
+            imageUrl: "https://p6.hellobixin.com/bx-user/e2879f178be74b9ba4a6df52a2e364b0.png",
+        })
+    
         return [
             pngView,
             gifView,
+            aniPngView
         ]
     }
     
@@ -75,7 +83,7 @@ export function codeString() {
             ],
             {
                 width: 240,
-                height: 160,
+                height: 380,
                 layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
                 backgroundColor: PubTool.bgColor,
             }

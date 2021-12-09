@@ -1,11 +1,10 @@
-import { Stack, View, ViewComponent } from "doric";
+import { LayoutConfig, Stack, View, ViewComponent } from "doric";
 import * as PubTool from "./PubTool"
 
 @ViewComponent
 export class Container extends Stack {
     child?: View
     isRandomColor?: boolean
-
     constructor() {
         super()
     }

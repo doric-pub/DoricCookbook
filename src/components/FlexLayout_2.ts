@@ -1,5 +1,5 @@
 
-import { Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout } from "doric"
+import { Align, Color, FlexDirection, flexlayout, Gravity, Justify, layoutConfig, stack, text, View, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 function createBoxes() {
@@ -39,12 +39,14 @@ function exampleUI(justifyContent: Justify, boxes: View[]) {
             flexConfig: {
                 flexDirection: FlexDirection.ROW,
                 justifyContent: justifyContent,
+                alignContent: Align.FLEX_START
             },
             border: {
                 width: 0.5,
                 color: Color.safeParse('#666666')
             },
-            layoutConfig: layoutConfig().mostWidth().fitHeight()
+            height: 40,
+            layoutConfig: layoutConfig().mostWidth().justHeight()
         }),
     ], {
         space: 5,
@@ -66,11 +68,11 @@ export function ui() {
                 exampleUI(Justify.SPACE_EVENLY, boxes),
             ], {
                 space: 15,
-                layoutConfig: layoutConfig().most().configMargin({top: 5})
+                layoutConfig: layoutConfig().mostWidth().fitHeight().configMargin({top: 5})
             })
         ],
         {
-            layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -115,12 +117,14 @@ export function codeString() {
                 flexConfig: {
                     flexDirection: FlexDirection.ROW,
                     justifyContent: justifyContent,
+                    alignContent: Align.FLEX_START
                 },
                 border: {
                     width: 0.5,
                     color: Color.safeParse('#666666')
                 },
-                layoutConfig: layoutConfig().mostWidth().fitHeight()
+                height: 40,
+                layoutConfig: layoutConfig().mostWidth().justHeight()
             }),
         ], {
             space: 5,
@@ -142,14 +146,15 @@ export function codeString() {
                     exampleUI(Justify.SPACE_EVENLY, boxes),
                 ], {
                     space: 15,
-                    layoutConfig: layoutConfig().most().configMargin({top: 5})
+                    layoutConfig: layoutConfig().mostWidth().fitHeight().configMargin({top: 5})
                 })
             ],
             {
-                layoutConfig: layoutConfig().fit().configAlignment(Gravity.Center),
+                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
                 backgroundColor: PubTool.bgColor,
             }
         )
     }
+    
     `
 }
