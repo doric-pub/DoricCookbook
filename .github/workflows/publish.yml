@@ -22,7 +22,7 @@ jobs:
           git config user.email "pengfeizhou@foxmail.com"
           git config user.name "pengfei.zhou"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git checkout master
+          git checkout main
       - name: Echo current Version
         run: |
           echo ${GITHUB_REF:11}>version
