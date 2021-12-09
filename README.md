@@ -32,10 +32,10 @@ Doric使用TypeScript作为开发语言，推荐使用编辑器
 请查看文档[命令行工具](https://doric.pub/docs/cli.html)
 
 ##### 部分图片
-
+<img src="../main/images/110.png" width="50%">
 <img src="../main/images/12.png" width="50%">
 <img src="../main/images/16.png" width="50%">
 <img src="../main/images/13.png" width="50%">
 <img src="../main/images/14.png" width="50%">
-<img src="../main/images/15.png" width="50%">
 <img src="../main/images/17.png" width="50%">
+
