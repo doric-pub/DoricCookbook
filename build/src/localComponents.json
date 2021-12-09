@@ -1,0 +1,193 @@
+[
+    {
+        "title": "Stack",
+        "subTitle": "堆叠布局",
+        "path": "",
+        "desc": "Stack是Doric最基本的视图组件，可容纳多个子视图，子视图按添加顺序依次堆叠摆放。后添加的子视图在更上层，最先添加的的子视图在最底层，子视图都是相对于其左上角顶点为坐标系原点。",
+        "cases": [
+            {
+                "title": "Stack基本使用",
+                "desc": "【功能】：用来显示一个View\n【views】：子视图列表，可以放一个或者多个子视图\n【config】： 配置项Partial<Stack>",
+                "ui": "Stack_1"
+            },
+            {
+                "title": "多个子视图场景",
+                "desc": "多个子视图，默认左上角对齐布局，以数组顺序层叠堆放视图，最后添加的视图在最上层。",
+                "ui": "Stack_2"
+            },
+            {
+                "title": "子视图对齐方式",
+                "desc": "【alignment】：子视图相对位置，可以设置对齐方式\n 左对齐、右对齐、居中对齐等方式可直接通过Gravity的静态方法设置，但是右上、右下等对齐方式需要用对象方法设置，比如\n【右下对齐】：通过Gravity的构造方式设置，比如gravity().right().bottom()",
+                "ui": "Stack_3"
+            },
+            {
+                "title": "精确位置定位",
+                "desc": "可以指定上下左右的边界对子视图进行位置精准安放\ntop、left分别代表离父视图上边界和左边界的距离\n而bottom和right不能理解成离底部和右边界的距离\n【bottom】代表视图的底部离父视图顶部的距离\n【right】代表视图的右部离父视图左边界的距离",
+                "ui": "Stack_5"
+            }
+        ]
+    },
+    {
+        "title": "Image",
+        "subTitle": "图片控件",
+        "path": "",
+        "desc": "用于显示一张图片，支持从本地文件或者网络链接加载图片，支持base64、webp、gif等图片，可以指定不同的缩放模式",
+        "cases": [
+            {
+                "title": "加载PNG、GIF",
+                "desc": "【imageUrl】：网络图片地址，支持GIF\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui": "Image_1"
+            },
+            {
+                "title": "加载WebP、Animated WebP",
+                "desc": "【imageUrl】：网络图片地址，支持WebP\n【isBlur】：是否高斯模糊\n【scaleType】：图片缩放方式",
+                "ui": "Image_2"
+            },
+            {
+                "title": "拉伸图片",
+                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "ui": "Image_3"
+            }
+        ]
+    },
+    {
+        "title": "Text",
+        "subTitle": "文字组件",
+        "path": "",
+        "desc": "用于显示文字的组件，拥有的属性非常多",
+        "cases": [
+            {
+                "title": "基本使用",
+                "desc": "【textSize】：文字大小\n【textColor】：文字颜色\n【fontStyle】：字体样式 normal/bold/italic\n【maxLines】：最大行数，设置为0代表不限行数\n【shadow】：阴影\n【lineSpacing】：行间距\n【strikethrough】：显示中横线，默认false\n【underline】：显示下划线，默认false",
+                "ui": "Text_1"
+            },
+            {
+                "title": "文字对齐方式",
+                "desc": "【textAlignment】：对齐方式，例如Gravity.Center代表中心对齐，上图依次是Left、Center、Right、Bottom",
+                "ui": "Text_2"
+            },
+            {
+                "title": "字体文件使用",
+                "desc": "【font】：字体文件名/字体文件路径",
+                "ui": "Text_3"
+            },
+            {
+                "title": "字体渐变色",
+                "desc": "【textColor】：支持渐变色GradientColor\n【start】：开始颜色\n【end】：结束颜色\n【orientation】：渐变方向",
+                "ui": "Text_4"
+            },
+            {
+                "title": "支持html文本",
+                "desc": "【htmlText】：html文本",
+                "ui": "Text_5"
+            }
+        ]
+    },
+    {
+        "title": "HLayout",
+        "subTitle": "水平线性布局容器控件",
+        "path": "",
+        "desc": "沿着水平方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
+        "cases": [
+            {
+                "title": "基本使用",
+                "desc": "【space】：子控件间距\n【gravity】：垂直方向上子控件的对齐方式，默认为左上对齐",
+                "ui": "HLayout_1"
+            },
+            {
+                "title": "垂直方向对齐方式",
+                "desc": "【gravity】：垂直方向上子控件的对齐方式设置为中心对齐，Gravity.Center\n【margin】：组件外间距",
+                "ui": "HLayout_2"
+            },
+            {
+                "title": "按比重分配",
+                "desc": "【weight】：按照水平方向宽度所占比重，默认值为0\n【weight>0】： 其余子控件宽度按照weight比重分配",
+                "ui": "HLayout_3"
+            }
+        ]
+    },
+    {
+        "title": "VLayout",
+        "subTitle": "垂直线性布局组件",
+        "path": "",
+        "desc": "沿着垂直方向，线性布局子控件，可设置子控件间距，交叉方向上子控件的对齐方式",
+        "cases": [
+            {
+                "title": "基本使用",
+                "desc": "【space】：子控件间距\n【gravity】：水平方向上子控件的对齐方式，默认为左上对齐",
+                "ui": "VLayout_1"
+            },
+            {
+                "title": "水平方向对齐方式",
+                "desc": "【gravity】：水平方向上子控件的对齐方式设置为中心对齐，Gravity.Center",
+                "ui": "VLayout_2"
+            },
+            {
+                "title": "按比重分配",
+                "desc": "【weight】：按照垂直方向高度所占比重，默认值为0\n【weight>0】： 其余子控件高度按照weight比重分配",
+                "ui": "VLayout_3"
+            }
+        ]
+    },
+    {
+        "title": "FlexLayout",
+        "subTitle": "弹性盒子布局",
+        "path": "",
+        "desc": "弹性盒子是一种用于按行或按列布局元素的一维布局方法，对一个容器中的子元素进行排列、对齐和分配空白空间。\n容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；\n交叉轴的开始位置叫做cross start，结束位置叫做cross end。\n项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。",
+        "cases": [
+            {
+                "title": "flexDirection属性",
+                "desc": "【flexDirection】：属性决定主轴的方向（即项目的排列方向）\n【row（默认值）】：主轴为水平方向，起点在左端。\n【column】：主轴为垂直方向，起点在上沿。\n【row-reverse】：主轴为水平方向，起点在右端。\n【column-reverse】：主轴为垂直方向，起点在下沿。",
+                "ui": "FlexLayout_1"
+            },
+            {
+                "title": "justifyContent属性",
+                "desc": "【justifyContent】：属性定义了项目在主轴上的对齐方式。\n假设主轴为从左到右：\n【flex-start（默认值）】：左对齐\n【flex-end】：右对齐\n【center】：居中\n【space-between】：两端对齐，项目之间的间隔都相等\n【space-around】：每个项目两侧的间隔相等，项目之间的间隔比项目与边框的间隔大一倍\n【space-evenly】：项目与边框的间距以及项目之间的间距均相等，间距均等。",
+                "ui": "FlexLayout_2"
+            },
+            {
+                "title": "alignItems属性",
+                "desc": "【alignItems】属性定义项目在交叉轴上如何对齐。\n【flex-start】：交叉轴的起点对齐。\n【flex-end】：交叉轴的终点对齐。\n【center】：交叉轴的中点对齐。\n【baseline】: 项目的第一行文字的基线对齐。\n【stretch（默认值）】：如果项目未设置高度或设为auto，将占满整个容器的高度。",
+                "ui": "FlexLayout_3"
+            },
+            {
+                "title": "flex-wrap属性",
+                "desc": "【flexWrap】属性定义，如果一条轴线排不下，如何换行。\n【nowrap】：默认情况下，项目都排在一条轴线上，不换行。\n【wrap】：换行，第一行在上方。\n【wrap-reverse】：换行，第一行在下方。",
+                "ui": "FlexLayout_4"
+            },
+            {
+                "title": "align-content属性",
+                "desc": "【align-content】属性定义项目在与交叉轴上如何对齐。\n【flex-start】：与交叉轴的起点对齐。\n【flex-end】：与交叉轴的终点对齐。\n【center】：与交叉轴的中点对齐。\n【stretch（默认值）】：轴线占满整个交叉轴。\n【space-between】：与交叉轴两端对齐，轴线之间的间隔平均分布\n【space-around】：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。\n",
+                "ui": "FlexLayout_5"
+            }
+        ]
+    },
+    {
+        "title": "List",
+        "subTitle": "列表控件",
+        "path": "/effects/list",
+        "desc": "圆角阴影在List中的示例",
+        "cases": []
+    },
+    {
+        "title": "FlowLayout",
+        "subTitle": "【itemCount】内容总条数。\n【renderItem】：每条内容的渲染回调。\n【columnCount】：每行列数。\n【columnSpace】：列间距\n【rowSpace】：行间距",
+        "path": "/FlowLayoutDemo",
+        "desc": "FlowLayout流式网格布局",
+        "cases": []
+    },
+    {
+        "title": "Slider",
+        "subTitle": "【itemCount】幻灯片页数。\n【renderPage】：每页的渲染回调。\n【onPageSlided】：幻灯片滑动回调。",
+        "desc": "滑动翻页(幻灯片)控件示例",
+        "path": "/slider",
+        "cases": []
+    },
+    {
+        "title": "Scroller",
+        "subTitle": "Scroller滑动控件示例",
+        "desc": "Scroller滑动控件示例",
+        "path": "/ScrollerDemo",
+        "cases": []
+    }
+]
