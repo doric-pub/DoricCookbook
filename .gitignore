@@ -8,7 +8,7 @@ Pods/
 *.lock
 *.xcworkspace/xcshareddata/xcdebugger/
 package-lock.json
-
+pnpm-lock.yaml
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore

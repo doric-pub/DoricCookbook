@@ -1,7 +1,8 @@
 {
-  "name": "DoricExamples",
+  "name": "doric-examples",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "build/src/DoricExamples.js",
+  "types": "src/DoricExamples.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "doric build",
@@ -12,8 +13,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "doric": "0.9.25",
-    "doric-cli": "0.9.25",
+    "doric": "0.9.26",
+    "doric-cli": "0.9.26",
     "reflect-metadata": "^0.1.13",
     "rollup": "^2.24.0",
     "ts-node": "^10.3.0",
@@ -25,8 +26,5 @@
     "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.4.0"
-  },
-  "optionalDependencies": {
-    "ios-deploy": "^1.11.4"
   }
 }
