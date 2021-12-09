@@ -6524,7 +6524,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function cell(model) {
+function cell(context, model) {
     let padding = 10;
     let hPadding = 20;
     let cellHeight = 118;
@@ -6645,7 +6645,7 @@ exports.MainWidget = class MainWidget extends doric.Panel {
         this.widgetModels = localComponentJson;
     }
     onShow() {
-        doric.navbar(context).setTitle("DoricExamples");
+        doric.navbar(this.context).setTitle("DoricExamples");
     }
     build(rootView) {
         let normalImages = [
@@ -6670,13 +6670,13 @@ exports.MainWidget = class MainWidget extends doric.Panel {
         ];
         this.widgetList = doric.list({
             itemCount: this.widgetModels.length,
-            renderItem: (index) => cell(this.widgetModels[index]),
+            renderItem: (index) => cell(this.context, this.widgetModels[index]),
         }).apply({
             layoutConfig: doric.layoutConfig().most(),
         });
         this.capacityList = doric.list({
             itemCount: this.capacityModels.length,
-            renderItem: (index) => cell(this.capacityModels[index]),
+            renderItem: (index) => cell(this.context, this.capacityModels[index]),
         }).apply({
             layoutConfig: doric.layoutConfig().most(),
         });

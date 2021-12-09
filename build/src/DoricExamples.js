@@ -16,7 +16,7 @@ import tab_home_selected from "./images/tab_home_selected@2x.png";
 import tab_mine_normal from "./images/tab_mine_normal@2x.png";
 import tab_mine_selected from "./images/tab_mine_selected@2x.png";
 import { PanelRouter } from "./PanelRouter";
-function cell(model) {
+function cell(context, model) {
     let padding = 10;
     let hPadding = 20;
     let cellHeight = 118;
@@ -137,7 +137,7 @@ let MainWidget = class MainWidget extends Panel {
         this.widgetModels = localComponentJson;
     }
     onShow() {
-        navbar(context).setTitle("DoricExamples");
+        navbar(this.context).setTitle("DoricExamples");
     }
     build(rootView) {
         let normalImages = [
@@ -162,13 +162,13 @@ let MainWidget = class MainWidget extends Panel {
         ];
         this.widgetList = list({
             itemCount: this.widgetModels.length,
-            renderItem: (index) => cell(this.widgetModels[index]),
+            renderItem: (index) => cell(this.context, this.widgetModels[index]),
         }).apply({
             layoutConfig: layoutConfig().most(),
         });
         this.capacityList = list({
             itemCount: this.capacityModels.length,
-            renderItem: (index) => cell(this.capacityModels[index]),
+            renderItem: (index) => cell(this.context, this.capacityModels[index]),
         }).apply({
             layoutConfig: layoutConfig().most(),
         });
