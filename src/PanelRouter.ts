@@ -17,6 +17,7 @@ import { DraggableDemo } from "./capacities/DraggableDemo"
 import { TextAnimationDemo } from "./capacities/TextAnimationDemo"
 import { PathButtonDemo } from "./capacities/PathButtonDemo"
 import { BlurEffectsDemo } from "./capacities/BlurEffectsDemo"
+import { NetworkDemo } from "./capacities/NetworkDemo"
 
 export class PanelRouter {
 
@@ -50,6 +51,7 @@ export class PanelRouter {
             ['/TextAnimationDemo', TextAnimationDemo],
             ['/PathButtonDemo', PathButtonDemo],
             ['/BlurEffectsDemo', BlurEffectsDemo],
+            ['/NetworkDemo', NetworkDemo],
         ])
     }
 

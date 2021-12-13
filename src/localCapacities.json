@@ -56,6 +56,13 @@
         "cases": [ ]
     },
     {
+        "title": "Network",
+        "subTitle": "网络请求",
+        "path":"/NetworkDemo",
+        "desc": "网络请求",
+        "cases": []
+    },
+    {
         "title": "EffectsDemo",
         "subTitle": "圆角阴影示例",
         "desc": "圆角阴影示例",
