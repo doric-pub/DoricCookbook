@@ -18,6 +18,7 @@ import { TextAnimationDemo } from "./capacities/TextAnimationDemo"
 import { PathButtonDemo } from "./capacities/PathButtonDemo"
 import { BlurEffectsDemo } from "./capacities/BlurEffectsDemo"
 import { NetworkDemo } from "./capacities/NetworkDemo"
+import { GestureContainerDemo } from "./capacities/GestureContainerDemo"
 
 export class PanelRouter {
 
@@ -52,6 +53,7 @@ export class PanelRouter {
             ['/PathButtonDemo', PathButtonDemo],
             ['/BlurEffectsDemo', BlurEffectsDemo],
             ['/NetworkDemo', NetworkDemo],
+            ['/GestureContainerDemo', GestureContainerDemo],
         ])
     }
 

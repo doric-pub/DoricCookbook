@@ -63,6 +63,13 @@
         "cases": []
     },
     {
+        "title": "GestureContainer",
+        "subTitle": "手势演示示例",
+        "desc": "手势演示示例",
+        "path":"/GestureContainerDemo",
+        "cases": [ ]
+    },
+    {
         "title": "EffectsDemo",
         "subTitle": "圆角阴影示例",
         "desc": "圆角阴影示例",
