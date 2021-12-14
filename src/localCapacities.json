@@ -110,5 +110,12 @@
         "desc": "组合动画示例",
         "path":"/PathButtonDemo",
         "cases": [ ]
+    },
+    {
+        "title": "GestureTSXDemo",
+        "subTitle": "手势演示示例(TSX版本)",
+        "desc": "手势演示示例(TSX版本)",
+        "path":"/GestureTSXDemo",
+        "cases": [ ]
     }
 ]

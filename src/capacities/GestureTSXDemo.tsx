@@ -1,10 +1,10 @@
 import { Color, createRef, GestureContainer, Gravity, Group, HLayout, jsx, layoutConfig, log, navbar, Panel, Stack, SwipeOrientation, text, Text } from "doric";
 
 @Entry
-export class GestureContainerDemo extends Panel {
+export class GestureTSXDemo extends Panel {
 
     onShow() {
-        navbar(context).setTitle('GestureContainerDemo')
+        navbar(this.context).setTitle('GestureTSXDemo')
     }
 
     build(rootView: Group): void {
@@ -68,7 +68,6 @@ export class GestureContainerDemo extends Panel {
                 x: number;
                 y: number;
             }) => {
-                // textRef.current.text = `onTouchCancel event.x:${event.x} event.y:${event.y}`
                 log(`${textRef.current.text}`)
             }}
         >
