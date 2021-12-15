@@ -54,11 +54,12 @@ export function ui() {
             ], {
                 space: 20,
                 gravity: Gravity.Center,
-                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                layoutConfig: layoutConfig().mostWidth().fitHeight(),
             })
         ],
         {
             layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+            padding: {left: 10, right: 10, top: 10, bottom: 10},
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -117,12 +118,12 @@ export function codeString() {
                 ], {
                     space: 20,
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                    layoutConfig: layoutConfig().mostWidth().fitHeight(),
                 })
             ],
             {
-                width: 240,
                 layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                padding: {left: 10, right: 10, top: 10, bottom: 10},
                 backgroundColor: PubTool.bgColor,
             }
         )

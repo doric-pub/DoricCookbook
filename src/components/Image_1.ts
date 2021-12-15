@@ -1,5 +1,5 @@
 
-import { Color, Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
+import { Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {
@@ -33,13 +33,12 @@ export function ui() {
             ], {
                 space: 30,
                 gravity: Gravity.Center,
-                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                layoutConfig: layoutConfig().mostWidth().fitHeight(),
             })
         ],
         {
-            width: 240,
-            height: 380,
-            layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+            layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+            padding: {left: 10, right: 10, top: 10, bottom: 10},
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -78,16 +77,15 @@ export function codeString() {
                 ], {
                     space: 30,
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                    layoutConfig: layoutConfig().mostWidth().fitHeight(),
                 })
             ],
             {
-                width: 240,
-                height: 380,
-                layoutConfig: layoutConfig().just().configAlignment(Gravity.Center),
+                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                padding: {left: 10, right: 10, top: 10, bottom: 10},
                 backgroundColor: PubTool.bgColor,
             }
         )
-    }    
+    }   
     `
 }

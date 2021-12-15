@@ -43,7 +43,7 @@ function title$1(str) {
     });
 }
 
-var __decorate$m = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$p = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -68,7 +68,7 @@ let Container = class Container extends doric.Stack {
         return t;
     }
 };
-Container = __decorate$m([
+Container = __decorate$p([
     doric.ViewComponent,
     __metadata$1("design:paramtypes", [])
 ], Container);
@@ -3128,7 +3128,7 @@ function caseUIorCode(path, needCode) {
     }
 }
 
-var __decorate$l = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$o = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -3160,11 +3160,11 @@ let CodeIDE = class CodeIDE extends doric.Panel {
         }).in(rootView);
     }
 };
-CodeIDE = __decorate$l([
+CodeIDE = __decorate$o([
     Entry
 ], CodeIDE);
 
-var __decorate$k = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$n = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -3337,7 +3337,7 @@ let ComponentDetail = class ComponentDetail extends doric.Panel {
         return new doric.ListItem();
     }
 };
-ComponentDetail = __decorate$k([
+ComponentDetail = __decorate$n([
     Entry
 ], ComponentDetail);
 
@@ -3605,6 +3605,22 @@ var localCapacitiesJson = [
 		]
 	},
 	{
+		title: "Network",
+		subTitle: "网络请求",
+		path: "/NetworkDemo",
+		desc: "网络请求",
+		cases: [
+		]
+	},
+	{
+		title: "GestureContainer",
+		subTitle: "手势演示示例",
+		desc: "手势演示示例",
+		path: "/GestureContainerDemo",
+		cases: [
+		]
+	},
+	{
 		title: "EffectsDemo",
 		subTitle: "圆角阴影示例",
 		desc: "圆角阴影示例",
@@ -3651,10 +3667,18 @@ var localCapacitiesJson = [
 		path: "/PathButtonDemo",
 		cases: [
 		]
+	},
+	{
+		title: "GestureTSXDemo",
+		subTitle: "手势演示示例(TSX版本)",
+		desc: "手势演示示例(TSX版本)",
+		path: "/GestureTSXDemo",
+		cases: [
+		]
 	}
 ];
 
-var __decorate$j = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$m = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -3743,7 +3767,7 @@ let MyTabBar = class MyTabBar extends doric.FlexLayout {
         return t;
     }
 };
-MyTabBar = __decorate$j([
+MyTabBar = __decorate$m([
     doric.ViewComponent,
     __metadata("design:paramtypes", [])
 ], MyTabBar);
@@ -3765,7 +3789,7 @@ var img$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGCAYAAAA6hjFpA
 
 var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABGCAYAAAA6hjFpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyVpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ4IDc5LjE2NDAzNiwgMjAxOS8wOC8xMy0wMTowNjo1NyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTg0ODFENkJGNzA1MTFFQUJDRTdGNTVBMThFRTFBMEMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTg0ODFENkNGNzA1MTFFQUJDRTdGNTVBMThFRTFBMEMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBODQ4MUQ2OUY3MDUxMUVBQkNFN0Y1NUExOEVFMUEwQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBODQ4MUQ2QUY3MDUxMUVBQkNFN0Y1NUExOEVFMUEwQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqU9VzAAAAKBSURBVHja7Jy9axRBGId3VfxCvDONhSeKFokYUALXBSwVsfEjQUFFLFNotFBrwUAQSf6BINgIBoMggjY2goWmEUWxVFARVAgWElTO35C3MCGizM5mZ53ngadJsu8d92T29m4uyTudTgbxsIyHgCBAEIIAQQgCBCEIEIQgQBAgCEGAIASB0KxY6hvMJ0/W6gHqDNxghXDKqh8b5JC8K9/IWflVvrKvDdnPcMoqmdXynLwgmwu+t1L2mAfkFXlVjslvrJDwbJVP5cgiMRajaVGe2LEECUhLPpK9Hsf22rEtgoQ7TU0VfEBbNmMNQYozLNsB5rRtFkEK0CUvBZx30WYSxJNjshFwXsNmEsSTvSXM3EcQf3aXMHMXQfzZWJOZyQSZzRIj9iAfSpj5kSD+vC5h5jOC+POghJn3CeLPTTkTcN6MzSSIJ1/kaMB5ozaTIAUYl88DzHlhs7jKKojbXDok3xeY8U4ezGqwUVWXt9+3y4fyh8fxP7O5/ZCdch1B/OmT7iMfn+3K6Hjmt+W8XB6Vd+QneUv2E+Tf2SEn5bQ8IdcGnL1KDtiKuWfRCfIHNsnr9gR+ROYl395+i+5WzDaCzOe0fClP2SlmqchtxbgrsGGCzHFNTsj1Fd4Ht9c+Zvcj6SDuc6XnIzptupV6JtUg7rdyJMKListZhfvuVQY5bE/ksdGwlZtckMGIXwMNphbE3e6eiIO0q3pVX1WQLRVfVf0N945AT0pBurP46U4pyOYaBGmlFKRRgyDNlIJ8zyCqII9l7P99czqlIO4vodw7um8jDOH23M/K21Vd3lXFlAm/kfN/e3kOAYIQBAhCECAIQYAgBAGCAEEIAgT5D/glwAC6rVeuclZOsgAAAABJRU5ErkJggg==";
 
-var __decorate$i = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$l = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -3896,7 +3920,7 @@ let KeyboardDemo = class KeyboardDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-KeyboardDemo = __decorate$i([
+KeyboardDemo = __decorate$l([
     Entry
 ], KeyboardDemo);
 
@@ -3958,7 +3982,7 @@ function rotatedArrow() {
     });
 }
 
-var __decorate$h = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$k = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -4162,11 +4186,11 @@ let SliderDemo = class SliderDemo extends doric.Panel {
         }));
     }
 };
-SliderDemo = __decorate$h([
+SliderDemo = __decorate$k([
     Entry
 ], SliderDemo);
 
-var __decorate$g = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$j = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -4875,11 +4899,11 @@ let EffectsDemo = class EffectsDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-EffectsDemo = __decorate$g([
+EffectsDemo = __decorate$j([
     Entry
 ], EffectsDemo);
 
-var __decorate$f = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$i = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -4964,11 +4988,11 @@ let ListEffectsDemo = class ListEffectsDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-ListEffectsDemo = __decorate$f([
+ListEffectsDemo = __decorate$i([
     Entry
 ], ListEffectsDemo);
 
-var __decorate$e = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$h = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5014,11 +5038,11 @@ let AnimationsDemo = class AnimationsDemo extends doric.Panel {
         }).in(root);
     }
 };
-AnimationsDemo = __decorate$e([
+AnimationsDemo = __decorate$h([
     Entry
 ], AnimationsDemo);
 
-var __decorate$d = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$g = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5050,11 +5074,11 @@ let AnimatedImageDemo = class AnimatedImageDemo extends doric.Panel {
                 } }, "stopAnimating"));
     }
 };
-AnimatedImageDemo = __decorate$d([
+AnimatedImageDemo = __decorate$g([
     Entry
 ], AnimatedImageDemo);
 
-var __decorate$c = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$f = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5275,11 +5299,11 @@ let AnimatorDemo = class AnimatorDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-AnimatorDemo = __decorate$c([
+AnimatorDemo = __decorate$f([
     Entry
 ], AnimatorDemo);
 
-var __decorate$b = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$e = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5508,11 +5532,11 @@ let ComplicatedAnimationDemo = class ComplicatedAnimationDemo extends doric.Pane
         }).in(rootView);
     }
 };
-ComplicatedAnimationDemo = __decorate$b([
+ComplicatedAnimationDemo = __decorate$e([
     Entry
 ], ComplicatedAnimationDemo);
 
-var __decorate$a = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$d = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5605,11 +5629,11 @@ let RefreshableDemo = class RefreshableDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-RefreshableDemo = __decorate$a([
+RefreshableDemo = __decorate$d([
     Entry
 ], RefreshableDemo);
 
-var __decorate$9 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$c = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5743,11 +5767,11 @@ let RefreshDemo = class RefreshDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-RefreshDemo = __decorate$9([
+RefreshDemo = __decorate$c([
     Entry
 ], RefreshDemo);
 
-var __decorate$8 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$b = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5808,11 +5832,11 @@ let CounterDemo = class CounterDemo extends doric.VMPanel {
         return CounterVM;
     }
 };
-CounterDemo = __decorate$8([
+CounterDemo = __decorate$b([
     Entry
 ], CounterDemo);
 
-var __decorate$7 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$a = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5889,11 +5913,11 @@ let PopoverDemo = class PopoverDemo extends doric.Panel {
             .in(rootView);
     }
 };
-PopoverDemo = __decorate$7([
+PopoverDemo = __decorate$a([
     Entry
 ], PopoverDemo);
 
-var __decorate$6 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$9 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -5962,11 +5986,11 @@ let FlowLayoutDemo = class FlowLayoutDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-FlowLayoutDemo = __decorate$6([
+FlowLayoutDemo = __decorate$9([
     Entry
 ], FlowLayoutDemo);
 
-var __decorate$5 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$8 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -6000,11 +6024,11 @@ let ScrollerDemo = class ScrollerDemo extends doric.Panel {
         }).in(rootView);
     }
 };
-ScrollerDemo = __decorate$5([
+ScrollerDemo = __decorate$8([
     Entry
 ], ScrollerDemo);
 
-var __decorate$4 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$7 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -6045,11 +6069,11 @@ let DraggableDemo = class DraggableDemo extends doric.Panel {
         }).in(root);
     }
 };
-DraggableDemo = __decorate$4([
+DraggableDemo = __decorate$7([
     Entry
 ], DraggableDemo);
 
-var __decorate$3 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$6 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -6135,11 +6159,11 @@ let TextAnimationDemo = class TextAnimationDemo extends doric.Panel {
         }));
     }
 };
-TextAnimationDemo = __decorate$3([
+TextAnimationDemo = __decorate$6([
     Entry
 ], TextAnimationDemo);
 
-var __decorate$2 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$5 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -6304,11 +6328,11 @@ let PathButtonDemo = class PathButtonDemo extends doric.Panel {
         }).in(root);
     }
 };
-PathButtonDemo = __decorate$2([
+PathButtonDemo = __decorate$5([
     Entry
 ], PathButtonDemo);
 
-var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+var __decorate$4 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
@@ -6476,9 +6500,377 @@ let BlurEffectsDemo = class BlurEffectsDemo extends doric.Panel {
         });
     }
 };
-BlurEffectsDemo = __decorate$1([
+BlurEffectsDemo = __decorate$4([
     Entry
 ], BlurEffectsDemo);
+
+var __decorate$3 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+let NetworkDemo = class NetworkDemo extends doric.Panel {
+    build(rootView) {
+        const padding = 15;
+        const resGetText = doric.createRef();
+        const resPostText = doric.createRef();
+        const resRequestText = doric.createRef();
+        doric.jsx.createElement(doric.Scroller, { parent: rootView, layoutConfig: doric.layoutConfig().most() },
+            doric.jsx.createElement(doric.VLayout, { layoutConfig: doric.layoutConfig().mostWidth().fitHeight(), space: 15 },
+                doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit().configMargin({ left: padding, top: 2 * padding }), textSize: 20, fontStyle: 'bold', textColor: themColor }, "\u7F51\u7EDC\u8BF7\u6C42"),
+                doric.jsx.createElement(doric.HLayout, { layoutConfig: doric.layoutConfig().fit().configMargin({ left: padding, top: padding }), space: 10, gravity: doric.Gravity.CenterY },
+                    doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().just(), height: 12, width: 12, corners: 6, backgroundColor: themColor }),
+                    doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), textSize: 16, fontStyle: 'bold', textColor: doric.Color.BLACK }, "GET\u8BF7\u6C42")),
+                doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().mostWidth().justHeight().configMargin({ left: padding, right: padding }), padding: { top: padding, left: padding, bottom: padding, right: padding }, backgroundColor: bgColor, height: 280 },
+                    doric.jsx.createElement(doric.VLayout, { layoutConfig: doric.layoutConfig().most(), space: 10 },
+                        doric.jsx.createElement(doric.Text, { fontStyle: "bold" }, "response:"),
+                        doric.jsx.createElement(doric.Scroller, { layoutConfig: doric.layoutConfig().mostWidth().fitHeight().configWeight(1) },
+                            doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), ref: resGetText, maxLines: 0, textSize: 13 })),
+                        doric.jsx.createElement(doric.Text, { width: 100, height: 38, corners: 19, textColor: doric.Color.WHITE, layoutConfig: doric.layoutConfig().just().configAlignment(doric.gravity().bottom().center()), backgroundColor: themColor, onClick: () => {
+                                doric.modal(this.context).toast('请求中...', doric.Gravity.Center);
+                                doric.network(this.context).get('https://www.dmoe.cc/random.php?return=json').then(res => {
+                                    doric.log(`Response : ${res.data}`);
+                                    const jsonStr = JSON.stringify(res);
+                                    resGetText.current.text = jsonStr;
+                                    doric.modal(this.context).alert(jsonStr);
+                                }).catch(e => {
+                                    doric.modal(this.context).toast('Catched:' + JSON.stringify(e));
+                                });
+                            } }, " \u53D1\u8D77\u8BF7\u6C42"))),
+                doric.jsx.createElement(doric.HLayout, { layoutConfig: doric.layoutConfig().fit().configMargin({ left: padding, top: padding }), space: 10, gravity: doric.Gravity.CenterY },
+                    doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().just(), height: 12, width: 12, corners: 6, backgroundColor: themColor }),
+                    doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), textSize: 16, fontStyle: 'bold', textColor: doric.Color.BLACK }, "POST\u8BF7\u6C42")),
+                doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().mostWidth().justHeight().configMargin({ left: padding, right: padding }), padding: { top: padding, left: padding, bottom: padding, right: padding }, backgroundColor: bgColor, height: 280 },
+                    doric.jsx.createElement(doric.VLayout, { layoutConfig: doric.layoutConfig().most(), space: 10 },
+                        doric.jsx.createElement(doric.Text, { fontStyle: "bold" }, "response:"),
+                        doric.jsx.createElement(doric.Scroller, { layoutConfig: doric.layoutConfig().mostWidth().fitHeight().configWeight(1) },
+                            doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), ref: resPostText, maxLines: 0, textSize: 13 })),
+                        doric.jsx.createElement(doric.Text, { width: 100, height: 38, corners: 19, textColor: doric.Color.WHITE, layoutConfig: doric.layoutConfig().just().configAlignment(doric.gravity().bottom().center()), backgroundColor: themColor, onClick: () => {
+                                doric.modal(this.context).toast('请求中...', doric.Gravity.Center);
+                                const data = 'start=1&num=1';
+                                doric.network(this.context).post('http://baobab.kaiyanapp.com/api/v4/discovery/hot', data).then(res => {
+                                    doric.log(`Response : ${res.data}`);
+                                    const jsonStr = JSON.stringify(res);
+                                    resPostText.current.text = jsonStr;
+                                    doric.modal(this.context).alert(jsonStr);
+                                }).catch(e => {
+                                    doric.modal(this.context).toast('Catched:' + JSON.stringify(e));
+                                });
+                            } }, " \u53D1\u8D77\u8BF7\u6C42"))),
+                doric.jsx.createElement(doric.HLayout, { layoutConfig: doric.layoutConfig().fit().configMargin({ left: padding, top: padding }), space: 10, gravity: doric.Gravity.CenterY },
+                    doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().just(), height: 12, width: 12, corners: 6, backgroundColor: themColor }),
+                    doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), textSize: 16, fontStyle: 'bold', textColor: doric.Color.BLACK }, "\u901A\u7528request\u8BF7\u6C42")),
+                doric.jsx.createElement(doric.Stack, { layoutConfig: doric.layoutConfig().mostWidth().justHeight().configMargin({ left: padding, right: padding }), padding: { top: padding, left: padding, bottom: padding, right: padding }, backgroundColor: bgColor, height: 280 },
+                    doric.jsx.createElement(doric.VLayout, { layoutConfig: doric.layoutConfig().most(), space: 10 },
+                        doric.jsx.createElement(doric.Text, { fontStyle: "bold" }, "response:"),
+                        doric.jsx.createElement(doric.Scroller, { layoutConfig: doric.layoutConfig().mostWidth().fitHeight().configWeight(1) },
+                            doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit(), ref: resRequestText, maxLines: 0, textSize: 13 })),
+                        doric.jsx.createElement(doric.Text, { width: 100, height: 38, corners: 19, textColor: doric.Color.WHITE, layoutConfig: doric.layoutConfig().just().configAlignment(doric.gravity().bottom().center()), backgroundColor: themColor, onClick: () => {
+                                doric.modal(this.context).toast('请求中...', doric.Gravity.Center);
+                                var r = {
+                                    url: 'http://baobab.kaiyanapp.com/api/v4/discovery/hot',
+                                    method: 'post',
+                                    data: 'start=1&num=1'
+                                };
+                                doric.network(this.context).request(r).then(res => {
+                                    doric.log(`Response : ${res.data}`);
+                                    const jsonStr = JSON.stringify(res);
+                                    resRequestText.current.text = jsonStr;
+                                    doric.modal(this.context).alert(jsonStr);
+                                }).catch(e => {
+                                    doric.modal(this.context).toast('Catched:' + JSON.stringify(e));
+                                });
+                            } }, " \u53D1\u8D77\u8BF7\u6C42")))));
+    }
+};
+NetworkDemo = __decorate$3([
+    Entry
+], NetworkDemo);
+
+var __decorate$2 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+let GestureContainerDemo = class GestureContainerDemo extends doric.Panel {
+    build(rootView) {
+        let touchChild = doric.stack([], {
+            layoutConfig: doric.layoutConfig().just(),
+            width: 100,
+            height: 100,
+            backgroundColor: doric.Color.CYAN,
+        });
+        let pinchChild = doric.stack([], {
+            layoutConfig: doric.layoutConfig().just().configAlignment(doric.Gravity.Center),
+            width: 100,
+            height: 100,
+            backgroundColor: doric.Color.CYAN,
+        });
+        let panChild = doric.stack([], {
+            layoutConfig: doric.layoutConfig().just().configAlignment(doric.Gravity.Center),
+            width: 100,
+            height: 100,
+            backgroundColor: doric.Color.CYAN,
+        });
+        let rotateChild = doric.stack([], {
+            layoutConfig: doric.layoutConfig().just().configAlignment(doric.Gravity.Center),
+            width: 100,
+            height: 100,
+            backgroundColor: doric.Color.CYAN,
+        });
+        doric.scroller(doric.vlayout([
+            doric.vlayout([
+                doric.text({
+                    text: "onTouch Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 30,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([touchChild], {
+                    onTouchDown: (event) => {
+                        doric.modal(this.context).toast("onTouchDown x=" + event.x + " y=" + event.y);
+                    },
+                    onTouchMove: (event) => {
+                        touchChild.x = event.x - 50;
+                        touchChild.y = event.y - 50;
+                    },
+                    onTouchUp: (event) => {
+                        doric.modal(this.context).toast("onTouchUp x=" + event.x + " y=" + event.y);
+                    },
+                    onTouchCancel: (event) => {
+                        doric.modal(this.context).toast("onTouchCancel x=" + event.x + " y=" + event.y);
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+            doric.vlayout([
+                doric.text({
+                    text: "SingleTap, DoubleTap, LongPress Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 20,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([], {
+                    onSingleTap: () => {
+                        doric.modal(this.context).toast("onSingleTap");
+                    },
+                    onDoubleTap: () => {
+                        doric.modal(this.context).toast("onDoubleTap");
+                    },
+                    onLongPress: () => {
+                        doric.modal(this.context).toast("onLongPress");
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+            doric.vlayout([
+                doric.text({
+                    text: "Pinch Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 30,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([pinchChild], {
+                    onPinch: (scale) => {
+                        pinchChild.width = 100 * scale;
+                        pinchChild.height = 100 * scale;
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+            doric.vlayout([
+                doric.text({
+                    text: "Pan Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 30,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([panChild], {
+                    onPan: (dx, dy) => {
+                        panChild.x -= dx;
+                        panChild.y -= dy;
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+            doric.vlayout([
+                doric.text({
+                    text: "Rotate Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 30,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([rotateChild], {
+                    onRotate: (dAngle) => {
+                        if (rotateChild.rotation == null) {
+                            rotateChild.rotation = 0;
+                        }
+                        rotateChild.rotation += dAngle;
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+            doric.vlayout([
+                doric.text({
+                    text: "Swipe Demo",
+                    layoutConfig: doric.layoutConfig().mostWidth(),
+                    textSize: 30,
+                    textColor: doric.Color.WHITE,
+                    backgroundColor: colors[5],
+                    textAlignment: doric.gravity().center(),
+                    height: 50,
+                }),
+                doric.gestureContainer([], {
+                    onSwipe: (orientation) => {
+                        if (orientation == doric.SwipeOrientation.LEFT) {
+                            doric.modal(this.context).toast("onSwipeLeft");
+                        }
+                        else if (orientation == doric.SwipeOrientation.RIGHT) {
+                            doric.modal(this.context).toast("onSwipeRight");
+                        }
+                        else if (orientation == doric.SwipeOrientation.TOP) {
+                            doric.modal(this.context).toast("onSwipeTop");
+                        }
+                        else if (orientation == doric.SwipeOrientation.BOTTOM) {
+                            doric.modal(this.context).toast("onSwipeBottom");
+                        }
+                    },
+                }).apply({
+                    layoutConfig: doric.layoutConfig()
+                        .just()
+                        .configAlignment(doric.Gravity.Center),
+                    width: 300,
+                    height: 300,
+                    backgroundColor: doric.Color.BLACK,
+                }),
+            ]).apply({
+                layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            }),
+        ], {
+            space: 50,
+            layoutConfig: doric.layoutConfig().mostWidth().fitHeight(),
+            gravity: doric.gravity().centerX(),
+        }), { layoutConfig: doric.layoutConfig().most() }).in(rootView);
+    }
+};
+GestureContainerDemo = __decorate$2([
+    Entry
+], GestureContainerDemo);
+
+var __decorate$1 = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+let GestureTSXDemo = class GestureTSXDemo extends doric.Panel {
+    onShow() {
+        doric.navbar(this.context).setTitle('GestureTSXDemo');
+    }
+    build(rootView) {
+        const textRef = doric.createRef();
+        const stackRef = doric.createRef();
+        doric.jsx.createElement(doric.GestureContainer, { parent: rootView, layoutConfig: doric.layoutConfig().most(), onClick: () => {
+                textRef.current.text = 'onClick';
+                doric.log('onClick');
+            }, onDoubleTap: () => {
+                textRef.current.text = 'onDoubleTap';
+                doric.log('onDoubleTap');
+            }, onLongPress: () => {
+                textRef.current.text = 'onLongPress';
+                doric.log('onLongPress');
+            }, onPan: (dx, dy) => {
+                textRef.current.text = `onPan dx:${dx} dy:${dy}`;
+                doric.log(`${textRef.current.text}`);
+            }, onPinch: (scale) => {
+                textRef.current.text = `onPinch scale: ${scale}`;
+                doric.log(`${textRef.current.text}`);
+            }, onRotate: (dAngle) => {
+                textRef.current.text = `onRotate dAngle: ${dAngle}`;
+                doric.log(`${textRef.current.text}`);
+            }, onSwipe: (orientation) => {
+                textRef.current.text = `onSwipe orientation: ${orientation}`;
+                doric.log(`${textRef.current.text}`);
+            }, onTouchDown: (event) => {
+                textRef.current.text = `onTouchDown event.x:${event.x} event.y:${event.y}`;
+                doric.log(`${textRef.current.text}`);
+                stackRef.current.centerX = event.x;
+                stackRef.current.centerY = event.y;
+            }, onTouchMove: (event) => {
+                textRef.current.text = `onTouchMove event.x:${event.x} event.y:${event.y}`;
+                doric.log(`${textRef.current.text}`);
+                stackRef.current.centerX = event.x;
+                stackRef.current.centerY = event.y;
+            }, onTouchUp: (event) => {
+                textRef.current.text = `onTouchUp event.x:${event.x} event.y:${event.y}`;
+                doric.log(`${textRef.current.text}`);
+            }, onTouchCancel: (event) => {
+                doric.log(`${textRef.current.text}`);
+            } },
+            doric.jsx.createElement(doric.Stack, { ref: stackRef, layoutConfig: doric.layoutConfig().just(), backgroundColor: doric.Color.RED, height: 100, width: 150 },
+                doric.jsx.createElement(doric.Text, { layoutConfig: doric.layoutConfig().fit().configAlignment(doric.Gravity.Center), ref: textRef, maxLines: 0, textColor: doric.Color.WHITE }, "x: 0, y: 0")));
+    }
+};
+GestureTSXDemo = __decorate$1([
+    Entry
+], GestureTSXDemo);
 
 class PanelRouter {
     constructor() {
@@ -6502,6 +6894,9 @@ class PanelRouter {
             ['/TextAnimationDemo', TextAnimationDemo],
             ['/PathButtonDemo', PathButtonDemo],
             ['/BlurEffectsDemo', BlurEffectsDemo],
+            ['/NetworkDemo', NetworkDemo],
+            ['/GestureContainerDemo', GestureContainerDemo],
+            ['/GestureTSXDemo', GestureTSXDemo],
         ]);
     }
     static instance() {

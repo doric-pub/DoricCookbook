@@ -56,6 +56,20 @@
         "cases": []
     },
     {
+        "title": "Network",
+        "subTitle": "网络请求",
+        "path": "/NetworkDemo",
+        "desc": "网络请求",
+        "cases": []
+    },
+    {
+        "title": "GestureContainer",
+        "subTitle": "手势演示示例",
+        "desc": "手势演示示例",
+        "path": "/GestureContainerDemo",
+        "cases": []
+    },
+    {
         "title": "EffectsDemo",
         "subTitle": "圆角阴影示例",
         "desc": "圆角阴影示例",
@@ -95,6 +109,13 @@
         "subTitle": "组合动画示例",
         "desc": "组合动画示例",
         "path": "/PathButtonDemo",
+        "cases": []
+    },
+    {
+        "title": "GestureTSXDemo",
+        "subTitle": "手势演示示例(TSX版本)",
+        "desc": "手势演示示例(TSX版本)",
+        "path": "/GestureTSXDemo",
         "cases": []
     }
 ]

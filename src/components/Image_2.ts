@@ -1,5 +1,5 @@
 
-import { Color, Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
+import { Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 function subViews() {
@@ -9,6 +9,7 @@ function subViews() {
         layoutConfig: layoutConfig().just(),
         width: 200,
         height: 200,
+        scaleType: ScaleType.ScaleAspectFit,
         loadCallback: (ret) => {
             if (ret) {
                 webPImage.width = ret.width
@@ -22,6 +23,7 @@ function subViews() {
         imageUrl: "https://p.upyun.com/demo/webp/webp/animated-gif-0.webp",
         width: 200,
         height: 200,
+        scaleType: ScaleType.ScaleAspectFit,
         loadCallback: (ret) => {
             if (ret) {
                 animatedWebPImage.width = ret.width
@@ -29,7 +31,6 @@ function subViews() {
             }
         }
     })
-
     return [
         webPImage,
         animatedWebPImage,
@@ -44,12 +45,13 @@ export function ui() {
             ], {
                 space: 10,
                 gravity: Gravity.Center,
-                layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                layoutConfig: layoutConfig().mostWidth().fitHeight(),
             })
         ],
         {
 
             layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+            padding: {left: 10, right: 10, top: 10, bottom: 10},
             backgroundColor: PubTool.bgColor,
         }
     )
@@ -64,6 +66,7 @@ export function codeString() {
             layoutConfig: layoutConfig().just(),
             width: 200,
             height: 200,
+            scaleType: ScaleType.ScaleAspectFit,
             loadCallback: (ret) => {
                 if (ret) {
                     webPImage.width = ret.width
@@ -77,6 +80,7 @@ export function codeString() {
             imageUrl: "https://p.upyun.com/demo/webp/webp/animated-gif-0.webp",
             width: 200,
             height: 200,
+            scaleType: ScaleType.ScaleAspectFit,
             loadCallback: (ret) => {
                 if (ret) {
                     animatedWebPImage.width = ret.width
@@ -84,7 +88,6 @@ export function codeString() {
                 }
             }
         })
-    
         return [
             webPImage,
             animatedWebPImage,
@@ -99,12 +102,13 @@ export function codeString() {
                 ], {
                     space: 10,
                     gravity: Gravity.Center,
-                    layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                    layoutConfig: layoutConfig().mostWidth().fitHeight(),
                 })
             ],
             {
     
                 layoutConfig: layoutConfig().mostWidth().fitHeight().configAlignment(Gravity.Center),
+                padding: {left: 10, right: 10, top: 10, bottom: 10},
                 backgroundColor: PubTool.bgColor,
             }
         )
