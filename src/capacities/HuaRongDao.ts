@@ -547,6 +547,7 @@ export class HuaRongDao extends Panel {
           [
             (this.saveBtn = text({
               text: "保存进度",
+              textColor: Color.WHITE,
               layoutConfig: layoutConfig().just(),
               width: 90,
               height: 32,
@@ -555,6 +556,7 @@ export class HuaRongDao extends Panel {
             })),
             (this.rePlayBtn = text({
               text: "重新开始",
+              textColor: Color.WHITE,
               layoutConfig: layoutConfig().just(),
               width: 90,
               height: 32,
@@ -563,6 +565,7 @@ export class HuaRongDao extends Panel {
             })),
             (this.backBtn = text({
               text: "回退",
+              textColor: Color.WHITE,
               layoutConfig: layoutConfig().just(),
               width: 90,
               height: 32,

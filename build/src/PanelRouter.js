@@ -19,6 +19,7 @@ import { BlurEffectsDemo } from "./capacities/BlurEffectsDemo";
 import { NetworkDemo } from "./capacities/NetworkDemo";
 import { GestureContainerDemo } from "./capacities/GestureContainerDemo";
 import { GestureTSXDemo } from "./capacities/GestureTSXDemo";
+import { HuaRongDao } from "./capacities/HuaRongDao";
 export class PanelRouter {
     constructor() {
         this.routeMap = new Map();
@@ -44,6 +45,7 @@ export class PanelRouter {
             ['/NetworkDemo', NetworkDemo],
             ['/GestureContainerDemo', GestureContainerDemo],
             ['/GestureTSXDemo', GestureTSXDemo],
+            ['/HuaRongDao', HuaRongDao],
         ]);
     }
     static instance() {

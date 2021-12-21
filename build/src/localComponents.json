@@ -47,6 +47,11 @@
                 "title": "拉伸图片",
                 "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
                 "ui": "Image_3"
+            },
+            {
+                "title": "通过Resource加载图片",
+                "desc": "【image】：通过resource loader加载图片的方式\n【MainBundleResource】：MainBundleResource(\"assets/The_Parthenon_in_Athens.jpeg\")\"\n【RemoteResource】：RemoteResource(\"https://p.upyun.com/demo/webp/webp/jpg-0.webp\")",
+                "ui": "Image_5"
             }
         ]
     },
