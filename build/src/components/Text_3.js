@@ -4,14 +4,14 @@ import * as PubTool from "../PubTool";
 export function ui() {
     return vlayout([
         text({
-            text: "Icon Font text from   \ue631 ",
+            text: "Icon Font text from assets/fonts/  \ue631 ",
             textSize: 20,
-            font: '../fonts/iconfont.ttf'
+            font: 'assets/fonts/iconfont.ttf'
         }),
         text({
             text: "Icon Font text from assets/fonts/ \ue631 ",
             textSize: 20,
-            font: '../fonts/Hanabi.ttf'
+            font: 'assets/fonts/iconfont'
         }),
     ], {
         space: 10,
@@ -22,26 +22,26 @@ export function ui() {
 }
 export function codeString() {
     return `
-    /// 字体文件使用
-    export function ui() {
-        return vlayout([
-            text({
-                text: "Icon Font text from   \ue631 ",
-                textSize: 20,
-                font: 'iconfont'
-            }),
-            text({
-                text: "Icon Font text from assets/fonts/ \ue631 ",
-                textSize: 20,
-                font: '/res/font/Hanabi.ttf'
-            }),
-        ], {
-            space: 10,
-            gravity: Gravity.Left,
-            backgroundColor: PubTool.bgColor,
-            layoutConfig: layoutConfig().most().configHeight(LayoutSpec.FIT)
-        })
-    }
+/// 字体文件使用
+export function ui() {
+    return vlayout([
+        text({
+            text: "Icon Font text from assets/fonts/  \ue631 ",
+            textSize: 20,
+            font: 'assets/fonts/iconfont.ttf'
+        }),
+        text({
+            text: "Icon Font text from assets/fonts/ \ue631 ",
+            textSize: 20,
+            font: 'assets/fonts/iconfont'
+        }),
+    ], {
+        space: 10,
+        gravity: Gravity.Left,
+        backgroundColor: PubTool.bgColor,
+        layoutConfig: layoutConfig().most().configHeight(LayoutSpec.FIT)
+    })
+}
     `;
 }
 //# sourceMappingURL=Text_3.js.map

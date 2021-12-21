@@ -1,6 +1,5 @@
 import { Gravity, image, layoutConfig, stack, vlayout } from "doric";
 import * as PubTool from "../PubTool";
-// import buttonImage from "../images/button.png"
 export function ui() {
     return stack([
         vlayout([
