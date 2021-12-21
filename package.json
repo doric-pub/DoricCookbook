@@ -1,6 +1,6 @@
 {
   "name": "doric-cookbook",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "build/src/DoricExamples.js",
   "types": "src/DoricExamples.ts",
   "scripts": {
