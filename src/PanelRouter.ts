@@ -21,6 +21,8 @@ import { NetworkDemo } from "./capacities/NetworkDemo"
 import { GestureContainerDemo } from "./capacities/GestureContainerDemo"
 import { GestureTSXDemo } from "./capacities/GestureTSXDemo"
 import { HuaRongDao } from "./capacities/HuaRongDao"
+import { StorageDemo } from "./capacities/StorageDemo"
+import { SwitchDemo } from "./capacities/SwitchDemo"
 
 export class PanelRouter {
 
@@ -58,6 +60,8 @@ export class PanelRouter {
             ['/GestureContainerDemo', GestureContainerDemo],
             ['/GestureTSXDemo', GestureTSXDemo],
             ['/HuaRongDao', HuaRongDao],
+            ['/StorageDemo', StorageDemo],
+            ['/SwitchDemo', SwitchDemo],
         ])
     }
 

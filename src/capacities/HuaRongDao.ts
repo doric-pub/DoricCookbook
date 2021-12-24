@@ -1,5 +1,4 @@
 import {
-  AndroidAssetsResource,
   animate,
   Color,
   FlexDirection,
@@ -10,7 +9,6 @@ import {
   image,
   Justify,
   log,
-  MainBundleResource,
   modal,
   Panel,
   ScaleType,
@@ -20,9 +18,33 @@ import {
   text,
   View,
   vlayout,
+  layoutConfig,
 } from "doric";
-import { layoutConfig } from "doric/lib/src/util/layoutconfig";
-import * as PubTool from "../PubTool";
+
+import pic0 from "../images/pic0.png";
+import pic3 from "../images/pic3.png";
+import pic6 from "../images/pic6.png";
+import pic10 from "../images/pic10.png";
+import pic11 from "../images/pic11.png";
+import pic13 from "../images/pic13.png";
+import pic14 from "../images/pic14.png";
+
+const kMenuWidth = Math.floor((Environment.screenWidth - 60) / 4);
+const kWidth = 4 * kMenuWidth;
+const kHeight = 5 * kMenuWidth;
+const kGameProgressKey = "kGameProgressKey";
+const buttonColor = Color.parse("#A0522D");
+
+const colors = [
+  Color.parse("#339999"),
+  Color.parse("#CC3333"),
+  Color.parse("#FF9999"),
+  Color.parse("#CCCC00"),
+  Color.parse("#9999FF"),
+  Color.parse("#CC6699"),
+  Color.parse("#666699"),
+  Color.parse("#0099CC"),
+];
 
 interface RoleModel {
   name: string;
@@ -46,23 +68,6 @@ interface DataModel {
   // 数据源 角色数组
   rolePositions?: Array<RoleModel>;
 }
-
-const kMenuWidth = Math.floor((Environment.screenWidth - 60) / 4);
-const kWidth = 4 * kMenuWidth;
-const kHeight = 5 * kMenuWidth;
-const kGameProgressKey = "kGameProgressKey";
-const buttonColor = Color.parse("#A0522D");
-
-const colors = [
-  Color.parse("#339999"),
-  Color.parse("#CC3333"),
-  Color.parse("#FF9999"),
-  Color.parse("#CCCC00"),
-  Color.parse("#9999FF"),
-  Color.parse("#CC6699"),
-  Color.parse("#666699"),
-  Color.parse("#0099CC"),
-];
 
 @Entry
 export class HuaRongDao extends Panel {
@@ -148,7 +153,7 @@ export class HuaRongDao extends Panel {
         return false;
       }
     }
-    const duration = 150;
+    const duration = 100;
     switch (direction) {
       case 1:
         {
@@ -284,6 +289,7 @@ export class HuaRongDao extends Panel {
           }
         }
       });
+      this.attached(state, this);
     }
   }
 
@@ -304,15 +310,14 @@ export class HuaRongDao extends Panel {
         modal(this.context).toast("已回到游戏开始阶段");
       } else {
         if (!this.btnEnabled) return;
-        log(`luxBtn.title = 回退`);
         this.btnEnabled = false;
         const step = steps[steps.length - 1];
-        const duration = 150;
+        const duration = 100;
         const item: RoleModel = it.rolePositions[step.index];
         const view = vh.roleViews[step.index];
         setTimeout(() => {
           this.btnEnabled = true;
-        }, 200);
+        }, 100);
         switch (step.direction) {
           case 1:
             {
@@ -376,7 +381,6 @@ export class HuaRongDao extends Panel {
 
     /// 保存进度
     vh.saveBtn.onClick = () => {
-      log(`luxBtn.title = 保存进度`);
       const it = this.dataModel;
       storage(this.context)
         .setItem(kGameProgressKey, JSON.stringify(it))
@@ -387,19 +391,23 @@ export class HuaRongDao extends Panel {
 
     /// 重新开始
     vh.rePlayBtn.onClick = () => {
-      log(`luxBtn.title = 重新开始`);
-      if (!this.btnEnabled) return;
-      this.btnEnabled = false;
-      setTimeout(() => {
-        this.btnEnabled = true;
-      }, 300);
-      this.reset(state);
-      animate(this.context)({
-        animations: () => {
-          this.resetSubViewsFrame(state);
-        },
-        duration: 300,
-      });
+      modal(this.context)
+        .confirm({
+          title: "温馨提示",
+          msg: "您确定要重新开始吗？",
+          okLabel: "确定",
+          cancelLabel: "取消",
+        })
+        .then(() => {
+          // OK 确定
+          this.reset(state);
+          animate(this.context)({
+            animations: () => {
+              this.resetSubViewsFrame(state);
+            },
+            duration: 300,
+          });
+        });
     };
   }
 
@@ -411,63 +419,91 @@ export class HuaRongDao extends Panel {
         name: "张飞",
         type: 12,
         origin: { x: 0, y: 0 },
-        photoPath: "assets/pic11.png",
+        photoPath: "pic11",
       },
       {
         name: "曹操",
         type: 22,
         origin: { x: 1, y: 0 },
-        photoPath: "assets/pic0.png",
+        photoPath: "pic0",
       },
       {
         name: "赵云",
         type: 12,
         origin: { x: 3, y: 0 },
-        photoPath: "assets/pic10.png",
+        photoPath: "pic10",
       },
       {
         name: "黄忠",
         type: 12,
         origin: { x: 0, y: 2 },
-        photoPath: "assets/pic14.png",
+        photoPath: "pic14",
       },
       {
         name: "关羽",
         type: 21,
         origin: { x: 1, y: 2 },
-        photoPath: "assets/pic3.png",
+        photoPath: "pic3",
       },
       {
         name: "马超",
         type: 12,
         origin: { x: 3, y: 2 },
-        photoPath: "assets/pic13.png",
+        photoPath: "pic13",
       },
       {
         name: "卒1",
         type: 11,
         origin: { x: 1, y: 3 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒2",
         type: 11,
         origin: { x: 2, y: 3 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒3",
         type: 11,
         origin: { x: 0, y: 4 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒4",
         type: 11,
         origin: { x: 3, y: 4 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
     ];
+  }
+
+  imageBase64String(path: string): string {
+    var base64Str = pic0;
+    switch (path) {
+      case "pic0":
+        base64Str = pic0;
+        break;
+      case "pic3":
+        base64Str = pic3;
+        break;
+      case "pic6":
+        base64Str = pic6;
+        break;
+      case "pic10":
+        base64Str = pic10;
+        break;
+      case "pic11":
+        base64Str = pic11;
+        break;
+      case "pic13":
+        base64Str = pic13;
+        break;
+      case "pic14":
+        base64Str = pic14;
+        break;
+    }
+    return base64Str;
   }
 
   build(rootView: Group): void {
@@ -491,10 +527,7 @@ export class HuaRongDao extends Panel {
               (item: RoleModel, index: number) => {
                 var view = gestureContainer(
                   image({
-                    image:
-                      Environment.platform === "Android"
-                        ? new AndroidAssetsResource(item.photoPath)
-                        : new MainBundleResource(item.photoPath),
+                    imageBase64: this.imageBase64String(item.photoPath),
                     layoutConfig: layoutConfig().most(),
                     scaleType: ScaleType.ScaleAspectFill,
                   }),
@@ -508,16 +541,16 @@ export class HuaRongDao extends Panel {
                     onPan: (dx: number, dy: number) => {
                       if (!this.responsedGesture) {
                         //direction: 1 left, 2 right, 3 top, 4 bottom
-                        if (dx > 2 && Math.abs(dy) <= 1) {
+                        if (dx > 1 && Math.abs(dy) <= 5) {
                           this.responsedGesture = true;
                           this.checkRoleCanMoveToDirection(index, 1, view);
-                        } else if (dx < -2 && Math.abs(dy) <= 1) {
+                        } else if (dx < -1 && Math.abs(dy) <= 5) {
                           this.responsedGesture = true;
                           this.checkRoleCanMoveToDirection(index, 2, view);
-                        } else if (dy > 2 && Math.abs(dx) <= 1) {
+                        } else if (dy > 1 && Math.abs(dx) <= 5) {
                           this.responsedGesture = true;
                           this.checkRoleCanMoveToDirection(index, 3, view);
-                        } else if (dy < -2 && Math.abs(dx) <= 1) {
+                        } else if (dy < -1 && Math.abs(dx) <= 5) {
                           this.responsedGesture = true;
                           this.checkRoleCanMoveToDirection(index, 4, view);
                         }
@@ -552,7 +585,7 @@ export class HuaRongDao extends Panel {
               width: 90,
               height: 32,
               backgroundColor: buttonColor,
-              corners: 16
+              corners: 16,
             })),
             (this.rePlayBtn = text({
               text: "重新开始",
@@ -561,7 +594,7 @@ export class HuaRongDao extends Panel {
               width: 90,
               height: 32,
               backgroundColor: buttonColor,
-              corners: 16
+              corners: 16,
             })),
             (this.backBtn = text({
               text: "回退",
@@ -570,7 +603,7 @@ export class HuaRongDao extends Panel {
               width: 90,
               height: 32,
               backgroundColor: buttonColor,
-              corners: 16
+              corners: 16,
             })),
           ],
           {
@@ -589,7 +622,7 @@ export class HuaRongDao extends Panel {
       ],
       {
         layoutConfig: layoutConfig().most(),
-        backgroundColor: PubTool.bgColor,
+        backgroundColor: Color.parse("#FDF5E6"),
         space: 20,
       }
     ).in(rootView);
@@ -603,61 +636,61 @@ export class HuaRongDao extends Panel {
         name: "张飞",
         type: 12,
         origin: { x: 0, y: 0 },
-        photoPath: "assets/pic11.png",
+        photoPath: "pic11",
       },
       {
         name: "曹操",
         type: 22,
         origin: { x: 1, y: 0 },
-        photoPath: "assets/pic0.png",
+        photoPath: "pic0",
       },
       {
         name: "赵云",
         type: 12,
         origin: { x: 3, y: 0 },
-        photoPath: "assets/pic10.png",
+        photoPath: "pic10",
       },
       {
         name: "黄忠",
         type: 12,
         origin: { x: 0, y: 2 },
-        photoPath: "assets/pic14.png",
+        photoPath: "pic14",
       },
       {
         name: "关羽",
         type: 21,
         origin: { x: 1, y: 2 },
-        photoPath: "assets/pic3.png",
+        photoPath: "pic3",
       },
       {
         name: "马超",
         type: 12,
         origin: { x: 3, y: 2 },
-        photoPath: "assets/pic13.png",
+        photoPath: "pic13",
       },
       {
         name: "卒1",
         type: 11,
         origin: { x: 1, y: 3 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒2",
         type: 11,
         origin: { x: 2, y: 3 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒3",
         type: 11,
         origin: { x: 0, y: 4 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
       {
         name: "卒4",
         type: 11,
         origin: { x: 3, y: 4 },
-        photoPath: "assets/pic6.png",
+        photoPath: "pic6",
       },
     ];
     // 读取进度缓存
@@ -665,7 +698,6 @@ export class HuaRongDao extends Panel {
       .getItem(kGameProgressKey)
       .then((cache) => {
         if (cache) {
-          log(`onCreate 读取缓存: ${cache}`);
           const s = JSON.parse(cache);
           this.dataModel = s;
           this.resetSubViewsFrame(s);
