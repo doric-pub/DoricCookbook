@@ -9,6 +9,8 @@ export class MyTabBar extends FlexLayout {
     selectedColor: Color
     selectedIndex: number
     onSelectedHandler?: (currentIndex: number) => void
+    private tempConfig: Partial<this> = {}
+
     constructor() {
         super()
         this.selectedIndex = 0
@@ -29,34 +31,34 @@ export class MyTabBar extends FlexLayout {
     apply(config: Partial<this>) {
         let t = super.apply(config)
         this.tempConfig = config
+        var tabItems: View[] = []
         if (config.titles && config.titles.length > 0) {
-            var tabItems = []
             let selectedIndex = config.selectedIndex ?? t.selectedIndex
             for (let index = 0; index < config.titles.length; index++) {
-                let title = config.titles[index];
+                let title: string = config.titles[index];
                 let color = Color.LTGRAY
                 if (config.selectedColor && config.normalColor) {
                     color = (index == selectedIndex) ? config.selectedColor : config.normalColor
                 } else {
                     color = (index == selectedIndex) ? t.selectedColor : t.normalColor
                 }
-                let imageV
+                var imageV = new Image
                 if (config.selectedImages && config.normalImages) {
                     imageV = (index == selectedIndex) ? config.selectedImages[index % config.selectedImages.length] : config.normalImages[index % config.normalImages.length]
                 }
-                var itemViews = []
+                var itemViews: View[] = []
                 if (imageV) {
-                    itemViews.push(imageV)
+                    itemViews.push(imageV as View)
                 }
                 itemViews.push(
                     text({
-                        text: title,
+                        text: title as string,
                         textSize: 13,
                         textColor: color,
                         layoutConfig: layoutConfig().fit()
                     }))
                 tabItems.push(
-                    vlayout(itemViews, {
+                    vlayout(itemViews as View[], {
                         height: 48,
                         gravity: Gravity.Center,
                         space: 5,
@@ -86,16 +88,12 @@ export class MyTabBar extends FlexLayout {
         }
         return t
     }
-
-    private tempConfig: Partial<this> = {}
 }
 
 export function myTabBar(config?: Partial<MyTabBar>) {
     const ret = new MyTabBar
-    log('myTabBar')
     if (config) {
         ret.apply(config)
-        // ret.applyChild(config)
     }
     return ret
 }

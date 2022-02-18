@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Color, FlexDirection, flexlayout, FlexLayout, Gravity, Justify, layoutConfig, log, text, ViewComponent, vlayout } from "doric";
+import { Color, FlexDirection, flexlayout, FlexLayout, Gravity, Image, Justify, layoutConfig, text, ViewComponent, vlayout } from "doric";
 let MyTabBar = class MyTabBar extends FlexLayout {
     constructor() {
         super();
@@ -31,8 +31,8 @@ let MyTabBar = class MyTabBar extends FlexLayout {
         var _a;
         let t = super.apply(config);
         this.tempConfig = config;
+        var tabItems = [];
         if (config.titles && config.titles.length > 0) {
-            var tabItems = [];
             let selectedIndex = (_a = config.selectedIndex) !== null && _a !== void 0 ? _a : t.selectedIndex;
             for (let index = 0; index < config.titles.length; index++) {
                 let title = config.titles[index];
@@ -43,7 +43,7 @@ let MyTabBar = class MyTabBar extends FlexLayout {
                 else {
                     color = (index == selectedIndex) ? t.selectedColor : t.normalColor;
                 }
-                let imageV;
+                var imageV = new Image;
                 if (config.selectedImages && config.normalImages) {
                     imageV = (index == selectedIndex) ? config.selectedImages[index % config.selectedImages.length] : config.normalImages[index % config.normalImages.length];
                 }
@@ -95,10 +95,8 @@ MyTabBar = __decorate([
 export { MyTabBar };
 export function myTabBar(config) {
     const ret = new MyTabBar;
-    log('myTabBar');
     if (config) {
         ret.apply(config);
-        // ret.applyChild(config)
     }
     return ret;
 }

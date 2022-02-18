@@ -14,8 +14,8 @@
   "author": "Xcoder1011 ",
   "license": "Apache-2.0",
   "dependencies": {
-    "doric": "0.9.26",
-    "doric-cli": "0.9.26",
+    "doric": "0.10.2",
+    "doric-cli": "0.10.2",
     "reflect-metadata": "^0.1.13",
     "rollup": "^2.24.0",
     "ts-node": "^10.3.0",
