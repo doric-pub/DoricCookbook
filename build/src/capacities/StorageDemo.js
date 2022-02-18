@@ -1,0 +1,113 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { storage, Panel, scroller, vlayout, text, layoutConfig, LayoutSpec, Color, gravity, modal, log, } from "doric";
+import { colors, label } from "./utils";
+const storedKey = "StoredKey";
+const zone = "StorageDemo";
+let StorageDemo = class StorageDemo extends Panel {
+    update() {
+        storage(context)
+            .getItem(storedKey, zone)
+            .then((e) => {
+            this.stored.text = e || "";
+            log("Called in then");
+        });
+    }
+    build(root) {
+        scroller(vlayout([
+            text({
+                text: "Storage Demo",
+                layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+                textSize: 30,
+                textColor: Color.WHITE,
+                backgroundColor: colors[1],
+                textAlignment: gravity().center(),
+                height: 50,
+            }),
+            label("Stored"),
+            text({
+                layoutConfig: layoutConfig().configWidth(LayoutSpec.MOST),
+                textSize: 20,
+                textColor: Color.WHITE,
+                backgroundColor: colors[3],
+                textAlignment: gravity().center(),
+                height: 50,
+            }).also((it) => (this.stored = it)),
+            label("store a value").apply({
+                width: 200,
+                height: 50,
+                backgroundColor: colors[0],
+                textSize: 30,
+                textColor: Color.WHITE,
+                layoutConfig: layoutConfig().just(),
+                onClick: () => {
+                    storage(context)
+                        .getItem(storedKey, zone)
+                        .then((e) => {
+                        modal(context)
+                            .prompt({
+                            text: e,
+                            title: "Please input text to store",
+                            defaultText: "Default Value",
+                        })
+                            .then((text) => {
+                            storage(context)
+                                .setItem(storedKey, text, zone)
+                                .then(() => {
+                                this.update();
+                            });
+                        });
+                    });
+                },
+            }),
+            label("remove value").apply({
+                width: 200,
+                height: 50,
+                backgroundColor: colors[0],
+                textSize: 30,
+                textColor: Color.WHITE,
+                layoutConfig: layoutConfig().just(),
+                onClick: () => {
+                    storage(context)
+                        .remove(storedKey, zone)
+                        .then((e) => {
+                        this.update();
+                    });
+                },
+            }),
+            label("clear values").apply({
+                width: 200,
+                height: 50,
+                backgroundColor: colors[0],
+                textSize: 30,
+                textColor: Color.WHITE,
+                layoutConfig: layoutConfig().just(),
+                onClick: () => {
+                    storage(context)
+                        .clear(zone)
+                        .then((e) => {
+                        this.update();
+                    });
+                },
+            }),
+        ]).apply({
+            layoutConfig: layoutConfig().most().configHeight(LayoutSpec.FIT),
+            gravity: gravity().center(),
+            space: 10,
+        }))
+            .apply({
+            layoutConfig: layoutConfig().most(),
+        })
+            .in(root);
+        this.update();
+    }
+};
+StorageDemo = __decorate([
+    Entry
+], StorageDemo);
+export { StorageDemo };
+//# sourceMappingURL=StorageDemo.js.map
