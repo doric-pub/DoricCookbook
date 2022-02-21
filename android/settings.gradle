@@ -1,5 +1,5 @@
 include ':app'
-rootProject.name='DoricExamples'
+rootProject.name='DoricCookbook'
 
 def nodeModuleDir = new File(rootDir.getParent() + File.separator + "node_modules")
 if (nodeModuleDir.isDirectory()) {
