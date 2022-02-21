@@ -21,11 +21,16 @@ target 'DoricExamples' do
   pod 'SDWebImageWebPCoder'
 
   pod 'PINCache'
+  
+  pod 'Dangle'
 
   dir_node_modules = File.join(__dir__,"../node_modules")
   Dir.foreach(dir_node_modules) do |file|
     if File.exist?(File.join(dir_node_modules, file, "__doric_library__"))
       puts "Doric Library: #{File.join(dir_node_modules, file)}"
+      if(file == "dangle")
+           next
+         end
       ret = Dir.glob(File.join(dir_node_modules,file,"*.podspec"))
       if(ret.length > 0)
         podspecPath = ret[0]

@@ -23,6 +23,7 @@ import { GestureTSXDemo } from "./capacities/GestureTSXDemo"
 import { HuaRongDao } from "./capacities/HuaRongDao"
 import { StorageDemo } from "./capacities/StorageDemo"
 import { SwitchDemo } from "./capacities/SwitchDemo"
+import { LittlestTokyo } from "./capacities/LittlestTokyo"
 
 export class PanelRouter {
 
@@ -62,6 +63,7 @@ export class PanelRouter {
             ['/HuaRongDao', HuaRongDao],
             ['/StorageDemo', StorageDemo],
             ['/SwitchDemo', SwitchDemo],
+            ['/LittlestTokyo', LittlestTokyo],            
         ])
     }
 

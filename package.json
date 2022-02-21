@@ -1,6 +1,6 @@
 {
   "name": "doric-cookbook",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "build/src/DoricExamples.js",
   "types": "src/DoricExamples.ts",
   "scripts": {
@@ -14,8 +14,10 @@
   "author": "Xcoder1011 ",
   "license": "Apache-2.0",
   "dependencies": {
-    "doric": "0.10.2",
-    "doric-cli": "0.10.2",
+    "doric": "^0.10.2",
+    "doric-cli": "^0.10.2",
+    "doric-three": "^0.1.3",
+    "@types/three": "^0.137.0",
     "reflect-metadata": "^0.1.13",
     "rollup": "^2.24.0",
     "ts-node": "^10.3.0",

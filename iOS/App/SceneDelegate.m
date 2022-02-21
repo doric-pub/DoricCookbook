@@ -1,5 +1,7 @@
 #import "SceneDelegate.h"
 #import <DoricCore/Doric.h>
+#import <DoricThree/DoricThreeLibrary.h>
+#import <Dangle/DangleLibrary.h>
 
 #if DEBUG
 
@@ -14,6 +16,11 @@
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     UIWindowScene *windowScene = (UIWindowScene *) scene;
     NSString *bundleName = @"DoricExamples";
+    
+    [DoricDev instance];
+    [Doric registerLibrary:[DangleLibrary new]];
+    [Doric registerLibrary:[DoricThreeLibrary new]];
+    
     DoricViewController *doricViewController = [[DoricViewController alloc] initWithSource:[NSString stringWithFormat:@"assets://src/%@.js", bundleName]
                                                                                      alias:bundleName
                                                                                      extra:@""];
