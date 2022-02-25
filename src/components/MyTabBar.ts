@@ -18,13 +18,14 @@ export class MyTabBar extends FlexLayout {
         this.normalColor = Color.GRAY
         this.selectedColor = Color.safeParse('#4BA664')
         this.backgroundColor = Color.WHITE
-        if (Environment.platform == 'iOS') {
-            // 有刘海的屏幕:44 没有刘海的屏幕为20
-            // 有刘海的屏幕:34 没有刘海的屏幕0
-            this.height = Environment.statusBarHeight > 20 ? (48 + 34) : 48
-        } else {
-            this.height = 48
-        }
+        // if (Environment.platform == 'iOS') {
+        //     // 有刘海的屏幕:44 没有刘海的屏幕为20
+        //     // 有刘海的屏幕:34 没有刘海的屏幕0
+        //     this.height = Environment.statusBarHeight > 20 ? (48 + 34) : 48
+        // } else {
+        //     this.height = 48
+        // }
+        this.height = Environment.hasNotch ? (48 + 34) : 48
         this.layoutConfig = layoutConfig().mostWidth().justHeight()
     }
 
