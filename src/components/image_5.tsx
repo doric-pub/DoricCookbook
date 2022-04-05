@@ -1,5 +1,5 @@
 
-import { AndroidAssetsResource, createRef, Gravity, Image, jsx, layoutConfig, MainBundleResource, RemoteResource, ScaleType, Stack, VLayout } from "doric"
+import { AndroidAssetsResource, AssetsResource, createRef, Gravity, Image, jsx, layoutConfig, MainBundleResource, RemoteResource, ScaleType, Stack, VLayout } from "doric"
 import * as PubTool from "../PubTool"
 
 export function ui() {
@@ -13,6 +13,13 @@ export function ui() {
             layoutConfig={layoutConfig().mostWidth().fitHeight()}
             gravity={Gravity.Center} space={20}
         >
+            <Image 
+            image={new AssetsResource("coupon_bg2.png")}
+            height={48}
+            width={78}
+            scaleType={ScaleType.ScaleAspectFill}
+            layoutConfig={layoutConfig().just()}
+            ></Image>
             <Image
                 ref={imageRef}
                 width={200}
@@ -49,11 +56,18 @@ export function codeString() {
         return <Stack
             layoutConfig={layoutConfig().mostWidth().fitHeight()}
             backgroundColor={PubTool.bgColor}
-            padding={{ left: 10, right: 10, top: 10, bottom: 10 }}>
+            padding={{left: 10, right: 10, top: 10, bottom: 10}}>
             <VLayout
                 layoutConfig={layoutConfig().mostWidth().fitHeight()}
                 gravity={Gravity.Center} space={20}
             >
+                <Image 
+                image={new AssetsResource("coupon_bg2.png")}
+                height={48}
+                width={78}
+                scaleType={ScaleType.ScaleAspectFill}
+                layoutConfig={layoutConfig().just()}
+                ></Image>
                 <Image
                     ref={imageRef}
                     width={200}

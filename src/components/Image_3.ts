@@ -1,5 +1,5 @@
 
-import { Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
+import { AssetsResource, Gravity, image, layoutConfig, ScaleType, stack, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 import buttonImage from "../images/button.png"
 
@@ -13,14 +13,12 @@ export function ui() {
                     scaleType: ScaleType.ScaleToFill,
                     layoutConfig: layoutConfig().fit(),
                 }),
-
                 image({
                     imageBase64: buttonImage,
                     scaleType: ScaleType.ScaleToFill,
                     layoutConfig: layoutConfig().fit(),
                     imageScale: 2,
                 }),
-
                 image({
                     imageBase64: buttonImage,
                     scaleType: ScaleType.ScaleToFill,
@@ -35,7 +33,6 @@ export function ui() {
                     },
                     imageScale: 2.75,
                 }),
-
                 image({
                     imageBase64: buttonImage,
                     scaleType: ScaleType.ScaleToFill,
@@ -50,7 +47,27 @@ export function ui() {
                     },
                     imageScale: 2,
                 }),
-
+                image({
+                  image: new AssetsResource("coupon_bg2.png"),
+                  height: 48,
+                  width: 78,
+                  scaleType: ScaleType.ScaleAspectFill,
+                  layoutConfig: layoutConfig().just(),
+                }),
+                image({
+                  image: new AssetsResource("coupon_bg2.png"),
+                  height: 48,
+                  width: 78 * 3,
+                  scaleType: ScaleType.ScaleToFill,
+                  imageScale: 1,
+                  layoutConfig: layoutConfig().just(),
+                  stretchInset: {
+                    left: 0,
+                    top: 0,
+                    right: 76,
+                    bottom: 0,
+                  },
+                }),
             ], {
                 space: 20,
                 gravity: Gravity.Center,
@@ -77,14 +94,12 @@ export function codeString() {
                         scaleType: ScaleType.ScaleToFill,
                         layoutConfig: layoutConfig().fit(),
                     }),
-    
                     image({
                         imageBase64: buttonImage,
                         scaleType: ScaleType.ScaleToFill,
                         layoutConfig: layoutConfig().fit(),
                         imageScale: 2,
                     }),
-    
                     image({
                         imageBase64: buttonImage,
                         scaleType: ScaleType.ScaleToFill,
@@ -99,7 +114,6 @@ export function codeString() {
                         },
                         imageScale: 2.75,
                     }),
-    
                     image({
                         imageBase64: buttonImage,
                         scaleType: ScaleType.ScaleToFill,
@@ -114,7 +128,27 @@ export function codeString() {
                         },
                         imageScale: 2,
                     }),
-    
+                    image({
+                      image: new AssetsResource("coupon_bg2.png"),
+                      height: 48,
+                      width: 78,
+                      scaleType: ScaleType.ScaleAspectFill,
+                      layoutConfig: layoutConfig().just(),
+                    }),
+                    image({
+                      image: new AssetsResource("coupon_bg2.png"),
+                      height: 48,
+                      width: 78 * 3,
+                      scaleType: ScaleType.ScaleToFill,
+                      imageScale: 1,
+                      layoutConfig: layoutConfig().just(),
+                      stretchInset: {
+                        left: 0,
+                        top: 0,
+                        right: 76,
+                        bottom: 0,
+                      },
+                    }),
                 ], {
                     space: 20,
                     gravity: Gravity.Center,

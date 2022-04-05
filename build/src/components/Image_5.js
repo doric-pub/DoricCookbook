@@ -1,10 +1,11 @@
-import { AndroidAssetsResource, createRef, Gravity, Image, jsx, layoutConfig, MainBundleResource, RemoteResource, ScaleType, Stack, VLayout } from "doric";
+import { AndroidAssetsResource, AssetsResource, createRef, Gravity, Image, jsx, layoutConfig, MainBundleResource, RemoteResource, ScaleType, Stack, VLayout } from "doric";
 import * as PubTool from "../PubTool";
 export function ui() {
     const imageRef = createRef();
     const remoteImageRef = createRef();
     return jsx.createElement(Stack, { layoutConfig: layoutConfig().mostWidth().fitHeight(), backgroundColor: PubTool.bgColor, padding: { left: 10, right: 10, top: 10, bottom: 10 } },
         jsx.createElement(VLayout, { layoutConfig: layoutConfig().mostWidth().fitHeight(), gravity: Gravity.Center, space: 20 },
+            jsx.createElement(Image, { image: new AssetsResource("coupon_bg2.png"), height: 48, width: 78, scaleType: ScaleType.ScaleAspectFill, layoutConfig: layoutConfig().just() }),
             jsx.createElement(Image, { ref: imageRef, width: 200, height: 200, scaleType: ScaleType.ScaleAspectFit, image: Environment.platform === 'Android'
                     ? new AndroidAssetsResource('assets/The_Parthenon_in_Athens.jpeg')
                     : new MainBundleResource("assets/The_Parthenon_in_Athens.jpeg"), layoutConfig: layoutConfig().just(), loadCallback: (res) => {
@@ -25,11 +26,18 @@ export function codeString() {
         return <Stack
             layoutConfig={layoutConfig().mostWidth().fitHeight()}
             backgroundColor={PubTool.bgColor}
-            padding={{ left: 10, right: 10, top: 10, bottom: 10 }}>
+            padding={{left: 10, right: 10, top: 10, bottom: 10}}>
             <VLayout
                 layoutConfig={layoutConfig().mostWidth().fitHeight()}
                 gravity={Gravity.Center} space={20}
             >
+                <Image 
+                image={new AssetsResource("coupon_bg2.png")}
+                height={48}
+                width={78}
+                scaleType={ScaleType.ScaleAspectFill}
+                layoutConfig={layoutConfig().just()}
+                ></Image>
                 <Image
                     ref={imageRef}
                     width={200}
