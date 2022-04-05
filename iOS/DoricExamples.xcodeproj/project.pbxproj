@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A25BB20F21FF2A06B7C41EB /* libPods-DoricExamples.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF612CE66DABF8623CFABEC /* libPods-DoricExamples.a */; };
+		A4C5EB1A27FC4DE10016BED6 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = A4C5EB1927FC4DE10016BED6 /* assets */; };
 		E2B059BF23C452BB007555C7 /* src in Resources */ = {isa = PBXBuildFile; fileRef = E2B059BE23C452BB007555C7 /* src */; };
 		E2F64CEF2399359C0006BD9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F64CEE2399359C0006BD9A /* AppDelegate.m */; };
 		E2F64CF22399359C0006BD9A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2F64CF12399359C0006BD9A /* SceneDelegate.m */; };
@@ -21,6 +22,7 @@
 		4EF612CE66DABF8623CFABEC /* libPods-DoricExamples.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoricExamples.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D47A9D4EA2836D57373FDF6 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		A052AF823C12D2096CBBC232 /* Pods-DoricExamples.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoricExamples.release.xcconfig"; path = "Target Support Files/Pods-DoricExamples/Pods-DoricExamples.release.xcconfig"; sourceTree = "<group>"; };
+		A4C5EB1927FC4DE10016BED6 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../bundle/assets; sourceTree = "<group>"; };
 		E2B059BE23C452BB007555C7 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../bundle/src; sourceTree = "<group>"; };
 		E2F64CEA2399359C0006BD9A /* DoricExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoricExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F64CED2399359C0006BD9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		E2F64CE12399359C0006BD9A = {
 			isa = PBXGroup;
 			children = (
+				A4C5EB1927FC4DE10016BED6 /* assets */,
 				E2B059BE23C452BB007555C7 /* src */,
 				E2F64CEC2399359C0006BD9A /* App */,
 				E2F64CEB2399359C0006BD9A /* Products */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B059BF23C452BB007555C7 /* src in Resources */,
+				A4C5EB1A27FC4DE10016BED6 /* assets in Resources */,
 				E2F64CFD2399359E0006BD9A /* LaunchScreen.storyboard in Resources */,
 				E2F64CFA2399359E0006BD9A /* Assets.xcassets in Resources */,
 			);
