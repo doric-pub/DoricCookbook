@@ -24,6 +24,11 @@
                 "title": "精确位置定位",
                 "desc": "可以指定上下左右的边界对子视图进行位置精准安放\ntop、left分别代表离父视图上边界和左边界的距离\n而bottom和right不能理解成离底部和右边界的距离\n【bottom】代表视图的底部离父视图顶部的距离\n【right】代表视图的右部离父视图左边界的距离",
                 "ui": "Stack_5"
+            },
+            {
+                "title": "maxHeight",
+                "desc": "可以指定maxWidth、maxHeight、minWidth、minHeight等属性\nconfigMaxWidth(v: number): this;\nconfigMaxHeight(v: number): this;",
+                "ui": "Stack_6"
             }
         ]
     },
@@ -45,12 +50,17 @@
             },
             {
                 "title": "拉伸图片",
-                "desc": "【imageBase64】：本地图片转成Base64格式加载\nimport buttonImage from \"../images/button.png\"\n【stretchInset】：图片拉伸部分",
+                "desc": "【stretchInset】：图片拉伸部分, 例如{ left: 100, top: 0, right: 100,bottom: 0 }",
                 "ui": "Image_3"
             },
             {
+                "title": "图片平铺Tile",
+                "desc": "【scaleType】：通过设置scaleType：ScaleType.Tile来实现图片平铺效果",
+                "ui": "Image_6"
+            },
+            {
                 "title": "通过Resource加载图片",
-                "desc": "【image】：通过resource loader加载图片的方式\n【MainBundleResource】：MainBundleResource(\"assets/The_Parthenon_in_Athens.jpeg\")\"\n【RemoteResource】：RemoteResource(\"https://p.upyun.com/demo/webp/webp/jpg-0.webp\")",
+                "desc": "【image】：通过resource loader加载图片的方式\n【AssetsResource】：new AssetsResource(\"coupon_bg2.png\")\n【MainBundleResource】：MainBundleResource(\"assets/The_Parthenon_in_Athens.jpeg\")\"\n【RemoteResource】：RemoteResource(\"https://p.upyun.com/demo/webp/webp/jpg-0.webp\")",
                 "ui": "Image_5"
             }
         ]
@@ -73,7 +83,7 @@
             },
             {
                 "title": "字体文件使用",
-                "desc": "【font】：字体文件名/字体文件路径",
+                "desc": "【font】：字体文件名\n支持从bundle加载 font: new AssetsResource('/fonts/Hanabi.ttf')",
                 "ui": "Text_3"
             },
             {

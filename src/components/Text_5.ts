@@ -1,5 +1,5 @@
 
-import { Color, GradientOrientation, Gravity, layoutConfig, LayoutSpec, stack, text, vlayout } from "doric"
+import {Gravity, layoutConfig, stack, text, vlayout } from "doric"
 import * as PubTool from "../PubTool"
 
 /// 颜色渐变

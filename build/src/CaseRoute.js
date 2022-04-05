@@ -11,11 +11,13 @@ import * as Stack_2 from "./components/Stack_2";
 import * as Stack_3 from "./components/Stack_3";
 import * as Stack_4 from "./components/Stack_4";
 import * as Stack_5 from "./components/Stack_5";
+import * as Stack_6 from "./components/Stack_6";
 /// Image
 import * as Image_1 from "./components/Image_1";
 import * as Image_2 from "./components/Image_2";
 import * as Image_3 from "./components/Image_3";
 import * as Image_5 from "./components/Image_5";
+import * as Image_6 from "./components/Image_6";
 /// HLayout
 import * as HLayout_1 from "./components/HLayout_1";
 import * as HLayout_2 from "./components/HLayout_2";
@@ -54,6 +56,8 @@ export function caseUIorCode(path, needCode) {
             return needCode ? Stack_4.codeString() : Stack_4.ui();
         case "Stack_5":
             return needCode ? Stack_5.codeString() : Stack_5.ui();
+        case "Stack_6":
+            return needCode ? Stack_6.codeString() : Stack_6.ui();
         case "Image_1":
             return needCode ? Image_1.codeString() : Image_1.ui();
         case "Image_2":
@@ -62,6 +66,8 @@ export function caseUIorCode(path, needCode) {
             return needCode ? Image_3.codeString() : Image_3.ui();
         case "Image_5":
             return needCode ? Image_5.codeString() : Image_5.ui();
+        case "Image_6":
+            return needCode ? Image_6.codeString() : Image_6.ui();
         case "HLayout_1":
             return needCode ? HLayout_1.codeString() : HLayout_1.ui();
         case "HLayout_2":

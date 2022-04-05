@@ -27,6 +27,12 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Request to open camera</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DINPro.ttf</string>
+		<string>Hanabi.ttf</string>
+		<string>iconfont.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
